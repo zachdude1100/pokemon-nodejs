@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/javascript/deck_viewer_draw_cards.js"></script>
+    <link rel="stylesheet" href="/css/deck_viewer.css">
+    <title><%= `${Deck.deckName}`%></title>
+</head>
+<body>
+    <h1><%= `${Deck.deckName}`%></h1>
+    <p id=decknotes><%=`${Deck.notes}`%></p>
+
+    <div id=cardlist></div>
+    <div id=cards></div>
+    <form action="/deckviewer/delete/<%= `${Deck._id}`%>" method="POST" onsubmit="return confirm('You really want to delete?');">
+        <button name="deletebutton" value="deletebutton">DELETE THIS DECK</button>
+    </form>
+    <script type='text/javascript'>
+        cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
+        drawcards(cards);
+    </script>
+</body>
+</html>

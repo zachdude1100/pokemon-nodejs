@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Pokemon Card Info</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/javascript/deck_builder.js"></script>
+  <link rel="stylesheet" href="/css/deck_builder_home.css">
+  
+
+ </head>
+ <body id="body">
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Pokemon Deck Builder</h2>  
+   <br /><br />
+   <div align="center">
+    <input type="text" name="search" id="search" placeholder="Search Cards" class="form-control" />
+   </div>
+   <ul class="list-group" id="result"></ul>
+  </div>
+  <div>
+      <p>Click cards to remove</p>
+      <form id="saveForm">
+        <label for="deckName">Deck Name</label>
+        <input type="text" id="deckName" class="form-control" name="deckName">
+        <label for="format">Format / Meta</label>
+        <select name="format" id="format">
+            <option value="Base_Set">Base Set</option>
+            <option value="Base_Jungle">Base - Jungle</option>
+            <option value="Base_Fossil">Base - Fossil</option>
+            <option value="Base_Team_Rocket">Base - Team Rocket</option>
+            <option value="Base_Gym">Base - Gym</option>
+            <option value="Prop_15/3">Prop 15/3</option>
+            <option value="Base_Neo">Base - Neo</option>
+            <option value="Rocket_On">Rocket-On</option>
+            <option value="Neo-On">Neo-On</option>
+        </select>
+        <label for="deckNotes">Deck Notes</label>
+        <input type="text" id="deckNotes" class="form-control" name="deckNotes">
+        <button onclick="submitDeck();" id="submit" class="button">Save Deck</button>
+      </form>      
+  </div>
+  <div id=cards></div>
+ </body>
+</html>

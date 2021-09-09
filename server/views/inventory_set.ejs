@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/javascript/inventory_draw_cards.js"></script>
+    <link rel="stylesheet" href="/css/inventory.css">
+    <title><%= `${foundCards.set}`%></title>
+</head>
+<body>
+    <h1><%= `${foundCards[0].set}`%></h1>
+    <div id=cardlist></div>
+    <div id=cards></div>
+    <script type='text/javascript'>
+
+        foundCards = Object.values(JSON.parse(`<%-JSON.stringify(foundCards)%>`));
+        drawcards(foundCards);
+        window.addEventListener('scroll',function() {
+            //When scroll change, you save it on localStorage.
+            localStorage.setItem('scrollPosition',window.scrollY);
+        },false);
+        window.addEventListener('load',function() {
+             if(localStorage.getItem('scrollPosition') !== null)
+            window.scrollTo(0, localStorage.getItem('scrollPosition'));
+        },false);
+
+    </script>
+</body>
+</html>

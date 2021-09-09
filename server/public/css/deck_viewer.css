@@ -1,0 +1,119 @@
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content option {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content option:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .card{
+    max-width:100%;
+    max-height:100%;
+    display:inline-block;
+  }
+
+  .anchor{
+    max-width:50%;
+  }
+  .instances{
+    font-size:20pt;
+    margin-left: 10%;
+    margin-bottom: 30%;
+    width: 20%;
+    display:inline-block;
+
+  }
+  .inventoryinput{
+    width:100px;
+    height:20px;
+    padding:1px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+
+  .inventorysubmit{
+    width:100px;
+    height:40px;
+    padding-bottom:10px;
+    font-size:10px;
+    
+    
+  }
+
+  .cardname{
+    font-family:helvetica;
+    font-size:15px;
+    height:auto;
+    margin:auto;
+    padding-top:10px;
+    padding-bottom:5px;
+  }
+  .cardnumber{
+    font-family:helvetica;
+    font-size:15px;
+    height:20px;
+    margin:auto;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  .inventorycurrent{
+    font-family:helvetica;
+    font-size:15px;
+    height:20px;
+    margin:auto;
+    padding-bottom:5px;
+    padding-top:5px;
+  }
+
+  .carddiv{
+    
+    background-color: burlywood;
+    border-style: solid;
+    border-width: 0.5%;
+    border-color: firebrick;
+    float:left;
+    width:300px;
+    height: 200px;
+    white-space: pre-wrap;
+    overflow:hidden;
+    
+  }
+  #decknotes{
+    width:40%;
+    margin:auto;
+    background-color: rgb(216, 130, 19);
+    border-style: solid;
+    border-width: 0.5%;
+    border-color: black;
+  }
+
+  h1{
+    margin:auto;
+    
+  }
