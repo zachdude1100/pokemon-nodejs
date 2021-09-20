@@ -9,7 +9,7 @@ function setOptions(dropDownNumber)
 
         $.ajax({  // grabs the card data from get request in the database
             type: 'GET',
-            url: '/play/decksinformat',
+            url: '/versuscalculation/decksinformat',
             data: formatSelection,
             success: function(deckResult) { 
                 let deckResultArr=Object.values(deckResult);
@@ -31,7 +31,7 @@ function getDecks(){
 
     $.ajax({  // grabs the card data from get request in the database
         type: 'GET',
-        url: '/play/getdecks',
+        url: '/versuscalculation/getdecks',
         data: {deckSelection1,deckSelection2},
         success: function(deckResult) { 
             let deckResultArr=Object.values(deckResult);
@@ -73,7 +73,7 @@ function getDecks(){
         let condensedObject=Object.assign({}, condensedDecks);
         $.ajax({  // grabs the card data from get request in the database
             type: 'GET',
-            url: '/play/submit',
+            url: '/versuscalculation/submit',
             data: condensedObject,
             success: function(cardResult) { 
                 //alert('data: ' + data);

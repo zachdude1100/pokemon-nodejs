@@ -14,7 +14,7 @@ const rtsIndex = require('./routes/login-register');
 const deckBuilder = require('./routes/deckbuilder.js');
 const deckViewer= require('./routes/deckviewer.js');
 const inventory = require('./routes/inventory.js');
-const play = require('./routes/play.js');
+const versusCalculation = require('./routes/versus_calculation.js');
 const formatCalculation = require('./routes/formatcalculation.js');
 const home = require('./routes/home.js');
 const tcg = require('./routes/tcg.js')
@@ -31,7 +31,7 @@ app.use('/deckbuilder',deckBuilder)
 app.use('/deckviewer',deckViewer)
 app.use('/inventory',inventory)
 app.use('/formatcalculation',formatCalculation)
-app.use('/play',play)
+app.use('/versuscalculation',versusCalculation)
 app.use('/',home)
 app.use('/tcg',tcg)
 

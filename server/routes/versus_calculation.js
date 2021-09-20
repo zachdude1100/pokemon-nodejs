@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 
 router.get("/",(req,res)=>{
-    res.render("play_home");
+    res.render("versus_calculation_home");
 })
 
 router.get("/decksinformat",(req,res)=>{

@@ -65,8 +65,9 @@ document.addEventListener("click",function(event){ //global click listener to up
 
 var deck;
 function initializeDeck(rawDeck,gameUUID){
-  deck = new Deck(rawDeck,gameUUID);
-  deck.shuffle();
+  deck = new Deck();
+  deck.initDeck(rawDeck)
+  deck.shuffleDeck();
 }
 var cardsInHand=[];
 
