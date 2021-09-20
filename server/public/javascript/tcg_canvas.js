@@ -6,11 +6,30 @@ socket.on('gameState',updateGameState) //upon receiving game state packet from t
 
 var width = document.getElementById('stageContainer').clientWidth; //these probably shouldn't be global (lazy)
 var height = document.getElementById('stageContainer').clientHeight;
-    var stage = new Konva.Stage({
-        container: 'stageContainer',
-        width: width,
-        height: height
+var randomStageSeed=Math.floor(Math.random()*2) //entirely temporary bullshit just to generate the client in 180 orientation randomly
+
+if (randomStageSeed==0){
+  var stage = new Konva.Stage({
+    container: 'stageContainer',
+    width: width,
+    height: height,
+    rotation: 180,
+    x: width,
+    y:height
   });
+}
+if (randomStageSeed==1){
+  var stage = new Konva.Stage({
+    container: 'stageContainer',
+    width: width,
+    height: height,
+    //rotation: 180,
+    //x: width,
+    //y:height
+  });
+}
+
+
 var layer = new Konva.Layer(); //not sure if I should be using multiple "layers"
 
 
@@ -46,7 +65,7 @@ document.addEventListener("click",function(event){ //global click listener to up
 
 var deck=[];  //misplaced global variables :D
 var cardsInHand=[];
-function initializeDeck(rawDeck){ //initialize deck called from page script, with the deck selection previous
+function initializeDeck(rawDeck,gameUUID){ //initialize deck called from page script, with the deck selection previous
   rawDeck.forEach(card => {
     var instances=card.instances;
     for (let i=0;i<instances;i++){

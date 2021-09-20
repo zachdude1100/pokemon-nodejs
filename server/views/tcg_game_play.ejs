@@ -17,7 +17,8 @@
     <script src="/javascript/tcg_canvas.js"></script>
     <script type='text/javascript'>
         cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
-        initializeDeck(cards);
+        gameUUID=JSON.parse(`<%-JSON.stringify(gameUUID)%>`)
+        initializeDeck(cards,gameUUID);
     </script>
 </body>
 
