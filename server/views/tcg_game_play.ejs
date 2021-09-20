@@ -14,7 +14,9 @@
 <body>
     <div id="stageContainer"></div>
     <div id="hand"></div>
-    <script src="/javascript/tcg_canvas.js"></script>
+    <script src="/javascript/tcg_gameplay/tcg_classes.js"></script>
+    <script src="/javascript/tcg_gameplay/tcg_canvas.js"></script>
+    
     <script type='text/javascript'>
         cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
         gameUUID=JSON.parse(`<%-JSON.stringify(gameUUID)%>`)

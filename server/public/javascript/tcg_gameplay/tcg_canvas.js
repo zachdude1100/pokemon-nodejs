@@ -63,32 +63,17 @@ document.addEventListener("click",function(event){ //global click listener to up
   socket.emit('gameState',stageData) //emits the game state
 })
 
-var deck=[];  //misplaced global variables :D
-var cardsInHand=[];
-function initializeDeck(rawDeck,gameUUID){ //initialize deck called from page script, with the deck selection previous
-  rawDeck.forEach(card => {
-    var instances=card.instances;
-    for (let i=0;i<instances;i++){
-      var rand = Math.random().toString(36).substr(2, 16) //generate and add a random unique (hopefully) id
-      deck.push({id: card.id,imageUrl:card.imageUrl, _id:rand}) //smack some objects in that deck
-    }
-  });
-  shuffle(deck); //call shuffle algorithm after init
+var deck;
+function initializeDeck(rawDeck,gameUUID){
+  deck = new Deck(rawDeck,gameUUID);
+  deck.shuffle();
 }
-function shuffle(shuffleDeck) { //stolen from the internet
-  var newDeck = [];
-  for (var i = 0; i < shuffleDeck.length; i++) {    
-      var rand = Math.floor(Math.random() * (i + 1));  
-      newDeck[i] = newDeck[rand];
-      newDeck[rand] = shuffleDeck[i];
-  }
-  deck=newDeck; //write back into deck
-  drawCardFromDeck() //temporarily draws 7 cards automatically
-}  
+var cardsInHand=[];
 
 function drawCardFromDeck(){ //will eventually not draw 7, will be one at a time
   for (let i=0; i<7;i++){
-    cardsInHand[i]=deck[i]
+    cardsInHand[i]=deck.deck[i]
+    console.log(cardsInHand[i])
   }
   animateHand() //call function to "animate" the hand because draw has conflicting wording
 }
@@ -151,3 +136,4 @@ function placeCardInPlay(cardId,cardSrc){  //loop needed because of the data bei
   imageObj.id=cardId
   drawCardOnCanvas(imageObj,stage.width() / 2 - 200 / 2,stage.height() / 2 - 137 / 2) //arbitrary placement
 }
+
