@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="/css/tcg_canvas.css">
+    <title>Zach's bootleg pokemon tcg game</title>
+</head>
+<body>
+    <div id="stageContainer"></div>
+    <div id="hand"></div>
+    <script src="/javascript/tcg_canvas.js"></script>
+    <script type='text/javascript'>
+        cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
+        initializeDeck(cards);
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const Deck = require('./models/deck.js');
 const Card = require('./models/card.js');
 const cors = require('cors');
+const socket = require('socket.io')
+
 const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants');
 
 const rtsIndex = require('./routes/login-register');
@@ -15,6 +17,7 @@ const inventory = require('./routes/inventory.js');
 const play = require('./routes/play.js');
 const formatCalculation = require('./routes/formatcalculation.js');
 const home = require('./routes/home.js');
+const tcg = require('./routes/tcg.js')
 const { isArray } = require('util');
 
 
@@ -30,6 +33,7 @@ app.use('/inventory',inventory)
 app.use('/formatcalculation',formatCalculation)
 app.use('/play',play)
 app.use('/',home)
+app.use('/tcg',tcg)
 
 
 mongoose.connect(config.db.connection, config.options, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -43,11 +47,21 @@ app.use((err, req, res, next) => {
     }
 });
 
-app.listen(3000,() => {
+var server = app.listen(3000,() => {
     console.log("application is running")
 });
 
+var io = socket(server);
+io.sockets.on('connection',newConnection);
 
+function newConnection(socket){
+    console.log('new connection ' +socket.id);
+    socket.on('gameState',syncGameState);
+    function syncGameState(stageData){
+        socket.broadcast.emit('gameState',stageData)
+        console.log(stageData);
+    }
+}
 
 
 
