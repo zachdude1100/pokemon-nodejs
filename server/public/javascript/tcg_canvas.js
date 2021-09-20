@@ -64,7 +64,7 @@ function shuffle(shuffleDeck) {
       newDeck[rand] = shuffleDeck[i];
   }
   deck=newDeck;
-  drawCardFromDeck() //temporary fix for not having a deck to click
+  drawCardFromDeck() //temporary fix for not having a deck to click, auto draws 7
 }  
 
 function drawCardFromDeck(){
