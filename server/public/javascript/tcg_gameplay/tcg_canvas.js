@@ -8,6 +8,11 @@ var width = document.getElementById('stageContainer').clientWidth; //these proba
 var height = document.getElementById('stageContainer').clientHeight;
 var randomStageSeed=Math.floor(Math.random()*2) //entirely temporary bullshit just to generate the client in 180 orientation randomly
 
+
+function gameLoop(){
+
+}
+
 if (randomStageSeed==0){
   var stage = new Konva.Stage({
     container: 'stageContainer',
@@ -23,9 +28,6 @@ if (randomStageSeed==1){
     container: 'stageContainer',
     width: width,
     height: height,
-    //rotation: 180,
-    //x: width,
-    //y:height
   });
 }
 
@@ -54,14 +56,7 @@ function updateGameState(gameState){
     })
 }
 
-document.addEventListener("click",function(event){ //global click listener to update game state
-  var allCardsOnStage=stage.find('.card') //finds all on field with the name of card, so all of them
-  var stageData=[];
-  allCardsOnStage.forEach(card=>{
-    stageData.push({id:card.attrs.id,src:card.attrs.image.src,x:card.attrs.x,y:card.attrs.y}) //all needed info to draw and update a card on the other player's screen
-  })
-  socket.emit('gameState',stageData) //emits the game state
-})
+
 
 var deck;
 function initializeDeck(rawDeck,gameUUID){
@@ -91,10 +86,7 @@ function animateHand(){ //draw the hand on the screen in the id=hand div
   
 }
 
-$(document).on('click',".card" ,function(){  //onclick for your hand
-  placeCardInPlay(this.id,this.src)  //grab the id and send it to be placed
-  removeCardFromHand(this.id);  //remove the card from hand global variable
-});
+
 
 function removeCardFromHand(id){
   for (let i = 0; i<cardsInHand.length;i++){ //iterates thru hand

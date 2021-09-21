@@ -14,8 +14,15 @@
 <body>
     <div id="stageContainer"></div>
     <div id="hand"></div>
+    <div id="context-menu">
+        <div class="item">Place card in deck</div>
+        <div class="item">Place card in hand</div>
+        <div class="item">Place card in discard</div>
+        <div id="placeCardInPlay" class="item">Place card in play</div>
+      </div>
     <script src="/javascript/tcg_gameplay/tcg_classes.js"></script>
     <script src="/javascript/tcg_gameplay/tcg_canvas.js"></script>
+    <script src="/javascript/tcg_gameplay/tcg_event_listeners.js"></script>
     
     <script type='text/javascript'>
         cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));

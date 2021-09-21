@@ -1,3 +1,5 @@
+
+
 class Card{
     constructor(cardId,imageUrl){
         this._id= Math.random().toString(36).substr(2, 16) //generate and add a random unique (hopefully) id
