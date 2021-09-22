@@ -12,17 +12,26 @@
     <title>Zach's bootleg pokemon tcg game</title>
 </head>
 <body>
-    <div id="stageContainer"></div>
-    <div id="hand"></div>
-    <div id="context-menu">
+    <div id="top_row">
+        <div id="stageContainer"></div>
+    </div>
+    <div id="bottom_row">
+        <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="deck_img">
+        <div id="hand"></div>
+    </div>
+    
+    <div id="context-menu-hand">
         <div class="item">Place card in deck</div>
         <div class="item">Place card in hand</div>
         <div class="item">Place card in discard</div>
-        <div id="placeCardInPlay" class="placeCardInPlay">Place card in play</div>
-      </div>
+        <div id="placeCardInPlay" class="placeCardInPlay" oncontextmenu=showContextMenu()>Place card in play</div>
+    </div>
+    
+
     <script src="/javascript/tcg_gameplay/tcg_classes.js"></script>
     <script src="/javascript/tcg_gameplay/tcg_canvas.js"></script>
     <script src="/javascript/tcg_gameplay/tcg_event_listeners.js"></script>
+    <script src="/javascript/tcg_gameplay/tcg_game_engine.js"></script>
     
     <script type='text/javascript'>
         cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));

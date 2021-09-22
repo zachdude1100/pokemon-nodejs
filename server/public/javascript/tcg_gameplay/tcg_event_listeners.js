@@ -1,5 +1,5 @@
 function showContextMenu(id){   //show context menu with passed thru card id
-  const contextMenu = document.getElementById("context-menu");  //right click listener to pop up the drop down menu
+  const contextMenu = document.getElementById("context-menu-hand");  //right click listener to pop up the drop down menu
     const { clientX: mouseX, clientY: mouseY } = event;
 
     contextMenu.style.top = `${mouseY}px`;
@@ -12,7 +12,7 @@ function showContextMenu(id){   //show context menu with passed thru card id
 }
 
 function hideContextMenu(){
-  const contextMenu = document.getElementById("context-menu")
+  const contextMenu = document.getElementById("context-menu-hand")
   contextMenu.classList.remove("visible")
 }
 
@@ -23,14 +23,8 @@ document.addEventListener("click",function(event){ //global click listener to up
       stageData.push({id:card.attrs.id,src:card.attrs.image.src,x:card.attrs.x,y:card.attrs.y}) //all needed info to draw and update a card on the other player's screen
     })
     socket.emit('gameState',stageData) //emits the game state
-    hideContextMenu();
+    hideContextMenu(); //global hide context menu whenever anything is clicked. Can't think of why you wouldn't want to
   })
-
-/*$(document).on('click',".card" ,function(){  //onclick for your hand
-    placeCardInPlay(this.id,this.src)  //grab the id and send it to be placed
-    removeCardFromHand(this.id);  //remove the card from hand global variable
-    
-});*/
 
 $(document).on('click',".placeCardInPlay" ,function(event){ //onclick for your hand
     var str = this.id   //takes the appended id to string var
