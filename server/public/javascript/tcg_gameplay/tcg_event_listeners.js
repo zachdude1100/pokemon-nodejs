@@ -1,21 +1,19 @@
-{const contextMenu = document.getElementById("context-menu");  //right click listener to pop up the drop down menu
-const scope = document.querySelector("body");
+function showContextMenu(id){   //show context menu with passed thru card id
+  const contextMenu = document.getElementById("context-menu");  //right click listener to pop up the drop down menu
+    const { clientX: mouseX, clientY: mouseY } = event;
 
-scope.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
+    contextMenu.style.top = `${mouseY}px`;
+    contextMenu.style.left = `${mouseX}px`;
 
-  const { clientX: mouseX, clientY: mouseY } = event;
+    contextMenu.classList.add("visible");
+    const placeCardInPlay = document.getElementById("placeCardInPlay")
+    placeCardInPlay.setAttribute("id","placeCardInPlay"+id)
+}
 
-  contextMenu.style.top = `${mouseY}px`;
-  contextMenu.style.left = `${mouseX}px`;
-
-  contextMenu.classList.add("visible");
-  scope.addEventListener("click", (e) => {
-    if (e.target.offsetParent != contextMenu) {
-      contextMenu.classList.remove("visible");
-    }
-  });
-});}
+function hideContextMenu(){
+  const contextMenu = document.getElementById("context-menu")
+  contextMenu.classList.remove("visible")
+}
 
 document.addEventListener("click",function(event){ //global click listener to update game state
     var allCardsOnStage=stage.find('.card') //finds all on field with the name of card, so all of them
@@ -31,9 +29,13 @@ $(document).on('click',".card" ,function(){  //onclick for your hand
     removeCardFromHand(this.id);  //remove the card from hand global variable
 });
 
-/*$(document).on('click',"#placeCardInPlay" ,function(event){ //onclick for your hand
-    var closestCard=$(this).closest(".card") 
-    console.log(closestCard)
-    placeCardInPlay(closestCard.id,closestCard.src)  //grab the id and send it to be placed
-    removeCardFromHand(closestCard.id);  //remove the card from hand global variable
-});*/
+$(document).on('click',".placeCardInPlay" ,function(event){ //onclick for your hand
+    var str = this.id   //takes the appended id to string var
+    var id = str.replace("placeCardInPlay","") //replaces the placeholder with nothing, so back to just id
+    this.id="placeCardInPlay" //set the id back to placeCardInPlay
+    var card = document.getElementById(id) //selects the card image of that id
+    placeCardInPlay(card.id,card.src)  //grab the id and send it to be placed
+    removeCardFromHand(card.id);  //remove the card from hand global variable
+
+    hideContextMenu();
+});

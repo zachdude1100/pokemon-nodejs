@@ -1,7 +1,7 @@
 //const { default: Konva } = require("konva");
 
 var socket;
-socket=io.connect('10.10.0.6:3000')
+socket=io.connect('10.70.0.3:3000')
 socket.on('gameState',updateGameState) //upon receiving game state packet from the other player:
 
 var width = document.getElementById('stageContainer').clientWidth; //these probably shouldn't be global (lazy)
@@ -81,6 +81,12 @@ function animateHand(){ //draw the hand on the screen in the id=hand div
           cardImage.src = cardsInHand[i].imageUrl;
           cardImage.setAttribute("class","card")
           cardImage.setAttribute("id",cardsInHand[i]._id);
+          cardImage.oncontextmenu = function () {
+            showContextMenu(cardImage.id);
+            //The return kills the normal context menu
+            return false;
+          }
+
           document.getElementById("hand").appendChild(cardImage);
   }
   
