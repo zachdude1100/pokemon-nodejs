@@ -6,8 +6,9 @@ function showContextMenu(id){   //show context menu with passed thru card id
     contextMenu.style.left = `${mouseX}px`;
 
     contextMenu.classList.add("visible");
-    const placeCardInPlay = document.getElementById("placeCardInPlay")
-    placeCardInPlay.setAttribute("id","placeCardInPlay"+id)
+    const placeCardInPlay = document.getElementsByClassName("placeCardInPlay")[0] //this seems dangerous but it works
+    
+    if (placeCardInPlay !==null) {placeCardInPlay.setAttribute("id","placeCardInPlay"+id)} //sets unique id to placeCardInPlay + the unique card id just so it can be parsed later
 }
 
 function hideContextMenu(){
@@ -22,17 +23,20 @@ document.addEventListener("click",function(event){ //global click listener to up
       stageData.push({id:card.attrs.id,src:card.attrs.image.src,x:card.attrs.x,y:card.attrs.y}) //all needed info to draw and update a card on the other player's screen
     })
     socket.emit('gameState',stageData) //emits the game state
+    hideContextMenu();
   })
 
-$(document).on('click',".card" ,function(){  //onclick for your hand
+/*$(document).on('click',".card" ,function(){  //onclick for your hand
     placeCardInPlay(this.id,this.src)  //grab the id and send it to be placed
     removeCardFromHand(this.id);  //remove the card from hand global variable
-});
+    
+});*/
 
 $(document).on('click',".placeCardInPlay" ,function(event){ //onclick for your hand
     var str = this.id   //takes the appended id to string var
     var id = str.replace("placeCardInPlay","") //replaces the placeholder with nothing, so back to just id
     this.id="placeCardInPlay" //set the id back to placeCardInPlay
+    
     var card = document.getElementById(id) //selects the card image of that id
     placeCardInPlay(card.id,card.src)  //grab the id and send it to be placed
     removeCardFromHand(card.id);  //remove the card from hand global variable
