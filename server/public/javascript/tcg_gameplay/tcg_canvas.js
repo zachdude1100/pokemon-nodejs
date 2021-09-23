@@ -1,7 +1,7 @@
 var width = document.getElementById('stageContainer').clientWidth; //these probably shouldn't be global (lazy)
 var height = document.getElementById('stageContainer').clientHeight;
 var randomStageSeed=Math.floor(Math.random()*2) //entirely temporary bullshit just to generate the client in 180 orientation randomly
-
+var layer = new Konva.Layer(); //not sure if I should be using multiple "layers"
 if (randomStageSeed==0){
   var stage = new Konva.Stage({
     container: 'stageContainer',
@@ -19,10 +19,6 @@ if (randomStageSeed==1){
     height: height,
   });
 }
-
-var layer = new Konva.Layer(); //not sure if I should be using multiple "layers"
-
-
 
 function drawCardOnCanvas(imageObj,xPosition,yPosition) { //pass it the image object, x and y
   var cardImg = new Konva.Image({
@@ -55,3 +51,10 @@ function placeCardInPlay(cardId,cardSrc){  //loop needed because of the data bei
   drawCardOnCanvas(imageObj,stage.width() / 2 - 200 / 2,stage.height() / 2 - 137 / 2) //arbitrary placement
 }
 
+function removeCardToHand(id){
+  var currentSelection = stage.find("#"+id)
+  if (currentSelection != undefined){
+    hand.addCardToHand(id,currentSelection[0].attrs.image.src)
+    currentSelection[0].destroy()
+  }
+}

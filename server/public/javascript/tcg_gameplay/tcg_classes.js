@@ -1,7 +1,6 @@
 class Card{
     constructor(cardId,imageUrl){
-        this._id= Math.random().toString(36).substr(2, 16) //generate and add a random unique (hopefully) id
-        this.id=cardId
+        this.id= Math.random().toString(36).substr(2, 16) //generate and add a random unique (hopefully) id
         this.imageUrl=imageUrl
     }
 }
@@ -17,7 +16,7 @@ class Hand {
             let cardImage = document.createElement('img');
             cardImage.src = this.cards[i].imageUrl;
             cardImage.setAttribute("class","card")
-            cardImage.setAttribute("id",this.cards[i]._id);
+            cardImage.setAttribute("id",this.cards[i].id);
             cardImage.oncontextmenu = function () {
               showContextMenu(cardImage.id,"hand");
               //The return kills the normal context menu
@@ -33,8 +32,9 @@ class Hand {
         imageObj.id=cardId
         drawCardOnCanvas(imageObj,stage.width() / 2 - 200 / 2,stage.height() / 2 - 137 / 2) //arbitrary placement
         for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
-            if (this.cards[i]._id === cardId){
+            if (this.cards[i].id === cardId){
                 this.cards.splice(i,1); //remove it
+                this.quantity--;
                 this.animate()
                 break;
             }
@@ -55,6 +55,11 @@ class Hand {
     hideCardModal(){
         var modal =document.getElementById("cardModal");
         modal.style.display = "none";
+    }
+    addCardToHand(id,src){
+        this.cards.push({id:id,imageUrl:src})
+        this.quantity++;
+        this.animate();
     }
 }
 

@@ -48,7 +48,7 @@ function showContextMenu(id,selector){   //show context menu with passed thru ha
     contextMenu.classList.add("visible");
     const allContextSelections = Array.from(document.getElementsByClassName("contextSelection")) //this seems dangerous but it works
     allContextSelections.forEach(selection=>{
-      selection.id=selection.id.split('_')[0]+"_"+id //this is beautiful. the _ is very important as it's the break character so subsequent right clicks will break it off and append new
+      selection.id=selection.id.split('-')[0]+"-"+id //this is beautiful. the _ is very important as it's the break character so subsequent right clicks will break it off and append new
     })
 }
 
@@ -73,18 +73,21 @@ document.addEventListener("click",function(event){ //global click listener to up
 
 $(document).on('click',".contextSelection" ,function(event){ //onclick for your hand
     var str = this.id   //takes the appended id to string var
-    var id = str.split('_')[1]; //splits the string into id and "action"
-    var action = str.split('_')[0];
-    if (action=="placeCardInPlay"){
+    var id = str.split('-')[1]; //splits the string into id and "action"
+    var action = str.split('-')[0];
+    if (action=="placeCardInPlay_hand"){
       const src=document.getElementById(id).src //grabs the image source for the selected image
       hand.placeCardInPlay(id,src)
     }
-    if (action=="drawCard"){
+    if (action=="drawCard_deck"){
       deck.drawCard();
     }
-    if (action=="viewCard"){
+    if (action=="viewCard_hand"){
       const src=document.getElementById(id).src
       hand.viewCardModal(id,src)
+    }
+    if (action=="placeCardInHand_stage"){
+      removeCardToHand(id)
     }
     hideContextMenu();
 });
@@ -92,6 +95,12 @@ $(document).on('click',".contextSelection" ,function(event){ //onclick for your 
 $(document).on('click',"#deck_img" ,function(event){ //onclick for your hand
   deck.drawCard()
 });
-function asdf(id){
-  console.log(id)
-}
+stage.on("contextmenu",function(e){
+  e.evt.preventDefault();
+  if (e.target === stage) {
+    // if we are on empty place of the stage we will do nothing
+    return;
+  }
+  var target=e.target;
+  showContextMenu(target.attrs.id,"stage");
+})
