@@ -1,12 +1,15 @@
 body{
-  width:100vw;
-  height:300vw;
+  width:95vw;
+  height:98vh;
 }
 #stageContainer{
+    position:absolute;
     width:70%;
     height: 100%;
     border: 1px solid black;
-    margin:auto;
+    top:0%;
+    left:15%;
+    
 
 }
 
@@ -16,13 +19,16 @@ body{
 }
 
 #top_row{
-  height:36vw;
-  width:100vw;
+  position:absolute;
+  height:35vw;
+  width:98vw;
 }
 #bottom_row{
-  height:10vw;
-  width:100vw;
   position:absolute;
+  height:10vw;
+  width:98vw;
+  
+  top:36vw;
 }
 
 #hand{
@@ -33,8 +39,19 @@ body{
 
 #deck_img{
   height:100%;
-  
-  float:right;
+  position:absolute;
+  left:90%
+}
+#discard_img{
+  position:absolute;
+  left: 90%;
+  height:28.5%;
+  top:60%;
+}
+#prizes{
+  position:absolute;
+  top:60%;
+  height:35%;
 }
 .context-menu {
   position: fixed;

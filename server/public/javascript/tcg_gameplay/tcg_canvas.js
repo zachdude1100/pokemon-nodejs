@@ -58,3 +58,10 @@ function removeCardToHand(id){
     currentSelection[0].destroy()
   }
 }
+function removeCardToDiscard(id){
+  var currentSelection = stage.find("#"+id)
+  if (currentSelection != undefined){
+    discard.addCardToDiscard(id,currentSelection[0].attrs.image.src)
+    currentSelection[0].destroy()
+  }
+}

@@ -89,6 +89,9 @@ $(document).on('click',".contextSelection" ,function(event){ //onclick for your 
     if (action=="placeCardInHand_stage"){
       removeCardToHand(id)
     }
+    if(action=="placeCardInDiscard_stage"){
+      removeCardToDiscard(id)
+    }
     hideContextMenu();
 });
 

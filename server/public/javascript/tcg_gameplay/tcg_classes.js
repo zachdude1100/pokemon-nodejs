@@ -5,6 +5,52 @@ class Card{
     }
 }
 
+class Discard {
+    constructor(){
+        this.cards=[];
+        this.quantity=0;
+    }
+    addCardToDiscard(id,src){
+        this.cards.push({id:id,imageUrl:src})
+        this.quantity++;
+    }
+}
+class Prizes {
+    constructor(){
+        this.cards=[];
+        this.quantity=0;
+    }
+    initPrizes(){
+        for(let i=0;i<6;i++){
+            this.cards.push(deck.cards[i]);
+            deck.cards.splice(0,1)
+            deck.quantity--
+            this.quantity++;
+        }
+        this.animatePrizes()
+    }
+    animatePrizes(){
+        if (this.quantity >0){
+            var prizes = document.getElementById("prizes")
+            prizes.setAttribute("src","/images/prizes_"+this.quantity+".png")
+        }
+        else{
+            var prizes = document.getElementById("prizes")
+            prizes.setAttribute("src","/images/winner.jpg") //you win
+        }
+        
+    }
+    drawPrize(){
+        if (this.quantity >0){
+            hand.addCardToHand(this.cards[0].id,this.cards[0].imageUrl)
+            this.cards.splice(0,1);;
+            this.quantity--;
+            this.animatePrizes()
+        }
+        
+    }
+}
+
 class Hand {
     constructor(){
         this.cards=[];
@@ -79,6 +125,7 @@ class Deck {
       });
       console.log(this.cards)
       this.shuffleDeck()
+      prizes.initPrizes();
   }
     shuffleDeck(){
         var newDeck = [];

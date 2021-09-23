@@ -4,6 +4,8 @@ socket.on('gameState',updateGameState) //upon receiving game state packet from t
 
 var deck= new Deck()
 var hand = new Hand()
+var discard = new Discard()
+var prizes = new Prizes()
 
 
   function updateGameState(gameState){

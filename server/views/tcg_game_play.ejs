@@ -13,7 +13,10 @@
 </head>
 <body oncontextmenu="return false">
     <div id="top_row">
+        <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="discard_img" oncontextmenu="showContextMenu(this.id,'discard')">
+        <img id="prizes" oncontextmenu="showContextMenu(this.id,'prizes')">
         <div id="stageContainer"></div>
+
     </div>
     <div id="bottom_row">
         <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="deck_img" oncontextmenu="showContextMenu(this.id,'deck')">
@@ -31,7 +34,7 @@
         <div id="drawCard_deck" class="contextSelection">Draw Card</div>
     </div>
     <div id="context-menu_discard" class="context-menu">
-        <div id="viewCards_discard" class="contextSelection">Place card in deck</div>
+        <div id="viewCards_discard" class="contextSelection">View Cards</div>
     </div>
     <div id="context-menu_stage" class="context-menu">
         <div id="viewCard_stage" class="contextSelection">View Card</div>
@@ -42,6 +45,7 @@
     <div id="cardModal" class="modal">
         <img class="modal-content" id="img01">
       </div>
+    
 
     
 
