@@ -22,25 +22,7 @@ if (randomStageSeed==1){
 
 var layer = new Konva.Layer(); //not sure if I should be using multiple "layers"
 
-function updateGameState(gameState){
-    gameState.forEach(card=>{ //game state is sent as an array of card objects
-      var cardQuery=stage.find('#'+card.id)[0] //look for the card id on the stage
-      if (cardQuery!=undefined){ //if its there, move it
-        tween=new Konva.Tween({
-          node:cardQuery,
-          duration:0.1,
-          x:card.x,
-          y:card.y
-        }).play()
-      }
-      else{  //if it's not there, draw it for the first time
-        let imageObj= new Image();
-        imageObj.src=card.src
-        imageObj.id=card.id
-        drawCardOnCanvas(imageObj,card.x,card.y) //sends the Image(?) object and the position to draw the card
-      }
-    })
-}
+
 
 function drawCardOnCanvas(imageObj,xPosition,yPosition) { //pass it the image object, x and y
   var cardImg = new Konva.Image({

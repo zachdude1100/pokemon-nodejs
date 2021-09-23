@@ -11,21 +11,32 @@
     <link rel="stylesheet" href="/css/tcg_canvas.css">
     <title>Zach's bootleg pokemon tcg game</title>
 </head>
-<body>
+<body oncontextmenu="return false">
     <div id="top_row">
         <div id="stageContainer"></div>
     </div>
     <div id="bottom_row">
-        <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="deck_img">
+        <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="deck_img" oncontextmenu="showContextMenu(this.id,'deck')">
         <div id="hand"></div>
     </div>
     
-    <div id="context-menu-hand">
-        <div class="item">Place card in deck</div>
-        <div class="item">Place card in hand</div>
-        <div class="item">Place card in discard</div>
-        <div id="placeCardInPlay" class="placeCardInPlay" oncontextmenu=showContextMenu()>Place card in play</div>
+    <div id="context-menu_hand" class="context-menu">
+        <div id="viewCard_hand" class="contextSelection">View Card</div>
+        <div id="placeCardInDeck_hand" class="contextSelection">Place card in deck</div>
+        <div id="placeCardInDiscard_hand" class="contextSelection">Place card in discard</div>
+        <div id="placeCardInPlay_hand" class="contextSelection">Place card in play</div>
     </div>
+    <div id="context-menu_deck" class="context-menu">
+        <div id="viewCards_deck" class="contextSelection">View Cards</div>
+        <div id="drawCard_deck" class="contextSelection">Draw Card</div>
+    </div>
+    <div id="context-menu_discard" class="context-menu">
+        <div id="viewCards_discard" class="contextSelection">Place card in deck</div>
+    </div>
+    <div id="cardModal" class="modal">
+        <img class="modal-content" id="img01">
+      </div>
+
     
 
     <script src="/javascript/tcg_gameplay/tcg_classes.js"></script>
@@ -36,7 +47,7 @@
     <script type='text/javascript'>
         cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
         gameUUID=JSON.parse(`<%-JSON.stringify(gameUUID)%>`)
-        initializeDeck(cards,gameUUID);
+        deck.initDeck(cards);
     </script>
 </body>
 
