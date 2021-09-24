@@ -1,0 +1,10 @@
+
+#gamename{
+  display:none;
+}
+  #gamename.visible{
+    display:block;
+  }
+  #gamename.hide{
+    display:none;
+  }

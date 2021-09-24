@@ -13,6 +13,7 @@ class Discard {
     addCardToDiscard(id,src){
         this.cards.push({id:id,imageUrl:src})
         this.quantity++;
+        updateGameState()
     }
     viewDiscardModal(){
         document.querySelectorAll('.discardCardsListImg').forEach(e => e.remove());
@@ -32,6 +33,7 @@ class Discard {
             if (this.cards[i].id === id){
                 this.cards.splice(i,1); //remove it
                 this.quantity--;
+                updateGameState()
                 break;
             }
             else{}
@@ -55,6 +57,7 @@ class Prizes {
             this.quantity++;
         }
         this.animatePrizes()
+        updateGameState()
     }
     animatePrizes(){
         if (this.quantity >0){
@@ -73,6 +76,7 @@ class Prizes {
             this.cards.splice(0,1);;
             this.quantity--;
             this.animatePrizes()
+            updateGameState()
         }
         
     }
@@ -108,6 +112,7 @@ class Hand {
                 this.cards.splice(i,1); //remove it
                 this.quantity--;
                 this.animate()
+                updateGameState()
                 break;
             }
             else{}
@@ -131,6 +136,7 @@ class Hand {
         this.cards.push({id:id,imageUrl:src})
         this.quantity++;
         this.animate();
+        updateGameState()
     }
     placeCardInDeck(id,src){
         for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
@@ -139,6 +145,7 @@ class Hand {
                 this.quantity--;
                 this.animate()
                 deck.addCardToDeck(id,src)
+                updateGameState()
                 break;
             }
             else{}
@@ -151,6 +158,7 @@ class Hand {
                 this.quantity--;
                 this.animate()
                 discard.addCardToDiscard(id,src)
+                updateGameState()
                 break;
             }
             else{}
@@ -174,6 +182,7 @@ class Deck {
       });
       this.shuffleDeck()
       prizes.initPrizes();
+      updateGameState()
   }
     shuffleDeck(){
         var newDeck = [];
@@ -183,6 +192,7 @@ class Deck {
             newDeck[rand] = this.cards[i];
         }   
         this.cards=newDeck; //write back into deck
+        updateGameState()
     }
     drawCard(){
         if (this.cards.length>0){
@@ -193,11 +203,13 @@ class Deck {
             hand.animate()  
         }
         else alert("Deck out! You lose!")
+        updateGameState()
     }
     addCardToDeck(id,src){
         this.cards.push({id:id,imageUrl:src})
         this.quantity++;
         this.shuffleDeck();
+        updateGameState()
     }
     viewDeckModal(){
         document.querySelectorAll('.deckCardsListImg').forEach(e => e.remove());
@@ -223,6 +235,7 @@ class Deck {
                 this.cards.splice(i,1); //remove it
                 this.quantity--;
                 this.shuffleDeck();
+                updateGameState()
                 break;
             }
             else{}

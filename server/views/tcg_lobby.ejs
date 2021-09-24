@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tcg_home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/javascript/tcg_lobby/tcg_lobby.js"></script>
+    <title>Zach's bootleg tcg game</title>
+    
+</head>
+<body>
+    <form action="/tcg/newgame" method="POST">
+        <select name="playerselection" id="playerselection">
+            <option value="" disabled selected>Select Player</option>
+            <option value="player1">Player 1</option>
+            <option value="player2">Player 2</option>
+        </select>
+        <select name="formatselection" id="formatselection" onchange="setOptions()">
+            <option value="asdf" disabled selected>Select format</option>
+            <option value="Base_Set">Base Set</option>
+            <option value="Base_Jungle">Base - Jungle</option>
+            <option value="Base_Fossil">Base - Fossil</option>
+            <option value="Base_Team_Rocket">Base - Team Rocket</option>
+            <option value="Base_Gym">Base - Gym</option>
+            <option value="Prop_15/3">Prop 15/3</option>
+            <option value="Base_Neo">Base - Neo</option>
+            <option value="Rocket_On">Rocket-On</option>
+            <option value="Neo_On">Neo - On</option>
+        </select>
+
+        <select name="deckselection" id="deckselection">
+            <option disabled selected>Select format first</option>
+        </select>
+        <select name="gameselection" id="gameselection">
+            <option value="" disabled selected>New game or Join game?</option>
+            <option value="new_game_selected" onclick="showNewGameInput()">New Game</option>
+        </select>
+        <input type="text" id="gamename" name="gamename" placeholder="Enter name of Game">
+        <button type="submit">ye old button</button>
+    </form>
+</body>
+</html>

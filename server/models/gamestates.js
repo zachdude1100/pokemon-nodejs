@@ -1,23 +1,24 @@
 const mongoose = require("mongoose");
 
 const gameStateSchema = new mongoose.Schema({
-        gamestateUUID: String,
-
+        gameStateUUID: String,
+        gameStateName: String,
+        
         playerOneUUID: String,
         playerOneName: String,
-        playerOneDeck: Array,
-        playerOneDiscard: Array,
-        playerOnePrizeCards: Array,
-        playerOneHand: Array,
-        playerOneStage: Array,
+        playerOneDeck: Object,
+        playerOneDiscard: Object,
+        playerOnePrizes: Object,
+        playerOneHand: Object,
+        playerOneStage: Object,
 
         playerTwoUUID: String,
         playerTwoName: String,
-        playerTwoDeck: Array,
-        playerTwoDiscard: Array,
-        playerTwoPrizeCards: Array,
-        playerTwoHand: Array,
-        playerTwoStage: Array,
+        playerTwoDeck: Object,
+        playerTwoDiscard: Object,
+        playerTwoPrizes: Object,
+        playerTwoHand: Object,
+        playerTwoStage: Object,
 
 })
 

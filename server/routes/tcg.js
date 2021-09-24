@@ -4,20 +4,24 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
+const bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({extended: true}));
+
+const gamestateController = require('../controllers/tcg_gamestate_controller.js');
 
 
 router.get("/",(req,res)=>{
-    res.render("tcg_game_home"); 
+    console.log("ree")
+    res.render("tcg_lobby"); 
 })
-router.get("/:format",(req,res)=>{
-    Deck.find({'format': req.params.format})
+router.get("/decksinformat",(req,res)=>{
+    queryArr=Object.keys(req.query);
+    Deck.find({'format':queryArr[0]})
     .exec()
     .then((foundDecks)=>{
-        res.render("tcg_game_deckselection",{Deck: foundDecks});
-    })
-    .catch((err)=>{
-        res.redirect("/tcg")
-        console.log(err)
+        foundDecksObj=Object.assign({},foundDecks)
+        return res.json(foundDecksObj)
+
     })
 })
 router.get("/deck/:id",(req,res)=>{
@@ -33,9 +37,10 @@ router.get("/deck/:id",(req,res)=>{
     })
 })
 
-router.post("/updateGameState/:gameUUID",(req,res)=>{
 
-})
+router.get("/queryexistinggamestates",gamestateController.queryAllExisting)
+router.post("/newgame",gamestateController.newGamestate)
+router.post("/updategamestate",gamestateController.updateGamestate)
 
 
 module.exports = router;
