@@ -14,6 +14,33 @@ class Discard {
         this.cards.push({id:id,imageUrl:src})
         this.quantity++;
     }
+    viewDiscardModal(){
+        document.querySelectorAll('.discardCardsListImg').forEach(e => e.remove());
+        this.cards.forEach(card=>{
+            let deckListElement=document.createElement('img')
+            deckListElement.setAttribute("id","discardCardsList_"+card.id)
+            deckListElement.setAttribute("class","discardCardsListImg")
+            deckListElement.onclick=function (){discard.removeCardFromDiscard(card.id);hand.addCardToHand(card.id,card.imageUrl)}
+            deckListElement.src=card.imageUrl
+            document.getElementById("discardCardsList").appendChild(deckListElement)
+        })
+        var modal = document.getElementById("discardModal");
+        modal.style.display = "block"
+    }
+    removeCardFromDiscard(id){
+        for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
+            if (this.cards[i].id === id){
+                this.cards.splice(i,1); //remove it
+                this.quantity--;
+                break;
+            }
+            else{}
+        }
+    }
+    hideDiscardModal(){
+        var modal =document.getElementById("discardModal");
+        modal.style.display = "none";
+    }
 }
 class Prizes {
     constructor(){
@@ -71,7 +98,6 @@ class Hand {
             document.getElementById("hand").appendChild(cardImage);
         }
     }
-
     placeCardInPlay(cardId,cardSrc){
         let imageObj= new Image();
         imageObj.src=cardSrc
@@ -93,7 +119,6 @@ class Hand {
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img = document.getElementById(id);
-        console.log(img)
         var modalImg = document.getElementById("img01");
         modal.style.display = "block";
         modalImg.src = src;
@@ -106,6 +131,30 @@ class Hand {
         this.cards.push({id:id,imageUrl:src})
         this.quantity++;
         this.animate();
+    }
+    placeCardInDeck(id,src){
+        for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
+            if (this.cards[i].id === id){
+                this.cards.splice(i,1); //remove it
+                this.quantity--;
+                this.animate()
+                deck.addCardToDeck(id,src)
+                break;
+            }
+            else{}
+        }
+    }
+    placeCardInDiscard(id,src){
+        for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
+            if (this.cards[i].id === id){
+                this.cards.splice(i,1); //remove it
+                this.quantity--;
+                this.animate()
+                discard.addCardToDiscard(id,src)
+                break;
+            }
+            else{}
+        }
     }
 }
 
@@ -123,7 +172,6 @@ class Deck {
             this.quantity++;
           }
       });
-      console.log(this.cards)
       this.shuffleDeck()
       prizes.initPrizes();
   }
@@ -135,7 +183,6 @@ class Deck {
             newDeck[rand] = this.cards[i];
         }   
         this.cards=newDeck; //write back into deck
-        this.drawCard()
     }
     drawCard(){
         if (this.cards.length>0){
@@ -146,7 +193,39 @@ class Deck {
             hand.animate()  
         }
         else alert("Deck out! You lose!")
-          
     }
-    
+    addCardToDeck(id,src){
+        this.cards.push({id:id,imageUrl:src})
+        this.quantity++;
+        this.shuffleDeck();
+    }
+    viewDeckModal(){
+        document.querySelectorAll('.deckCardsListImg').forEach(e => e.remove());
+        deck.cards.forEach(card=>{
+            let deckListElement=document.createElement('img')
+            deckListElement.setAttribute("id","deckCardsList_"+card.id)
+            deckListElement.setAttribute("class","deckCardsListImg")
+            deckListElement.onclick=function (){deck.removeCardFromDeck(card.id);hand.addCardToHand(card.id,card.imageUrl)}
+            deckListElement.src=card.imageUrl
+            document.getElementById("deckCardsList").appendChild(deckListElement)
+        })
+        var modal = document.getElementById("deckModal");
+        modal.style.display = "block"
+        this.shuffleDeck();
+    }
+    hideDeckModal(){
+        var modal =document.getElementById("deckModal");
+        modal.style.display = "none";
+    }
+    removeCardFromDeck(id){
+        for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
+            if (this.cards[i].id === id){
+                this.cards.splice(i,1); //remove it
+                this.quantity--;
+                this.shuffleDeck();
+                break;
+            }
+            else{}
+        }
+    }
 }

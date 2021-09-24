@@ -102,3 +102,12 @@ body{
   width: 80%;
   max-width: 700px;
 }
+.modalList {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 70%;
+}
+.deckCardsListImg{
+  width:10%;
+}

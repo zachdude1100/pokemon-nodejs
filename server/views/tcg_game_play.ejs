@@ -42,9 +42,19 @@
         <div id="placeCardInHand_stage" class="contextSelection">Place card in hand</div>
         <div id="placeCardInDiscard_stage" class="contextSelection">Place card in discard</div>
     </div>
+    <div id="context-menu_prizes" class="context-menu">
+        <div id="drawPrize_prizes" class="contextSelection" oncontextmenu="showContextMenu(this.id,'prizes')">Take Prize</div>
+    </div>
+
     <div id="cardModal" class="modal">
         <img class="modal-content" id="img01">
-      </div>
+    </div>
+    <div id="deckModal" class="modal">
+        <div id="deckCardsList" class="modalList"></div>
+    </div>
+    <div id="discardModal" class="modal">
+        <div id="discardCardsList" class="modalList"></div>
+    </div>
     
 
     

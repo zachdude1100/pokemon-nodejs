@@ -65,3 +65,26 @@ function removeCardToDiscard(id){
     currentSelection[0].destroy()
   }
 }
+function removeCardToDeck(id){
+  var currentSelection = stage.find("#"+id)
+  if (currentSelection != undefined){
+    discard.addCardToDiscard(id,currentSelection[0].attrs.image.src)
+    currentSelection[0].destroy()
+  }
+}
+
+function stageViewCardModal(id){
+  // Get the modal
+  var currentSelection = stage.find("#"+id)
+  if (currentSelection != undefined){
+    var modal = document.getElementById("cardModal");
+    var src = currentSelection[0].attrs.image.src;
+    modal.style.display = "block";
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = src;
+  }
+  
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+}

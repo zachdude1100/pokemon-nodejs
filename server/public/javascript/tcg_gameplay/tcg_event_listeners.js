@@ -69,22 +69,29 @@ document.addEventListener("click",function(event){ //global click listener to up
     socket.emit('gameState',stageData) //emits the game state
     hideContextMenu(); //global hide context menu whenever anything is clicked. Can't think of why you wouldn't want to
     hand.hideCardModal();
+    deck.hideDeckModal();
+    discard.hideDiscardModal();
   })
 
 $(document).on('click',".contextSelection" ,function(event){ //onclick for your hand
     var str = this.id   //takes the appended id to string var
     var id = str.split('-')[1]; //splits the string into id and "action"
     var action = str.split('-')[0];
-    if (action=="placeCardInPlay_hand"){
-      const src=document.getElementById(id).src //grabs the image source for the selected image
-      hand.placeCardInPlay(id,src)
+    if (action=="viewCards_deck"){
+      deck.viewDeckModal()
     }
     if (action=="drawCard_deck"){
       deck.drawCard();
     }
+    if (action=="viewCards_discard"){
+      discard.viewDiscardModal()
+    }
     if (action=="viewCard_hand"){
       const src=document.getElementById(id).src
       hand.viewCardModal(id,src)
+    }
+    if (action=="viewCard_stage"){
+      stageViewCardModal(id)
     }
     if (action=="placeCardInHand_stage"){
       removeCardToHand(id)
@@ -92,12 +99,28 @@ $(document).on('click',".contextSelection" ,function(event){ //onclick for your 
     if(action=="placeCardInDiscard_stage"){
       removeCardToDiscard(id)
     }
+    if(action=="placeCardInDeck_stage"){
+      removeCardToDeck(id)
+    }
+    if (action=="drawPrize_prizes"){
+      prizes.drawPrize();
+    }
+    if (action=="placeCardInDeck_hand"){
+      const src=document.getElementById(id).src
+      hand.placeCardInDeck(id,src)
+    }
+    if (action=="placeCardInDiscard_hand"){
+      const src=document.getElementById(id).src
+      hand.placeCardInDiscard(id,src)
+    }
+    if (action=="placeCardInPlay_hand"){
+      const src=document.getElementById(id).src //grabs the image source for the selected image
+      hand.placeCardInPlay(id,src)
+    }
     hideContextMenu();
 });
 
-$(document).on('click',"#deck_img" ,function(event){ //onclick for your hand
-  deck.drawCard()
-});
+
 stage.on("contextmenu",function(e){
   e.evt.preventDefault();
   if (e.target === stage) {
