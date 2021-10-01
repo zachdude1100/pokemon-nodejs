@@ -54,12 +54,22 @@ module.exports.newGamestate = (req,res,err)=>{
     })
  }
 
+module.exports.joinGame = (req,res,next)=>{
+    Deck.find({deckName:req.body.deckselection})
+    .then(foundDeck=>{
+        res.render("tcg_game_play",{Deck: foundDeck[0].cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
+
 module.exports.queryAllExisting=(req,res,next)=>{
     gameState.find()
     .then(foundGames=>{
         let foundGameStateUuidArr=[];
         foundGames.forEach(game=>{
-            foundGameStateUuidArr.push({_id:game._id,gameStateName:game.gameStateName})
+            foundGameStateUuidArr.push({gameStateUUID:game.gameStateUUID,gameStateName:game.gameStateName})
         })
         return res.json(foundGameStateUuidArr)
     })
@@ -67,16 +77,23 @@ module.exports.queryAllExisting=(req,res,next)=>{
 module.exports.updateGamestate =(req,res,next)=>{
     if (req.body.player=="player1")
         gameState.findOneAndUpdate({gameStateUUID:req.body.gameUUID},
-            {playerOneHand:req.body.hand,playerOneDeck:req.body.deck,playerOneDiscard:req.body.discard,playerOnePrizes:req.body.prizes,playerOneUUID:"yep"}, 
+            {playerOneHand:req.body.hand,playerOneDeck:req.body.deck,playerOneDiscard:req.body.discard,playerOnePrizes:req.body.prizes,playerOneUUID:"yep",playerOneStage:req.body.stageData}, 
             function(err,doc){
             if (err) return res.send(500, {error:err});
         })
     if (req.body.player=="player2")
         gameState.findOneAndUpdate({gameStateUUID:req.body.gameUUID},
-            {playerTwoHand:req.body.hand,playerTwoDeck:req.body.deck,playerTwoDiscard:req.body.discard,playerTwoPrizes:req.body.prizes,playerTwoUUID:"yep"}, 
+            {playerTwoHand:req.body.hand,playerTwoDeck:req.body.deck,playerTwoDiscard:req.body.discard,playerTwoPrizes:req.body.prizes,playerTwoUUID:"yep",playerTwoStage:req.body.stageData}, 
             function(err,doc){
             if (err) return res.send(500, {error:err});
         })
     return res.json("success")
 }
 
+module.exports.getGameState = (req,res,next)=>{
+    var gameStateUUID=Object.values(req.query)[0]
+    gameState.find({gameStateUUID:gameStateUUID})
+    .then(foundGame=>{
+        return res.json(foundGame[0]);
+    })
+}

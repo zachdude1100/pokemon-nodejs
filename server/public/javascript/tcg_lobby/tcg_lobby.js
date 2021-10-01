@@ -6,7 +6,7 @@ $.ajax({
         let ActiveGamesArr=Object.values(ActiveGames);
         ActiveGamesArr.forEach(game=>{
         let UUID = document.createElement('option');
-        UUID.setAttribute("name",game.gameStateName);
+        UUID.setAttribute("value",game.gameStateUUID);
         UUID.innerText=game.gameStateName;
         UUID.onclick=function(){hideNewGameInput()};
         document.getElementById("gameselection").appendChild(UUID);
@@ -45,7 +45,12 @@ function setOptions()
 
 function showNewGameInput(){
     document.getElementById("gamename").className="visible"
+    changeFormAction("/tcg/newgame")
 }
 function hideNewGameInput(){
     document.getElementById("gamename").className="hidden"
+    changeFormAction("/tcg/joingame")
+}
+function changeFormAction(action){
+    document.getElementById("form").setAttribute("action",action)
 }

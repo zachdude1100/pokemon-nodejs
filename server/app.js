@@ -56,10 +56,9 @@ io.sockets.on('connection',newConnection);
 
 function newConnection(socket){
     console.log('new connection ' +socket.id);
-    socket.on('gameState',syncGameState);
+    socket.on('updateGameState',syncGameState);
     function syncGameState(stageData){
-        socket.broadcast.emit('gameState',stageData)
-        console.log(stageData);
+        socket.broadcast.emit('updateGameState',stageData)
     }
 }
 

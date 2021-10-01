@@ -106,7 +106,7 @@ class Hand {
         let imageObj= new Image();
         imageObj.src=cardSrc
         imageObj.id=cardId
-        drawCardOnCanvas(imageObj,stage.width() / 2 - 200 / 2,stage.height() / 2 - 137 / 2) //arbitrary placement
+        drawCardOnCanvas(imageObj,stage.width()/3,stage.height()/3*2,player) //arbitrary placement
         for (let i = 0; i<this.cards.length;i++){ //iterates thru hand
             if (this.cards[i].id === cardId){
                 this.cards.splice(i,1); //remove it

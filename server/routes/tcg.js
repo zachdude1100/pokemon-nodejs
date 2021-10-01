@@ -11,7 +11,6 @@ const gamestateController = require('../controllers/tcg_gamestate_controller.js'
 
 
 router.get("/",(req,res)=>{
-    console.log("ree")
     res.render("tcg_lobby"); 
 })
 router.get("/decksinformat",(req,res)=>{
@@ -39,7 +38,9 @@ router.get("/deck/:id",(req,res)=>{
 
 
 router.get("/queryexistinggamestates",gamestateController.queryAllExisting)
+router.get("/getgamestate",gamestateController.getGameState)
 router.post("/newgame",gamestateController.newGamestate)
+router.post("/joingame",gamestateController.joinGame)
 router.post("/updategamestate",gamestateController.updateGamestate)
 
 

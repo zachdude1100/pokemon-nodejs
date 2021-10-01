@@ -61,12 +61,8 @@ function hideContextMenu(){
 }
 
 document.addEventListener("click",function(event){ //global click listener to update game state
-    var allCardsOnStage=stage.find('.card') //finds all on field with the name of card, so all of them
-    var stageData=[];
-    allCardsOnStage.forEach(card=>{
-      stageData.push({id:card.attrs.id,src:card.attrs.image.src,x:card.attrs.x,y:card.attrs.y}) //all needed info to draw and update a card on the other player's screen
-    })
-    socket.emit('gameState',stageData) //emits the game state
+    updateGameState();
+    socket.emit('updateGameState')
     hideContextMenu(); //global hide context menu whenever anything is clicked. Can't think of why you wouldn't want to
     hand.hideCardModal();
     deck.hideDeckModal();
