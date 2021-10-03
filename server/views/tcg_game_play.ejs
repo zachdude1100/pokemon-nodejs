@@ -16,13 +16,16 @@
         <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="discard_img" oncontextmenu="showContextMenu(this.id,'discard')">
         <img id="prizes" oncontextmenu="showContextMenu(this.id,'prizes')">
         <div id="stageContainer"></div>
-
+        <div id="gamestate" class="gamestate">
+            <p id="opponentdeckcount"></p>
+            <p id="opponentprizescount"></p>
+            <p id="opponenthandcount"></p>
+        </div>
     </div>
     <div id="bottom_row">
         <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="deck_img" oncontextmenu="showContextMenu(this.id,'deck')">
         <div id="hand"></div>
     </div>
-    
     <div id="context-menu_hand" class="context-menu">
         <div id="viewCard_hand" class="contextSelection">View Card</div>
         <div id="placeCardInDeck_hand" class="contextSelection">Place card in deck</div>
@@ -36,16 +39,18 @@
     <div id="context-menu_discard" class="context-menu">
         <div id="viewCards_discard" class="contextSelection">View Cards</div>
     </div>
-    <div id="context-menu_stage" class="context-menu">
-        <div id="viewCard_stage" class="contextSelection">View Card</div>
-        <div id="placeCardInDeck_stage" class="contextSelection">Place card in deck</div>
-        <div id="placeCardInHand_stage" class="contextSelection">Place card in hand</div>
-        <div id="placeCardInDiscard_stage" class="contextSelection">Place card in discard</div>
+    <div id="context-menu_playerStage" class="context-menu">
+        <div id="viewCard_playerStage" class="contextSelection">View Card</div>
+        <div id="placeCardInDeck_playerStage" class="contextSelection">Place card in deck</div>
+        <div id="placeCardInHand_playerStage" class="contextSelection">Place card in hand</div>
+        <div id="placeCardInDiscard_playerStage" class="contextSelection">Place card in discard</div>
+    </div>
+    <div id="context-menu_opponentStage" class="context-menu">
+        <div id="viewCard_opponentStage" class="contextSelection">View Card</div>
     </div>
     <div id="context-menu_prizes" class="context-menu">
         <div id="drawPrize_prizes" class="contextSelection" oncontextmenu="showContextMenu(this.id,'prizes')">Take Prize</div>
     </div>
-
     <div id="cardModal" class="modal">
         <img class="modal-content" id="img01">
     </div>

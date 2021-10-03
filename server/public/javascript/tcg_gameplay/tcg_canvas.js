@@ -101,6 +101,9 @@ function drawCardOnCanvas(imageObj,xPosition,yPosition,playerSelect) { //pass it
     cardImg.on('mouseout', function () {
       document.body.style.cursor = 'default';
     });
+    cardImg.on('click',function(){
+      this.moveToTop();
+    })
 
     layer.add(cardImg); //add card to the layer
     stage.add(layer); //add layer to the stage

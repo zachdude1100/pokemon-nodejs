@@ -9,15 +9,14 @@ body{
     border: 1px solid black;
     top:0%;
     left:15%;
-    
-
 }
-
-
 .card{
   max-height: 100%;
 }
-
+.gamestate{
+  border:1px solid black;
+  max-width: 14%;
+}
 #top_row{
   position:absolute;
   height:35vw;
@@ -27,16 +26,13 @@ body{
   position:absolute;
   height:10vw;
   width:98vw;
-  
   top:36vw;
 }
-
 #hand{
   margin:auto;
   width:70%;
   height:100%;
 }
-
 #deck_img{
   height:100%;
   position:absolute;
@@ -61,12 +57,9 @@ body{
   border-radius: 5px;
   display:none;
 }
-
-
 .context-menu.visible {
     display:block;
 }
-
 .context-menu .contextSelection {
   padding: 8px 10px;
   font-size: 15px;
@@ -74,10 +67,6 @@ body{
   cursor: pointer;
   border-radius: inherit;
 }
-
-
-
-
 .context-menu .contextSelection:hover {
   background: #343434;
 }
@@ -94,13 +83,11 @@ body{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
-
 /* Modal Content (image) */
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  height: 70%;
 }
 .modalList {
   margin: auto;

@@ -86,16 +86,16 @@ $(document).on('click',".contextSelection" ,function(event){ //onclick for your 
       const src=document.getElementById(id).src
       hand.viewCardModal(id,src)
     }
-    if (action=="viewCard_stage"){
+    if (action=="viewCard_playerStage" || action=="viewCard_opponentStage"){
       stageViewCardModal(id)
     }
-    if (action=="placeCardInHand_stage"){
+    if (action=="placeCardInHand_playerStage"){
       removeCardToHand(id)
     }
-    if(action=="placeCardInDiscard_stage"){
+    if(action=="placeCardInDiscard_playerStage"){
       removeCardToDiscard(id)
     }
-    if(action=="placeCardInDeck_stage"){
+    if(action=="placeCardInDeck_playerStage"){
       removeCardToDeck(id)
     }
     if (action=="drawPrize_prizes"){
@@ -124,5 +124,6 @@ stage.on("contextmenu",function(e){
     return;
   }
   var target=e.target;
-  showContextMenu(target.attrs.id,"stage");
+  if(target.attrs.name=="card") showContextMenu(target.attrs.id,"playerStage");
+  if(target.attrs.name=="opponentcard") showContextMenu(target.attrs.id,"opponentStage");
 })

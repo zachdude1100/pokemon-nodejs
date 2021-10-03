@@ -38,10 +38,11 @@ function updateGameState(){
         success: function(foundGame) { //update local gamestate variable to match db
             gamestate=foundGame;
             updateOpponentStage()
+            updateGameStateHTML()
         },
       })
     }, 
-  });  
+  });
 }
 
 function updateOpponentStage(){
@@ -68,4 +69,12 @@ function updateOpponentStage(){
       drawCardOnCanvas(imageObj,x,y,"player1")
     })
   }
+}
+function updateGameStateHTML(){ //updates the screen with stats on your opponents shiz
+  if (player=="player1"&&gamestate.playerTwoDeck!=undefined) document.getElementById("opponentdeckcount").innerText = "Opponent deck count - "+gamestate.playerTwoDeck.quantity;
+  if (player=="player2"&&gamestate.playerOneDeck!=undefined) document.getElementById("opponentdeckcount").innerText = "Opponent deck count - "+gamestate.playerOneDeck.quantity;
+  if (player=="player1"&&gamestate.playerTwoPrizes!=undefined) document.getElementById("opponentprizescount").innerText = "Opponent prizes count - "+gamestate.playerTwoPrizes.quantity;
+  if (player=="player2"&&gamestate.playerOnePrizes!=undefined) document.getElementById("opponentprizescount").innerText = "Opponent prizes count - "+gamestate.playerOnePrizes.quantity;
+  if (player=="player1"&&gamestate.playerTwoHand!=undefined) document.getElementById("opponenthandcount").innerText = "Opponent hand count - "+gamestate.playerTwoHand.quantity;
+  if (player=="player2"&&gamestate.playerOneHand!=undefined) document.getElementById("opponenthandcount").innerText = "Opponent hand count - "+gamestate.playerOneHand.quantity;
 }
