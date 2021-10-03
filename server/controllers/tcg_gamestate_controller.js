@@ -5,23 +5,8 @@ const gameState=require("../models/gamestates.js")
 const Deck = require('../models/deck.js');
 const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
-module.exports.queryActiveGames = (req,res,next)=>{
-
-    console.log(req)
-    //gameState.find()
-    /*.then(foundGames=>{
-        let foundGameStateUuidArr=[];
-        foundGames.forEach(game=>{
-            foundGameStateUuidArr.push(game._id)
-            console.log(game._id)
-        })
-        return res.json(foundGameStateUuidArr)
-    })*/
-    
-}
 
 module.exports.newGamestate = (req,res,err)=>{
-    
     Deck.find({deckName:req.body.deckselection})
     .then(foundDeck=>{
         var UUID = crypto.randomBytes(64).toString('hex');
@@ -95,5 +80,19 @@ module.exports.getGameState = (req,res,next)=>{
     gameState.find({gameStateUUID:gameStateUUID})
     .then(foundGame=>{
         return res.json(foundGame[0]);
+    })
+}
+module.exports.updateCoinFlip =(req,res,next)=>{
+        gameState.findOneAndUpdate({gameStateUUID:req.body.gameUUID},
+            {coinFlip:req.body.flipResult}, 
+            function(err,doc){
+            if (err) return res.send(500, {error:err});
+        })
+    return res.json("success")
+}
+module.exports.getCoinFlip =(req,res,next)=>{
+    gameState.findOne({gameStateUUID:Object.values(req.query)[0]})
+    .then(flip=>{
+        return res.json(flip.coinFlip)
     })
 }

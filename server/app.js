@@ -60,6 +60,10 @@ function newConnection(socket){
     function syncGameState(stageData){
         socket.broadcast.emit('updateGameState',stageData)
     }
+    socket.on('updateCoinFlip',syncCoinFlip);
+    function syncCoinFlip(stageData){
+        socket.broadcast.emit('updateCoinFlip',stageData)
+    }
 }
 
 

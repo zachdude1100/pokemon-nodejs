@@ -113,6 +113,9 @@ $(document).on('click',".contextSelection" ,function(event){ //onclick for your 
       const src=document.getElementById(id).src //grabs the image source for the selected image
       hand.placeCardInPlay(id,src)
     }
+    if (action=="removeMarker_playerMarkers"){
+      removeMarker(id);
+    }
     hideContextMenu();
 });
 
@@ -126,4 +129,5 @@ stage.on("contextmenu",function(e){
   var target=e.target;
   if(target.attrs.name=="card") showContextMenu(target.attrs.id,"playerStage");
   if(target.attrs.name=="opponentcard") showContextMenu(target.attrs.id,"opponentStage");
+  if(target.attrs.name=="marker") showContextMenu(target.attrs.id,"playerMarkers");
 })

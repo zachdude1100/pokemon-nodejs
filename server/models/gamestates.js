@@ -19,6 +19,7 @@ const gameStateSchema = new mongoose.Schema({
         playerTwoPrizes: Object,
         playerTwoHand: Object,
         playerTwoStage: Object,
+        coinFlip: String
 
 })
 

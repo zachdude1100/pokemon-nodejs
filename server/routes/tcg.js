@@ -39,9 +39,11 @@ router.get("/deck/:id",(req,res)=>{
 
 router.get("/queryexistinggamestates",gamestateController.queryAllExisting)
 router.get("/getgamestate",gamestateController.getGameState)
+router.get("/coinflip",gamestateController.getCoinFlip)
 router.post("/newgame",gamestateController.newGamestate)
 router.post("/joingame",gamestateController.joinGame)
 router.post("/updategamestate",gamestateController.updateGamestate)
+router.post("/coinflip",gamestateController.updateCoinFlip)
 
 
 module.exports = router;

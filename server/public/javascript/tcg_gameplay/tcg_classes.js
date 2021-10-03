@@ -4,7 +4,6 @@ class Card{
         this.imageUrl=imageUrl
     }
 }
-
 class Discard {
     constructor(){
         this.cards=[];

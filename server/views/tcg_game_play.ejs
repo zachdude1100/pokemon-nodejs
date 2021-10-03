@@ -14,12 +14,22 @@
 <body oncontextmenu="return false">
     <div id="top_row">
         <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="discard_img" oncontextmenu="showContextMenu(this.id,'discard')">
+        <img src="/images/placeholder_heads.png" id="coinflip" onclick="flipCoin()">
         <img id="prizes" oncontextmenu="showContextMenu(this.id,'prizes')">
         <div id="stageContainer"></div>
         <div id="gamestate" class="gamestate">
-            <p id="opponentdeckcount"></p>
-            <p id="opponentprizescount"></p>
-            <p id="opponenthandcount"></p>
+            <p id="opponentdeckcount" class="gamestatetext"></p>
+            <p id="opponentprizescount" class="gamestatetext"></p>
+            <p id="opponenthandcount" class="gamestatetext"></p>
+        </div>
+        <div id="markersdiv">
+            <img src="/images/damage_10.png" id="damage_10" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/damage_50.png" id="damage_50" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/paralyze.png" id="paralyze" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/confusion.png" id="confusion" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/sleep.png" id="sleep" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/burn.png" id="burn" class="marker" onclick="addMarkerToStage(this.id,this.src)">
+            <img src="/images/poison.png" id="poison" class="marker" onclick="addMarkerToStage(this.id,this.src)">
         </div>
     </div>
     <div id="bottom_row">
@@ -50,6 +60,9 @@
     </div>
     <div id="context-menu_prizes" class="context-menu">
         <div id="drawPrize_prizes" class="contextSelection" oncontextmenu="showContextMenu(this.id,'prizes')">Take Prize</div>
+    </div>
+    <div id="context-menu_playerMarkers" class="context-menu">
+        <div id="removeMarker_playerMarkers" class="contextSelection">Remove Marker</div>
     </div>
     <div id="cardModal" class="modal">
         <img class="modal-content" id="img01">

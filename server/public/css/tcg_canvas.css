@@ -17,6 +17,27 @@ body{
   border:1px solid black;
   max-width: 14%;
 }
+.gamestatetext{
+  width: max-content;
+}
+#markersdiv{
+  position:absolute;
+  border: 1px solid black;
+  width:14%;
+  height:20%;
+  left:86%;
+  top:30%;
+}
+#coinflip{
+  position:absolute;
+  width:14%;
+  left:86%;
+  top:1%;
+}
+.marker{
+  width:22%;
+  padding:none;
+}
 #top_row{
   position:absolute;
   height:35vw;
