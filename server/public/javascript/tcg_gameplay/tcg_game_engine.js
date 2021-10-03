@@ -53,9 +53,9 @@ function updateGameState(){
   });
 }
 function updateOpponentStage(){
-  
+  stage.find(".opponentcard").forEach(card=>{card.destroy()})//destroy all card images for opponent on the screen and recreate them
+  stage.find(".opponentmarker").forEach(marker=>{marker.destroy()})//destroy all marker images for opponent on the screen and recreate them
   if(player=="player1"&&gamestate.playerTwoStage!=undefined&&gamestate.playerTwoStage.cards!=undefined){ 
-    stage.find(".opponentcard").forEach(card=>{card.destroy()})//destroy all card images for opponent on the screen and recreate them
     gamestate.playerTwoStage.cards.forEach(card=>{
       let x=card.x*stage.attrs.width;
       let y=card.y*stage.attrs.height;
@@ -66,7 +66,6 @@ function updateOpponentStage(){
     })
   }
   if(player=="player1"&&gamestate.playerTwoStage!=undefined&&gamestate.playerTwoStage.markers!=undefined){ 
-    stage.find(".opponentmarker").forEach(marker=>{marker.destroy()})//destroy all marker images for opponent on the screen and recreate them
     gamestate.playerTwoStage.markers.forEach(marker=>{
       let x=marker.x*stage.attrs.width;
       let y=marker.y*stage.attrs.height;
@@ -77,7 +76,6 @@ function updateOpponentStage(){
     })
   }
   if(player=="player2"&&gamestate.playerOneStage!=undefined&&gamestate.playerOneStage.cards!=undefined){ 
-    stage.find(".opponentcard").forEach(card=>{card.destroy()})//destroy all card images for opponent on the screen and recreate them
     gamestate.playerOneStage.cards.forEach(card=>{
       let x=card.x*stage.attrs.width;
       let y=card.y*stage.attrs.height;
@@ -88,7 +86,6 @@ function updateOpponentStage(){
     })
   }
   if(player=="player2"&&gamestate.playerOneStage!=undefined&&gamestate.playerOneStage.markers!=undefined){ 
-    stage.find(".opponentmarker").forEach(marker=>{marker.destroy()})//destroy all marker images for opponent on the screen and recreate them
     gamestate.playerOneStage.markers.forEach(marker=>{
       let x=marker.x*stage.attrs.width;
       let y=marker.y*stage.attrs.height;
