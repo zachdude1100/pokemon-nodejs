@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Card = require('../models/card.js');
+const {ensureAuth,ensureGuest}=require('../middleware/auth')
 
-router.get("/",(req,res)=>{
+router.get("/",ensureAuth,(req,res)=>{
     res.render("inventory_home");
 })
 
-router.post("/submit",(req,res)=>{
+router.post("/submit",ensureAuth,(req,res)=>{
     Card.findOneAndUpdate({'_id':req.body.id},{inventory:req.body.inventoryinput}, function(err,doc){
        if (err) return res.send(500, {error:err});
     })
@@ -18,7 +19,7 @@ router.post("/submit",(req,res)=>{
     })
 });
 
-router.get("/:setcode",(req,res)=>{
+router.get("/:setcode",ensureAuth,(req,res)=>{
     Card.find({'setCode': req.params.setcode})
     .exec()
     .then((foundCards)=>{

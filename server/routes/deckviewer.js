@@ -3,8 +3,9 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
+const {ensureAuth,ensureGuest}=require('../middleware/auth')
 
-router.get("/",(req,res)=>{
+router.get("/",ensureAuth,(req,res)=>{
     Deck.find()
     .exec()
     .then((foundDecks)=>{
@@ -16,7 +17,7 @@ router.get("/",(req,res)=>{
     })
 })
 
-router.get("/:format",(req,res)=>{
+router.get("/:format",ensureAuth,(req,res)=>{
     Deck.find({'format': req.params.format})
     .exec()
     .then((foundDecks)=>{
@@ -27,7 +28,7 @@ router.get("/:format",(req,res)=>{
         console.log(err)
     })
 })
-router.get("/deck/:id",(req,res)=>{
+router.get("/deck/:id",ensureAuth,(req,res)=>{
     Deck.findById(req.params.id)
     .exec()
     .then((foundDecks)=>{
@@ -40,7 +41,7 @@ router.get("/deck/:id",(req,res)=>{
 })
 
 
-router.post("/delete/:id",(req,res)=>{
+router.post("/delete/:id",ensureAuth,(req,res)=>{
     Deck.findByIdAndDelete(req.params.id)
     .exec()
     .then(res.redirect("/deckviewer"))

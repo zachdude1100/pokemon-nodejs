@@ -3,13 +3,14 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
+const {ensureAuth,ensureGuest}=require('../middleware/auth')
 
-router.get("/",(req,res)=>{
+router.get("/",ensureAuth,(req,res)=>{
     res.render("deck_builder_home"); 
  
 })
 
-router.post("/savedeck",(req,res)=>{
+router.post("/savedeck",ensureAuth,(req,res)=>{
     const newDeck = new Deck({
         deckName: req.body.deckName,
         notes: req.body.notes,
@@ -22,7 +23,7 @@ router.post("/savedeck",(req,res)=>{
     })
 });
 
-router.get("/searchcard",(req,res)=>{
+router.get("/searchcard",ensureAuth,(req,res)=>{
     query=Object.keys(req.query)[0];    
     if (query != undefined &&query.length > 2){
         Card.find({"name":{$regex:".*"+query+".*","$options":"i"}})

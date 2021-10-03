@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
+const {ensureAuth,ensureGuest}=require('../middleware/auth')
 
 const playController = require('../controllers/play.controller');
 
-router.get("/",(req,res)=>{
+router.get("/",ensureAuth,(req,res)=>{
     res.render("format_calculation");
 })
-router.get("/extracards",(req,res)=>{
+router.get("/extracards",ensureAuth,(req,res)=>{
     Card.find()
     .then((allCardsArr)=>{  //tallies up the total inventory including duplicates
         let arr=[];
@@ -100,6 +101,6 @@ router.get("/extracards",(req,res)=>{
         })
     })
 });
-router.get("/extracardstest",playController.playCalc)
+router.get("/extracardstest",ensureAuth,playController.playCalc)
 
 module.exports = router;

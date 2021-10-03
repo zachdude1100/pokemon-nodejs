@@ -3,14 +3,16 @@ const router = express.Router();
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
 const bodyParser = require('body-parser');
+const {ensureAuth,ensureGuest}=require('../middleware/auth')
+
 
 router.use(bodyParser.urlencoded({extended: true}));
 
-router.get("/",(req,res)=>{
+router.get("/",ensureAuth,(req,res)=>{
     res.render("versus_calculation_home");
 })
 
-router.get("/decksinformat",(req,res)=>{
+router.get("/decksinformat",ensureAuth,(req,res)=>{
     queryArr=Object.keys(req.query);
     Deck.find({'format':queryArr[0]})
     .exec()
@@ -21,7 +23,7 @@ router.get("/decksinformat",(req,res)=>{
     })
 })
 
-router.get("/getdecks",(req,res)=>{
+router.get("/getdecks",ensureAuth,(req,res)=>{
     queryArr=Object.values(req.query);
 
     let arr=[];
@@ -35,7 +37,7 @@ router.get("/getdecks",(req,res)=>{
         return res.json(foundDecks)
     })
 })
-router.get("/submit",(req,res)=>{    
+router.get("/submit",ensureAuth,(req,res)=>{    
     queryArr=Object.values(req.query)
     let arr=[]; // This was a bitch. Takes ye olde deck json and searches for duplicate printings with mostly successful parameters
     queryArr.forEach(element => {

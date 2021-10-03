@@ -1,5 +1,5 @@
 var socket;
-socket=io.connect('10.70.0.3:3000')
+socket=io.connect('http://webserver.zachicus.xyz:3000')
 socket.on('updateGameState',updateGameState) //upon receiving game state packet from the other player:
 socket.on('updateCoinFlip',updateCoinFlip)
 
