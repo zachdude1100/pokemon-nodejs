@@ -107,7 +107,7 @@ function removeCard(id){
 
 function submitDeck(){
     $(document).ready(function(){
-        url = '/deckbuilder/savedeck';
+        url = '/deckbuilder/savedecknew';
         const arrayToObject = (array) =>
             array.reduce((obj, item) => {
                 obj[item.id] = item

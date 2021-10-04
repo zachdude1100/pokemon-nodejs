@@ -9,7 +9,7 @@
     <h1>Decks for format</h1>
     <ul>
         <% Deck.forEach((deck)=> { %>
-            <a href="/deckviewer/deck/<%= `${deck._id}`%>"><h3><%= `${deck.deckName}` %></h3></a>
+            <a href="/deckviewer/deck/<%= `${deck.id}`%>"><h3><%= `${deck.deckName}` %></h3></a>
             <p><%=`${deck.notes}`%></p>
         <% }) %>
         
