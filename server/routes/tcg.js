@@ -39,7 +39,7 @@ router.get("/deck/:id",ensureAuth,(req,res)=>{
 })*/
 router.get("/decksinformat",ensureAuth,(req,res)=>{
     let queryArr=Object.keys(req.query);
-    User.findOne({googleId:req.user.googleId})
+    User.findOne({_id:req.user.id})
     .then((user)=>{
         var decksInFormat=[]
         user.decks.forEach((deck)=>{
@@ -56,7 +56,7 @@ router.get("/decksinformat",ensureAuth,(req,res)=>{
     })
 })
 router.get("/deck/:id",ensureAuth,(req,res)=>{
-    User.findOne({googleId:req.user.googleId})
+    User.findOne({_id:req.user.id})
     .then((user)=>{
         for (i=0;i<user.decks.length;i++){
             if (user.decks[i].id==req.params.id){

@@ -51,7 +51,8 @@ router.post("/delete/:id",ensureAuth,(req,res)=>{
 });*/
 
 router.get("/",ensureAuth,(req,res)=>{
-    User.findOne({googleId:req.user.googleId})
+    console.log(req.session)
+    User.findOne({_id:req.user.id})
     .then((user)=>{
         res.render("deck_viewer_home",{Deck: user.decks});
     })
@@ -62,7 +63,7 @@ router.get("/",ensureAuth,(req,res)=>{
 })
 
 router.get("/:format",ensureAuth,(req,res)=>{
-    User.findOne({googleId:req.user.googleId})
+    User.findOne({_id:req.user.id})
     .then((user)=>{
         var decksInFormat=[]
         user.decks.forEach((deck)=>{
@@ -78,7 +79,7 @@ router.get("/:format",ensureAuth,(req,res)=>{
     })
 })
 router.get("/deck/:id",ensureAuth,(req,res)=>{
-    User.findOne({googleId:req.user.googleId})
+    User.findOne({_id:req.user.id})
     .then((user)=>{
         for (i=0;i<user.decks.length;i++){
             if (user.decks[i].id==req.params.id){
@@ -94,7 +95,7 @@ router.get("/deck/:id",ensureAuth,(req,res)=>{
 
 
 router.post("/delete/:id",ensureAuth,(req,res)=>{
-    User.findOneAndUpdate({googleId:req.user.googleId},{$pull:{decks:{id:req.params.id}}})
+    User.findOneAndUpdate({_id:req.user.id},{$pull:{decks:{id:req.params.id}}})
     .then(res.redirect("/deckviewer"))
     .catch((err)=>{
         console.log(err)

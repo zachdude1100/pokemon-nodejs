@@ -12,19 +12,6 @@ router.get("/",ensureAuth,(req,res)=>{
  
 })
 
-router.post("/savedeck",ensureAuth,(req,res)=>{
-    const newDeck = new Deck({
-        deckName: req.body.deckName,
-        notes: req.body.notes,
-        format: req.body.format,
-        cards: req.body.cards
-    });
-    Deck.create(newDeck)
-    .catch((err)=>{
-        console.log(err)
-    })
-});
-
 router.get("/searchcard",ensureAuth,(req,res)=>{
     query=Object.keys(req.query)[0];    
     if (query != undefined &&query.length > 2){
@@ -49,7 +36,7 @@ router.post("/savedecknew",ensureAuth,(req,res)=>{
         format: req.body.format,
         cards: req.body.cards
     };
-    User.findOneAndUpdate({googleId:req.user.googleId},{$addToSet:{decks:newDeck}},function(err,doc){
+    User.findOneAndUpdate({_id:req.user.id},{$addToSet:{decks:newDeck}},function(err,doc){
         if (err) return res.send(500, {error:err});
      })
      .then((err)=>{

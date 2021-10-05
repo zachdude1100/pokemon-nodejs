@@ -4,11 +4,19 @@ const crypto=require('crypto')
 const gameState=require("../models/gamestates.js")
 const Deck = require('../models/deck.js');
 const bodyParser = require('body-parser');
+const User = require('../models/User.js');
 router.use(bodyParser.urlencoded({extended: true}));
 
 module.exports.newGamestate = (req,res,err)=>{
-    Deck.find({deckName:req.body.deckselection})
-    .then(foundDeck=>{
+    User.findOne({_id:req.user.id})
+    .then(user=>{
+        deckSelected={};
+        for (let i=0;i<user.decks[i].length;i++){
+            if(user.decks.deckName==req.body.deckselection){
+                deckSelected=user.decks[i]
+                break
+            }
+        }
         var UUID = crypto.randomBytes(64).toString('hex');
         const newGamestate = new gameState({
             gameStateUUID: UUID,
@@ -32,7 +40,7 @@ module.exports.newGamestate = (req,res,err)=>{
         gameState.create(newGamestate)
         
         //return res.json({Deck: foundDeck[0].cards,gameUUID:UUID})
-        res.render("tcg_game_play",{Deck: foundDeck[0].cards,gameUUID:UUID,player:req.body.playerselection});
+        res.render("tcg_game_play",{Deck: deckSelected.cards,gameUUID:UUID,player:req.body.playerselection});
     })
     .catch((err)=>{
         console.log(err)
@@ -40,9 +48,14 @@ module.exports.newGamestate = (req,res,err)=>{
  }
 
 module.exports.joinGame = (req,res,next)=>{
-    Deck.find({deckName:req.body.deckselection})
-    .then(foundDeck=>{
-        res.render("tcg_game_play",{Deck: foundDeck[0].cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
+    User.findOne({_id:req.user.id})
+    .then(user=>{
+        for (let i=0;i<user.decks.length;i++){
+            if (user.decks[i].deckName==req.body.deckselection){
+                res.render("tcg_game_play",{Deck: user.decks[i].cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
+                break
+            }
+        }
     })
     .catch((err)=>{
         console.log(err)
