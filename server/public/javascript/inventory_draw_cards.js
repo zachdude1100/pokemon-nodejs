@@ -1,6 +1,5 @@
-function drawcards(foundCards){
-    let cardsOnScreen=foundCards;
-    console.log(cardsOnScreen)
+function drawcards(allCardsInSet,userCardsInSet){
+    let cardsOnScreen=allCardsInSet;
     document.querySelectorAll('.card').forEach(e => e.remove());
     for (let i = 0; i < cardsOnScreen.length; i++){
             let cardDiv = document.createElement('div');
@@ -39,10 +38,11 @@ function drawcards(foundCards){
             cardNumber.setAttribute("class","cardnumber");
             document.getElementById("carddivright"+''+i+'').appendChild(cardNumber);
 
-            let cardInventoryCurrent = document.createElement('p');
-            cardInventoryCurrent.innerText="Current Inventory: "+cardsOnScreen[i].inventory;
-            cardInventoryCurrent.setAttribute("class","inventorycurrent");
-            document.getElementById("carddivright"+''+i+'').appendChild(cardInventoryCurrent);
+            let playSetInvText = document.createElement('p');
+            playSetInvText.innerText="Current Inventory: 0";
+            playSetInvText.setAttribute("class","inventorycurrent");
+            playSetInvText.setAttribute("id","playSetInvText_"+cardsOnScreen[i].id);
+            document.getElementById("carddivright"+''+i+'').appendChild(playSetInvText);
             
             let cardForm = document.createElement('form');
             cardForm.setAttribute("class","inventoryform");
@@ -51,12 +51,12 @@ function drawcards(foundCards){
             cardForm.setAttribute("method","POST");
             document.getElementById("carddivright"+''+i+'').appendChild(cardForm);
             
-            let cardInventoryInput = document.createElement('input');
-            cardInventoryInput.placeholder="Update inventory";
-            cardInventoryInput.setAttribute("class","inventoryinput");
-            cardInventoryInput.setAttribute("name","inventoryinput")
-            cardInventoryInput.setAttribute("value",cardsOnScreen[i].inventory);
-            document.getElementById("inventoryform"+''+i+'').appendChild(cardInventoryInput);
+            let playSetInvInput = document.createElement('input');
+            playSetInvInput.setAttribute("class","inventoryinput");
+            playSetInvInput.setAttribute("name","playSetInvInput")
+            playSetInvInput.setAttribute("id","playSetInvInput_"+cardsOnScreen[i].id)
+            playSetInvInput.setAttribute("value",0);
+            document.getElementById("inventoryform"+''+i+'').appendChild(playSetInvInput);
             
             let cardInventoryId = document.createElement('input');
             cardInventoryId.setAttribute("id",cardsOnScreen[i].id)
@@ -70,8 +70,11 @@ function drawcards(foundCards){
             cardInventorySubmit.setAttribute("class","inventorysubmit");
             cardInventorySubmit.innerText="Update Inventory";
             document.getElementById("inventoryform"+''+i+'').appendChild(cardInventorySubmit);
-        
-
     }
-    
+    for(i=0;i<userCardsInSet.length;i++){
+        let playSetInvText=document.getElementById("playSetInvText_"+userCardsInSet[i].id)
+        playSetInvText.innerText="Current Inventory: "+userCardsInSet[i].playSetInv;
+        let playSetInvInput=document.getElementById("playSetInvInput_"+userCardsInSet[i].id)
+        playSetInvInput.setAttribute("value",userCardsInSet[i].playSetInv);
+    }
 }

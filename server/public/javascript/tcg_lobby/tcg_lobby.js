@@ -28,12 +28,12 @@ function setOptions()
         $.ajax({  // grabs the card data from get request in the database
             type: 'GET',
             url: '/tcg/decksinformat',
-            data: formatSelection,
+            data: {format:formatSelection},
             success: function(deckResult) { 
                 let deckResultArr=Object.values(deckResult);
                 deckResultArr.forEach(deck=>{
                 let deckName = document.createElement('option');
-                deckName.setAttribute("name",deck.deckName);
+                deckName.setAttribute("value",deck._id);
                 deckName.innerText=deck.deckName;
                 document.getElementById("deckselection").appendChild(deckName);
                 });

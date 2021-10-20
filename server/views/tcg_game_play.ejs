@@ -83,7 +83,7 @@
     <script src="/javascript/tcg_gameplay/tcg_game_engine.js"></script>
     
     <script type='text/javascript'>
-        cardsFromDb = Object.values(JSON.parse(`<%-JSON.stringify(Deck)%>`));
+        cardsFromDb = JSON.parse(`<%-JSON.stringify(Deck)%>`);
         gameUUID=JSON.parse(`<%-JSON.stringify(gameUUID)%>`)
         player=JSON.parse(`<%-JSON.stringify(player)%>`)
         deck.initDeck(cardsFromDb);

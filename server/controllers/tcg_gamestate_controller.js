@@ -2,21 +2,14 @@ const express = require('express');
 const router = express.Router();
 const crypto=require('crypto')
 const gameState=require("../models/gamestates.js")
-const Deck = require('../models/deck.js');
+const DeckV2 = require('../models/deckv2.js');
 const bodyParser = require('body-parser');
 const User = require('../models/User.js');
 router.use(bodyParser.urlencoded({extended: true}));
 
 module.exports.newGamestate = (req,res,err)=>{
-    User.findOne({_id:req.user.id})
-    .then(user=>{
-        deckSelected={};
-        for (let i=0;i<user.decks[i].length;i++){
-            if(user.decks.deckName==req.body.deckselection){
-                deckSelected=user.decks[i]
-                break
-            }
-        }
+    DeckV2.findOne({$and:[{_id:req.body.deckselection},{userID:req.user.id}]})
+    .populate('cards.card').exec((err,deck)=>{
         var UUID = crypto.randomBytes(64).toString('hex');
         const newGamestate = new gameState({
             gameStateUUID: UUID,
@@ -38,9 +31,11 @@ module.exports.newGamestate = (req,res,err)=>{
             playerTwoStage: {},
         });
         gameState.create(newGamestate)
-        
-        //return res.json({Deck: foundDeck[0].cards,gameUUID:UUID})
-        res.render("tcg_game_play",{Deck: deckSelected.cards,gameUUID:UUID,player:req.body.playerselection});
+        let cards=[]
+        for (let card of deck.cards){
+            cards.push({imageUrl:card.card.imageUrl,id:card.card.id,instances:card.instances})
+        }
+        res.render("tcg_game_play",{Deck:cards,gameUUID:UUID,player:req.body.playerselection});
     })
     .catch((err)=>{
         console.log(err)
@@ -48,14 +43,13 @@ module.exports.newGamestate = (req,res,err)=>{
  }
 
 module.exports.joinGame = (req,res,next)=>{
-    User.findOne({_id:req.user.id})
-    .then(user=>{
-        for (let i=0;i<user.decks.length;i++){
-            if (user.decks[i].deckName==req.body.deckselection){
-                res.render("tcg_game_play",{Deck: user.decks[i].cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
-                break
-            }
+    DeckV2.findOne({$and:[{_id:req.body.deckselection},{userID:req.user.id}]})
+    .populate('cards.card').exec((err,deck)=>{
+        let cards=[]
+        for (let card of deck.cards){
+            cards.push({imageUrl:card.card.imageUrl,id:card.card.id,instances:card.instances})
         }
+        res.render("tcg_game_play",{Deck:cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
     })
     .catch((err)=>{
         console.log(err)

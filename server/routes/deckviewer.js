@@ -1,106 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-const Deck = require('../models/deck.js');
 const User = require('../models/User.js');
-const {ensureAuth,ensureGuest}=require('../middleware/auth')
-
-/*router.get("/",ensureAuth,(req,res)=>{
-    Deck.find()
-    .exec()
-    .then((foundDecks)=>{
-        res.render("deck_viewer_home",{Deck: foundDecks});
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
-})
-
-router.get("/:format",ensureAuth,(req,res)=>{
-    Deck.find({'format': req.params.format})
-    .exec()
-    .then((foundDecks)=>{
-        res.render("deck_viewer_format",{Deck: foundDecks});
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
-})
-router.get("/deck/:id",ensureAuth,(req,res)=>{
-    Deck.findById(req.params.id)
-    .exec()
-    .then((foundDecks)=>{
-        res.render("deck_viewer_deck",{Deck: foundDecks});
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
-})
-
-
-router.post("/delete/:id",ensureAuth,(req,res)=>{
-    Deck.findByIdAndDelete(req.params.id)
-    .exec()
-    .then(res.redirect("/deckviewer"))
-    .catch((err)=>{
-        console.log(err)
-    })
-});*/
+const {ensureAuth,ensureGuest}=require('../middleware/auth');
+const DeckV2 = require('../models/deckv2.js');
 
 router.get("/",ensureAuth,(req,res)=>{
-    console.log(req.session)
-    User.findOne({_id:req.user.id})
-    .then((user)=>{
-        res.render("deck_viewer_home",{Deck: user.decks});
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
+    res.render("deck_viewer_home");
 })
-
-router.get("/:format",ensureAuth,(req,res)=>{
-    User.findOne({_id:req.user.id})
-    .then((user)=>{
-        var decksInFormat=[]
-        user.decks.forEach((deck)=>{
-            if (deck.format==req.params.format){
-                decksInFormat.push(deck)
-            }
-        })
-        res.render("deck_viewer_format",{Deck: decksInFormat});
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
-})
-router.get("/deck/:id",ensureAuth,(req,res)=>{
-    User.findOne({_id:req.user.id})
-    .then((user)=>{
-        for (i=0;i<user.decks.length;i++){
-            if (user.decks[i].id==req.params.id){
-                res.render("deck_viewer_deck",{Deck: user.decks[i]});
-            }
-        }
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
-    })
-})
-
 
 router.post("/delete/:id",ensureAuth,(req,res)=>{
-    User.findOneAndUpdate({_id:req.user.id},{$pull:{decks:{id:req.params.id}}})
+    DeckV2.findOneAndDelete({$and:[{_id:req.params.id},{userID:req.user.id}]})
     .then(res.redirect("/deckviewer"))
     .catch((err)=>{
         console.log(err)
     })
 });
-
+router.get("/deck/:id",ensureAuth,(req,res)=>{
+    DeckV2.findOne({$and:[{_id:req.params.id},{userID:req.user.id}]})
+    .populate('cards.card').exec((err,deck)=>{
+        let cardObjs=[]
+        for (let card of deck.cards){
+            let cardObj={id:card.card.id,imageUrl:card.card.imageUrl,instances:card.instances}
+            cardObjs.push(cardObj)
+        }
+        let deckFormatted={_id:deck._id,deckName:deck.deckName,notes:deck.notes,format:deck.format,cards:cardObjs}
+        res.render("deck_viewer_deck",{Deck:deckFormatted});
+    })
+})
+router.get("/:format",ensureAuth,(req,res)=>{
+    DeckV2.find({'$and':[{userID:req.user.id},{format:req.params.format}]})
+    .then((decks)=>{
+        res.render("deck_viewer_format",{Deck: decks})
+    })
+})
 
 module.exports = router;

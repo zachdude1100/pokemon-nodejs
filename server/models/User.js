@@ -11,15 +11,12 @@ const UserSchema=new mongoose.Schema({
     image:{
         type: String,
     },
-    decks:{
-        type: Array
-    },
-    inventory:{
-        type: Array
-    },
     createdAt:{
         type: Date,
         default: Date.now
+    },
+    cards:{
+        type:Array
     }
 })
 module.exports=mongoose.model('User',UserSchema)

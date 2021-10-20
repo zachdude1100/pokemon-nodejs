@@ -14,11 +14,11 @@
 
     <div id=cardlist></div>
     <div id=cards></div>
-    <form action="/deckviewer/delete/<%= `${Deck.id}`%>" method="POST" onsubmit="return confirm('You really want to delete?');">
+    <form action="/deckviewer/delete/<%= `${Deck._id}`%>" method="POST" onsubmit="return confirm('You really want to delete?');">
         <button name="deletebutton" value="deletebutton">DELETE THIS DECK</button>
     </form>
     <script type='text/javascript'>
-        cards = Object.values(JSON.parse(`<%-JSON.stringify(Deck.cards)%>`));
+        cards = JSON.parse(`<%-JSON.stringify(Deck.cards)%>`);
         drawcards(cards);
     </script>
 </body>

@@ -23,7 +23,7 @@ $(document).ready(function()
             if (value.name.search(expression) != -1 && searchField.length >2)
             {
                 $('#result').append('<li class="list-group-item link-class"><a href="'+value.imageUrlHiRes+'"><img src="'+value.imageUrl+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted">'
-                +value.set+' '+value.number+' '+value.rarity+'</span></a><button onclick="addCard(\''+value.imageUrl+'\',\''+value.id+'\')">Add to Deck</button></li>');  
+                +value.set+' '+value.number+' '+value.rarity+'</span></a><button onclick="addCard(\''+value.imageUrl+'\',\''+value.id+'\',\''+value._id+'\')">Add to Deck</button></li>');  
             }
         });   
     },
@@ -35,12 +35,12 @@ $(document).ready(function()
 let cardsOnScreen = [];
 let cardCounter=0;
 // adds card to cardsOnScreen after checking for unique and incrementing instances if not
-function addCard(cardImgUrl,cardId)
+function addCard(cardImgUrl,cardId,card_Id)
 {
     if (cardCounter <60){
         increment=incrementAndSort(cardId);    
         if (increment==false){
-            let cardObject={"id": cardId, "imageUrl": cardImgUrl,"instances": 1}
+            let cardObject={"id": cardId, "imageUrl": cardImgUrl,"instances": 1,"_id": card_Id}
             cardsOnScreen.push(cardObject);
             
         }
@@ -106,21 +106,25 @@ function removeCard(id){
 }
 
 function submitDeck(){
-    $(document).ready(function(){
-        url = '/deckbuilder/savedecknew';
-        const arrayToObject = (array) =>
-            array.reduce((obj, item) => {
-                obj[item.id] = item
-                return obj
-            }, {})
-    
-        
-        const cardsOnScreenObject = arrayToObject(cardsOnScreen)
-               $.post(url, {
+    if(cardCounter==60){
+        $.ajax({  
+            type: 'POST',
+            url: '/deckbuilder/savedeck',
+            data: {
                 deckName: $('#deckName').val(),
                 notes: $('#deckNotes').val(),
                 format: $('#format').val(),
-                cards: cardsOnScreenObject,
-                }); 
-    });
+                cards: cardsOnScreen,
+                },
+            success: function() { 
+                alert("Save successful")
+                location.reload()
+            }
+        })
+    }
+    else{
+        alert("You need 60 cards to submit the deck!")
+    }
+
+    
 }

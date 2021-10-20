@@ -5,74 +5,33 @@ const mongoose = require('mongoose');
 const Deck = require('../models/deck.js');
 const Card = require('../models/card.js');
 const User = require('../models/User.js')
+const DeckV2 = require('../models/deckv2.js');
 const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 const {ensureAuth,ensureGuest}=require('../middleware/auth')
-
 const gamestateController = require('../controllers/tcg_gamestate_controller.js');
-
-
 router.get("/",ensureAuth,(req,res)=>{
     res.render("tcg_lobby"); 
-})
-/*router.get("/decksinformat",ensureAuth,(req,res)=>{
-    queryArr=Object.keys(req.query);
-    Deck.find({'format':queryArr[0]})
-    .exec()
-    .then((foundDecks)=>{
-        foundDecksObj=Object.assign({},foundDecks)
-        return res.json(foundDecksObj)
-
-    })
-})
-router.get("/deck/:id",ensureAuth,(req,res)=>{
-    Deck.findById(req.params.id)
-    .exec()
-    .then((foundDecks)=>{
-        var gameUUID=crypto.randomBytes(20).toString('hex');
-        res.render("tcg_game_play",{Deck: foundDecks,gameUUID:gameUUID});
-    })
-    .catch((err)=>{
-        res.redirect("/tcg")
-        console.log(err)
-    })
-})*/
+})   
 router.get("/decksinformat",ensureAuth,(req,res)=>{
-    let queryArr=Object.keys(req.query);
-    User.findOne({_id:req.user.id})
-    .then((user)=>{
-        var decksInFormat=[]
-        user.decks.forEach((deck)=>{
-            if (deck.format==queryArr[0]){
-                decksInFormat.push(deck)
-            }
-        })
-        let decksInFormatObj=Object.assign({},decksInFormat)
-        return res.json(decksInFormatObj)
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
+    DeckV2.find({$and:[{userID:req.user.id},{format:req.query.format}]})
+    .then((decks)=>{
+        return res.json(decks)
     })
 })
 router.get("/deck/:id",ensureAuth,(req,res)=>{
-    User.findOne({_id:req.user.id})
-    .then((user)=>{
-        for (i=0;i<user.decks.length;i++){
-            if (user.decks[i].id==req.params.id){
-                var gameUUID=crypto.randomBytes(20).toString('hex');
-                res.render("tcg_game_play",{Deck: user.decks[i],gameUUID:gameUUID});
-                break;
-            }
+    DeckV2.findOne({$and:[{_id:req.params.id},{userID:req.user.id}]})
+    .populate('cards.card').exec((err,deck)=>{
+        let cardObjs=[]
+        for (let card of deck.cards){
+            let cardObj={id:card.card.id,imageUrl:card.card.imageUrl,instances:card.instances}
+            cardObjs.push(cardObj)
         }
-    })
-    .catch((err)=>{
-        res.redirect("/deckviewer")
-        console.log(err)
+        var gameUUID=crypto.randomBytes(20).toString('hex');
+        let deckFormatted={_id:deck._id,deckName:deck.deckName,notes:deck.notes,format:deck.format,cards:cardObjs}
+        res.render("tcg_game_play",{Deck:deckFormatted,gameUUID:gameUUID});
     })
 })
-
-
 router.get("/queryexistinggamestates",ensureAuth,gamestateController.queryAllExisting)
 router.get("/getgamestate",ensureAuth,gamestateController.getGameState)
 router.get("/coinflip",ensureAuth,gamestateController.getCoinFlip)

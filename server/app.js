@@ -18,6 +18,7 @@ const deckViewer= require('./routes/deckviewer.js');
 const inventory = require('./routes/inventory.js');
 const versusCalculation = require('./routes/versus_calculation.js');
 const formatCalculation = require('./routes/formatcalculation.js');
+const deckCalculation = require('./routes/deck_calculation.js')
 const home = require('./routes/home.js');
 const tcg = require('./routes/tcg.js')
 const auth = require('./routes/auth.js')
@@ -47,6 +48,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
+app.use('/deckcalculation',deckCalculation)
 app.use('/deckbuilder',deckBuilder)
 app.use('/deckviewer',deckViewer)
 app.use('/inventory',inventory)
