@@ -4,7 +4,6 @@ const crypto=require('crypto')
 const gameState=require("../models/gamestates.js")
 const DeckV2 = require('../models/deckv2.js');
 const bodyParser = require('body-parser');
-const User = require('../models/User.js');
 router.use(bodyParser.urlencoded({extended: true}));
 
 module.exports.newGamestate = (req,res,err)=>{

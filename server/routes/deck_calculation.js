@@ -15,7 +15,7 @@ router.get("/",ensureAuth,(req,res)=>{
     res.render('deck_calculation_home.ejs')
 })
 
-router.get("/getDecks",ensureAuth,deckCalcController.getUserDecks)
+router.get("/getUserDecksAndInv",ensureAuth,deckCalcController.getUserDecksAndInv)
 
 /*router.get("/zachsdecks",(req,res)=>{
     Deck.find()
