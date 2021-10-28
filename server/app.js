@@ -16,9 +16,8 @@ const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants');
 const deckBuilder = require('./routes/deckbuilder.js');
 const deckViewer= require('./routes/deckviewer.js');
 const inventory = require('./routes/inventory.js');
-const versusCalculation = require('./routes/versus_calculation.js');
-const formatCalculation = require('./routes/formatcalculation.js');
 const deckCalculation = require('./routes/deck_calculation.js')
+const adminUtility = require('./routes/administrator_utility.js')
 const home = require('./routes/home.js');
 const tcg = require('./routes/tcg.js')
 const auth = require('./routes/auth.js')
@@ -52,8 +51,7 @@ app.use('/deckcalculation',deckCalculation)
 app.use('/deckbuilder',deckBuilder)
 app.use('/deckviewer',deckViewer)
 app.use('/inventory',inventory)
-app.use('/formatcalculation',formatCalculation)
-app.use('/versuscalculation',versusCalculation)
+app.use('/adminutility',adminUtility)
 app.use('/',home)
 app.use('/tcg',tcg)
 app.use('/auth',auth)
@@ -70,7 +68,7 @@ app.use((err, req, res, next) => {
     }
 });
 
-var server = app.listen(3000,() => {
+var server = app.listen(80,() => {
     console.log("application is running")
 });
 

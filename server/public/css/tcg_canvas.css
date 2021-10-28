@@ -44,7 +44,7 @@ body{
   width:98vw;
 }
 #bottom_row{
-  position:absolute;
+  position:relative;
   height:10vw;
   width:98vw;
   top:36vw;

@@ -4,6 +4,7 @@
   <title>Pokemon Card Info</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="/javascript/deck_builder.js"></script>
   <link rel="stylesheet" href="/css/deck_builder_home.css">
@@ -11,6 +12,9 @@
 
  </head>
  <body id="body">
+  <header>
+    <%- include('./templates/header'); %>
+  </header>
   <br /><br />
   <div class="container" style="width:900px;">
    <h2 align="center">Pokemon Deck Builder</h2>  
@@ -35,6 +39,34 @@
             <option value="Base_Neo">Base - Neo</option>
             <option value="Rocket_On">Rocket-On</option>
             <option value="Neo-On">Neo-On</option>
+            <option value='ecard1_ex5'>Expedition to EX Hidden Legends (03-04 Standard)</option>
+            <option value='ex1_ex9'>EX Ruby & Sapphire to EX Emerald (04-05 Standard)</option>
+            <option value='ex5_ex13'>EX Hidden Legends to EX Holon Phantoms (05-06 Standard)</option>
+            <option value='ex8_dp1'>EX Deoxys to Diamond & Pearl (06-07 Standard)</option>
+            <option value='ex13_dp5'>EX Holon Phantoms to Majestic Dawn (07-08 Standard)</option>
+            <option value='dp1_hgss2'>Diamond & Pearl to Unleashed (08-10 Standard)</option>
+            <option value='dp5_bw1'>Majestic Dawn to Black & White (10-11 Standard)</option>
+            <option value='hgss1_bw5'>HeartGold & SoulSilver to Dark Explorers (11-12 Standard)</option>
+            <option value='bw1_bw9'>Black & White to Plasma Freeze (12-13 Standard)</option>
+            <option value='bw4_xy2'>Next Destinies to Flashfire (13-14 Standard)</option>
+            <option value='bw7_xy6'>Boundaries Crossed to Roaring Skies (14-15 Standard)</option>
+            <option value='bw1_xy6'>Black & White to Roaring Skies (14-15 Modified)</option>
+            <option value='xy1_xy11'>XY to Steam Siege (15-16 Standard)</option>
+            <option value='bw1_xy11'>Black & White to Steam Siege (15-16 Modified)</option>
+            <option value='xy5_sm3'>Primal Clash to Burning Shadows (16-17 Standard)</option>
+            <option value='bw1_sm3'>Black & White to Burning Shadows (16-17 Modified)</option>
+            <option value='xy8_sm7'>BREAKthrough to Celestial Storm (17-18 Standard)</option>
+            <option value='bw1_sm7'>Black & White to Celestial Storm (17-18 Modified)</option>
+            <option value='sm1_sm10'>Sun & Moon to Unbroken Bonds (18-19 Standard)</option>
+            <option value='bw1_sm10'>Black & White to Unbroken Bonds (18-19 Modified)</option>
+            <option value='sm5_swsh2'>Ultra Prism to Rebel Clash (19-20 Standard)</option>
+            <option value='bw1_swsh2'>Black & White to Rebel Clash (19-20 Modified)</option>
+            <option value='sm9_swsh6'>Team Up to Chilling Reign (20-21 Standard)</option>
+            <option value='bw1_swsh6'>Black & White to Chilling Reign (20-21 Modified)</option>
+            <option value='swsh1_swsh7'>Sword & Shield onwards (21-22 Standard)</option>
+            <option value='bw1_swsh7'>Black & White onwards (21-22 Modified)</option>
+
+
         </select>
         <label for="deckNotes">Deck Notes</label>
         <input type="text" id="deckNotes" class="form-control" name="deckNotes">

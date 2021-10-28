@@ -12,6 +12,9 @@
     <title>Zach's bootleg pokemon tcg game</title>
 </head>
 <body oncontextmenu="return false">
+    <header>
+        <%- include('./templates/header'); %>
+      </header>
     <div id="top_row">
         <img src="/images/Pokemon_Trading_Card_Game_cardback.jpg" id="discard_img" oncontextmenu="showContextMenu(this.id,'discard')">
         <img src="/images/placeholder_heads.png" id="coinflip" onclick="flipCoin()">

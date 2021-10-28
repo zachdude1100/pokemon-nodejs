@@ -6,13 +6,12 @@ const cardSchema = new mongoose.Schema({
         imageUrl: String,
         subtype: String,
         supertype: String,
-        number: Number,
+        number: String,
         rarity: String,
         series: String,
         set: String,
         setCode: String,
         imageUrlHiRes: String,
-        inventory: Number,
         duplicateprints: Array,
         artist: String
 

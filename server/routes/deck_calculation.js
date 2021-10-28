@@ -12,7 +12,9 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: true}));
 
 router.get("/",ensureAuth,(req,res)=>{
+    console.log(req.user)
     res.render('deck_calculation_home.ejs')
+
 })
 
 router.get("/getUserDecksAndInv",ensureAuth,deckCalcController.getUserDecksAndInv)

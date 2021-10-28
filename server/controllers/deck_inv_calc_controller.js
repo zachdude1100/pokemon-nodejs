@@ -16,13 +16,13 @@ module.exports.getUserDecksAndInv=(req,res,next)=>{
             for (let card of deck.cards){
                 let prints=card.card.duplicateprints.concat(card.card.id)
                 prints.sort()
-                cardsArr.push({id:card.card.id,prints:prints,instances:card.instances})
+                cardsArr.push({id:card.card.id,name:card.card.name,prints:prints,instances:card.instances})
                 uniteArg.push(prints)   //creating an argument array to find unique cards needed for these decks
             }
             decksArr.push({_id:deck._id,deckName:deck.deckName,cards:cardsArr})
         }
         let unitedArr=unite(...uniteArg) //unite the prints arrays into one with removed dupes
-        User.findOne({_id:req.user.id})
+        User.findOne({_id:req.user.id}) //begin finding user inventory
         .then((user)=>{
             let cardInvArr=[]
             for(let card of user.cards){

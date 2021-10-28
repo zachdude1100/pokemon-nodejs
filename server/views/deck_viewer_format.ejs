@@ -6,6 +6,9 @@
     <title><% Deck[0].format %></title>
 </head>
 <body>
+    <header>
+        <%- include('./templates/header'); %>
+      </header>
     <h1>Decks for format</h1>
     <ul>
         <% Deck.forEach((deck)=> { %>

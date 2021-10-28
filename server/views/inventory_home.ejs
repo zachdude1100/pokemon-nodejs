@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="/css/inventory.css">
 </head>
 <body>
+    <header>
+        <%- include('./templates/header'); %>
+      </header>
     <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn">Select Set</button>
         <div class="dropdown-content">
             <a href="/inventory/base1">Base Set</a>
             <a href="/inventory/base4">Base Set 2</a>
@@ -23,6 +26,112 @@
             <a href="/inventory/neo3">Neo Revelation</a>
             <a href="/inventory/basep">Wizards Black Star Promos</a>
             <a href="/inventory/base6">Legendary Collection</a>
+            <a href='/inventory/ecard1'>Expedition Base Set </a>
+            <a href='/inventory/ecard2'>Aquapolis </a>
+            <a href='/inventory/ecard3'>Skyridge </a>
+            <a href='/inventory/ex1'>EX Ruby & Sapphire </a>
+            <a href='/inventory/ex2'>EX Sandstorm </a>
+            <a href='/inventory/ex3'>EX Dragon </a>
+            <a href='/inventory/ex4'>EX Team Magma vs Team Aqua </a>
+            <a href='/inventory/ex5'>EX Hidden Legends </a>
+            <a href='/inventory/ex6'>EX FireRed & LeafGreen</a>
+            <a href='/inventory/ex7'>EX Team Rocket Returns </a>
+            <a href='/inventory/ex8'>EX Deoxys </a>
+            <a href='/inventory/ex9'>EX Emerald</a>
+            <a href='/inventory/ex10'>EX Unseen Forces </a>
+            <a href='/inventory/ex11'>EX Delta Species </a>
+            <a href='/inventory/ex12'>EX Legend Maker </a>
+            <a href='/inventory/ex13'>EX Holon Phantoms </a>
+            <a href='/inventory/ex14'>EX Crystal Guardians </a>
+            <a href='/inventory/ex15'>EX Dragon Frontiers </a>
+            <a href='/inventory/ex16'>EX Power Keepers </a>
+            <a href='/inventory/dp1'>Diamond & Pearl </a>
+            <a href='/inventory/dp2'>Mysterious Treasures </a>
+            <a href='/inventory/dp3'>Secret Wonders </a>
+            <a href='/inventory/dp4'>Great Encounters </a>
+            <a href='/inventory/dp5'>Majestic Dawn </a>
+            <a href='/inventory/dp6'>Legends Awakened </a>
+            <a href='/inventory/dp7'>Stormfront </a>
+            <a href='/inventory/pl1'>Platinum </a>
+            <a href='/inventory/pl2'>Rising Rivals </a>
+            <a href='/inventory/pl3'>Supreme Victors </a>
+            <a href='/inventory/pl4'>Arceus </a>
+            <a href='/inventory/hgss1'>HeartGold & SoulSilver </a>
+            <a href='/inventory/hgss2'>Unleashed </a>
+            <a href='/inventory/hgss3'>Undaunted </a>
+            <a href='/inventory/hgss4'>Triumphant </a>
+            <a href='/inventory/col1'>Call of Legends </a>
+            <a href='/inventory/xy1'>XY </a>
+            <a href='/inventory/xy2'>Flashfire </a>
+            <a href='/inventory/xy3'>Furious Fists </a>
+            <a href='/inventory/xy4'>Phantom Forces </a>
+            <a href='/inventory/xy5'>Primal Clash </a>
+            <a href='/inventory/xy6'>Roaring Skies </a>
+            <a href='/inventory/xy7'>Ancient Origins </a>
+            <a href='/inventory/xy8'>BREAKthrough </a>
+            <a href='/inventory/xy9'>BREAKpoint </a>
+            <a href='/inventory/xy10'>Fates Collide </a>
+            <a href='/inventory/xy11'>Steam Siege </a>
+            <a href='/inventory/xy12'>Evolutions </a>
+            <a href='/inventory/sm1'>Sun & Moon </a>
+            <a href='/inventory/sm2'>Guardians Rising </a>
+            <a href='/inventory/sm3'>Burning Shadows </a>
+            <a href='/inventory/sm4'>Crimson Invasion </a>
+            <a href='/inventory/sm5'>Ultra Prism </a>
+            <a href='/inventory/sm6'>Forbidden Light </a>
+            <a href='/inventory/sm7'>Celestial Storm </a>
+            <a href='/inventory/sm8'>Lost Thunder </a>
+            <a href='/inventory/sm9'>Team Up </a>
+            <a href='/inventory/sm10'>Unbroken Bonds </a>
+            <a href='/inventory/sm11'>Unified Minds </a>
+            <a href='/inventory/sm12'>Cosmic Eclipse </a>
+            <a href='/inventory/swsh1'>Sword & Shield </a>
+            <a href='/inventory/swsh2'>Rebel Clash </a>
+            <a href='/inventory/swsh3'>Darkness Ablaze </a>
+            <a href='/inventory/swsh4'>Vivid Voltage </a>
+            <a href='/inventory/swsh5'>Battle Styles </a>
+            <a href='/inventory/swsh6'>Chilling Reign </a>
+            <a href='/inventory/swsh7'>Evolving Skies </a>
+            <a href='/inventory/dv1'>Dragon Vault</a>
+            <a href='/inventory/xy0'>Kalos Starter Set</a>
+            <a href='/inventory/dc1'>Double Crisis</a>
+            <a href='/inventory/g1'>Generations</a>
+            <a href='/inventory/sm35'>Shining Legends</a>
+            <a href='/inventory/sm75'>Dragon Majesty</a>
+            <a href='/inventory/sm115'>Hidden Fates</a>
+            <a href='/inventory/sma'>Hidden Fates Shiny Vault</a>
+            <a href='/inventory/swsh35'>Champion’s Path</a>
+            <a href='/inventory/swsh45'>Shining Fates</a>
+            <a href='/inventory/swsh45sv'>Shining Fates Shiny Vault</a>
+            <a href='/inventory/cel25'>Celebrations</a>
+            <a href='/inventory/cel25c'>Celebrations Classic Collection</a>
+            <a href='/inventory/det1'>Detective Pikachu</a>
+            <a href='/inventory/dpp'>DP Black Star Promos</a>
+            <a href='/inventory/hsp'>HGSS Black Star Promos</a>
+            <a href='/inventory/mcd11'>McDonald’s Collection 2011</a>
+            <a href='/inventory/mcd12'>McDonald’s Collection 2012</a>
+            <a href='/inventory/mcd13'>McDonald’s Collection 2013</a>
+            <a href='/inventory/mcd14'>McDonald’s Collection 2014</a>
+            <a href='/inventory/mcd15'>McDonald’s Collection 2015</a>
+            <a href='/inventory/mcd16'>McDonald’s Collection 2016</a>
+            <a href='/inventory/mcd17'>McDonald’s Collection 2017</a>
+            <a href='/inventory/mcd18'>McDonald’s Collection 2018</a>
+            <a href='/inventory/mcd19'>McDonald’s Collection 2019</a>
+            <a href='/inventory/mcd20'>McDonald’s Collection 2021</a>
+            <a href='/inventory/np'>Nintendo Black Star Promos</a>
+            <a href='/inventory/pop1'>POP Series 1</a>
+            <a href='/inventory/pop2'>POP Series 2</a>
+            <a href='/inventory/pop3'>POP Series 3</a>
+            <a href='/inventory/pop4'>POP Series 4</a>
+            <a href='/inventory/pop5'>POP Series 5</a>
+            <a href='/inventory/pop6'>POP Series 6</a>
+            <a href='/inventory/pop7'>POP Series 7</a>
+            <a href='/inventory/pop8'>POP Series 8</a>
+            <a href='/inventory/pop9'>POP Series 9</a>
+            <a href='/inventory/ru1'>Pokémon Rumble</a>
+            <a href='/inventory/smp'>SM Black Star Promos</a>
+            <a href='/inventory/swshp'>SWSH Black Star Promos</a>
+
         </div>
       </div> 
         

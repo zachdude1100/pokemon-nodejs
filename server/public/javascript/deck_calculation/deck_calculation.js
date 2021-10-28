@@ -1,6 +1,5 @@
 function getUserDecksAndInv(){
     let formatselection=document.getElementById("formatselection")
-    console.log(formatselection.value)
     $.ajax({
         type:'GET',
         url:'/deckcalculation/getUserDecksAndInv',
@@ -18,18 +17,83 @@ function calculateTwoDecks(inventory,decks){
             mergedDecks.push({id:decks[i].deckName+" vs "+decks[j].deckName,cards:mergeTwoDecksCards(allCards)})
         }
     }
-    console.log(mergedDecks)
+    compareDecksToInv(inventory,mergedDecks)
+}
+function compareDecksToInv(inventory,mergedDecks){
+    comparedArr=[]
+    for (let deckVs of mergedDecks){
+        for (let deckCard of deckVs.cards){
+            let printInvCount=0;
+            for (let deckPrint of deckCard.prints){
+                for (let invCard of inventory){
+                    if (deckPrint===invCard.id){
+                        printInvCount+=Number(invCard.playSetInv)
+                        break
+                    }
+                }  
+            }
+            comparedArr.push({deckVs:deckVs.id,id:deckCard.id,prints:deckCard.prints,name:deckCard.name,instances:Number(deckCard.instances),inventory:printInvCount})
+            
+        }
+    }
+    drawResult(comparedArr)
 }
 function mergeTwoDecksCards(allCards){
+    let mergedCards=[]
     for (let i=0; i<allCards.length;i++){
+        let instances=Number(allCards[i].instances)
         for (let j=i+1;j<allCards.length;j++){
             if(allCards[i].prints.equals(allCards[j].prints)==true){
-                allCards[i].instances=Number(allCards[i].instances)+Number(allCards[j].instances)
+                instances+=Number(allCards[j].instances)
                 allCards.splice(j,1)
             }
         }
+        mergedCards.push({id:allCards[i].id,name:allCards[i].name,prints:allCards[i].prints,instances:instances})
     }
-    return allCards
+    return mergedCards
+    
+}
+function drawResult(deckCalcArray){
+    document.querySelectorAll('.carddiv').forEach(e => e.remove());
+    for (let deckVs of deckCalcArray){
+        if(deckVs.instances>deckVs.inventory){
+            if(document.getElementById(deckVs.id)==null){
+                let cardIdDiv = document.createElement('div');
+                cardIdDiv.innerText=deckVs.name+"   ///   "+deckVs.prints
+                cardIdDiv.setAttribute("id",deckVs.id)
+                cardIdDiv.setAttribute("class","carddiv");
+                document.getElementById("cards").appendChild(cardIdDiv);
+                let collapsibleButton = document.createElement('button');
+                collapsibleButton.innerText="Click to see deck breakdown"
+                collapsibleButton.setAttribute("id",deckVs.id+"button")
+                collapsibleButton.setAttribute("class","collapsible")
+                document.getElementById(deckVs.id).appendChild(collapsibleButton)
+                let contentDiv = document.createElement('div');
+                contentDiv.setAttribute("id",deckVs.id+"contentdiv")
+                contentDiv.setAttribute("class","content")
+                document.getElementById(deckVs.id).appendChild(contentDiv)
+            }
+        $('#'+deckVs.id+"contentdiv").append('<p>You are missing '+(deckVs.instances-deckVs.inventory)+' '+deckVs.name+' for decks '+deckVs.deckVs)
+        }
+    }
+    collapsibleBoxStart()
+}
+
+function collapsibleBoxStart(){
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }   
+    });
+    }
 }
 
 // Warn if overriding existing method

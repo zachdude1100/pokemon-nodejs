@@ -9,6 +9,9 @@
     <title><%= `${Deck.deckName}`%></title>
 </head>
 <body>
+    <header>
+        <%- include('./templates/header'); %>
+      </header>
     <h1><%= `${Deck.deckName}`%></h1>
     <p id=decknotes><%=`${Deck.notes}`%></p>
 

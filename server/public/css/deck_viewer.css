@@ -1,14 +1,24 @@
+header{
+  display:block;
+}
+nav{
+  display:block;
+}
 .dropbtn {
+  
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
+    
   }
   
   .dropdown {
+    clear:none;
     position: relative;
     display: inline-block;
+
   }
   
   .dropdown-content {

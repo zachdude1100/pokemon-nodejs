@@ -9,6 +9,9 @@
     <title><%= `${allCardsInSet.set}`%></title>
 </head>
 <body>
+    <header>
+        <%- include('./templates/header'); %>
+      </header>
     <h1><%= `${allCardsInSet[0].set}`%></h1>
     <div id=cardlist></div>
     <div id=cards></div>
