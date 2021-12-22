@@ -35,12 +35,15 @@ router.post("/savedeck",ensureAuth,(req,res)=>{
     let cardCount=0;
     for (let card of req.body.cards){
         card._id=mongoose.Types.ObjectId(card._id) //turns the _id into a mongoose object_id
-        cardIdArr.push(card._id)
         if (isNaN(Number(card.instances))===true){ //validate that number was entered
             res.status(400)
             break
         }
-        cardCount=cardCount+Number(card.instances)
+        if(Number(card.instances)!=0){
+            cardIdArr.push(card._id)
+            cardCount=cardCount+Number(card.instances)
+        }
+        
     }
     if (cardCount!==60){ //validate 60 cards
         res.status(400)
@@ -59,16 +62,18 @@ router.post("/savedeck",ensureAuth,(req,res)=>{
     .then((create)=>{
         if(create===true){
             //const cards = req.body.cards.map(({id,imageUrl,...remainingAttrs})=>remainingAttrs) //strips id and imageUrl from data, don't need it
-            let cards=[]
+            let cardsarr=[]
             for (let card of req.body.cards){
-                cards.push({card:card._id,instances:card.instances})
+                if(Number(card.instances)!=0){
+                    cardsarr.push({card:card._id,instances:card.instances})  
+                }
             }
             const newDeck ={
             userID:req.user.id,
             deckName: req.body.deckName,
             notes: req.body.notes,
             format: req.body.format,
-            cards: cards 
+            cards: cardsarr 
             };
             DeckV2.create(newDeck)
             return
