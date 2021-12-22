@@ -12,11 +12,14 @@ router.get("/",ensureAuth,(req,res)=>{
     res.render("deck_builder_home"); 
  
 })
-
+router.get("/format/:format",ensureAuth,(req,res)=>{
+    res.render("deck_builder_builder",{format:req.params.format});
+})
 router.get("/searchcard",ensureAuth,(req,res)=>{
-    query=Object.keys(req.query)[0];    
+    query=Object.values(req.query)[0];  
+    formatSelected=Object.values(req.query)[1];   
     if (query != undefined &&query.length > 2){
-        Card.find({"name":{$regex:".*"+query+".*","$options":"i"}})
+        Card.find({$and:[{"name":{$regex:".*"+query+".*","$options":"i"}},{legalFormats:formatSelected}]})
         .exec()
             .then((foundCards) =>{
                 return res.json(foundCards)

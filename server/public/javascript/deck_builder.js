@@ -2,7 +2,6 @@
 
 $(document).ready(function()
 {
- //$.ajaxSetup({ cache: false });
  $('#search').keyup(function()
  {
   $('#result').html('');
@@ -10,11 +9,9 @@ $(document).ready(function()
 
   var searchField = $('#search').val();
   var expression = new RegExp(searchField, "i");
-  console.log(expression)
-  //$.getJSON('Card Data/All Sets.json', function(data) 
   $.ajax({
       url:'/deckbuilder/searchcard',
-      data:searchField,
+      data:{searchField:searchField,formatSelected:formatSelected},
       dataType:'JSON',
       type:'GET',
       contentType: 'application/json',

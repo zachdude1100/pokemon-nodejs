@@ -13,7 +13,8 @@ const cardSchema = new mongoose.Schema({
         setCode: String,
         imageUrlHiRes: String,
         duplicateprints: Array,
-        artist: String
+        artist: String,
+        legalFormats: Array
 
 })
 

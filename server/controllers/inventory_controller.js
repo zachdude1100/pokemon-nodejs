@@ -15,6 +15,7 @@ module.exports.returnUserCardsInFormat=(req,res,next)=>{
             Card.find({'setCode': req.params.setcode})
             .then((allCardsInSet)=>{
                 res.render("inventory_set",{allCardsInSet: allCardsInSet,userCardsInSet:userCardsInSet});
+                //return res.json({allCardsInSet: allCardsInSet,userCardsInSet:userCardsInSet})
             }) 
         }
     })

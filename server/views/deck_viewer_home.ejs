@@ -10,47 +10,73 @@
     <header>
         <%- include('./templates/header'); %>
       </header>
-    <div class="dropdown">
-        <button class="dropbtn">Select Set</button>
-        <div class="dropdown-content">
-            <a href="/deckviewer/Base_Set">Base Set</a>
-            <a href="/deckviewer/Base_Jungle">Base - Jungle</a>
-            <a href="/deckviewer/Base_Fossil">Base - Fossil</a>
-            <a href="/deckviewer/Base_Team_Rocket">Base - Team Rocket</a>
-            <a href="/deckviewer/Base_Gym">Base Gym</a>
-            <a href="/deckviewer/Prop_15/3">Prop 15/3</a>
-            <a href="/deckviewer/Base_Neo">Base Neo</a>
-            <a href="/deckviewer/Rocket_On">Rocket-On</a>
-            <a href="/deckviewer/Neo-On">Neo-On</a>
-            <a href='/deckviewer/ecard1_ex5'>Expedition to EX Hidden Legends (03-04 Standard)</a>
-            <a href='/deckviewer/ex1_ex9'>EX Ruby & Sapphire to EX Emerald (04-05 Standard)</a>
-            <a href='/deckviewer/ex5_ex13'>EX Hidden Legends to EX Holon Phantoms (05-06 Standard)</a>
-            <a href='/deckviewer/ex8_dp1'>EX Deoxys to Diamond & Pearl (06-07 Standard)</a>
-            <a href='/deckviewer/ex13_dp5'>EX Holon Phantoms to Majestic Dawn (07-08 Standard)</a>
-            <a href='/deckviewer/dp1_hgss2'>Diamond & Pearl to Unleashed (08-10 Standard)</a>
-            <a href='/deckviewer/dp5_bw1'>Majestic Dawn to Black & White (10-11 Standard)</a>
-            <a href='/deckviewer/hgss1_bw5'>HeartGold & SoulSilver to Dark Explorers (11-12 Standard)</a>
-            <a href='/deckviewer/bw1_bw9'>Black & White to Plasma Freeze (12-13 Standard)</a>
-            <a href='/deckviewer/bw4_xy2'>Next Destinies to Flashfire (13-14 Standard)</a>
-            <a href='/deckviewer/bw7_xy6'>Boundaries Crossed to Roaring Skies (14-15 Standard)</a>
-            <a href='/deckviewer/bw1_xy6'>Black & White to Roaring Skies (14-15 Modified)</a>
-            <a href='/deckviewer/xy1_xy11'>XY to Steam Siege (15-16 Standard)</a>
-            <a href='/deckviewer/bw1_xy11'>Black & White to Steam Siege (15-16 Modified)</a>
-            <a href='/deckviewer/xy5_sm3'>Primal Clash to Burning Shadows (16-17 Standard)</a>
-            <a href='/deckviewer/bw1_sm3'>Black & White to Burning Shadows (16-17 Modified)</a>
-            <a href='/deckviewer/xy8_sm7'>BREAKthrough to Celestial Storm (17-18 Standard)</a>
-            <a href='/deckviewer/bw1_sm7'>Black & White to Celestial Storm (17-18 Modified)</a>
-            <a href='/deckviewer/sm1_sm10'>Sun & Moon to Unbroken Bonds (18-19 Standard)</a>
-            <a href='/deckviewer/bw1_sm10'>Black & White to Unbroken Bonds (18-19 Modified)</a>
-            <a href='/deckviewer/sm5_swsh2'>Ultra Prism to Rebel Clash (19-20 Standard)</a>
-            <a href='/deckviewer/bw1_swsh2'>Black & White to Rebel Clash (19-20 Modified)</a>
-            <a href='/deckviewer/sm9_swsh6'>Team Up to Chilling Reign (20-21 Standard)</a>
-            <a href='/deckviewer/bw1_swsh6'>Black & White to Chilling Reign (20-21 Modified)</a>
-            <a href='/deckviewer/swsh1_swsh7'>Sword & Shield onwards (21-22 Standard)</a>
-            <a href='/deckviewer/bw1_swsh7'>Black & White onwards (21-22 Modified)</a>
-
-        </div>
-      </div> 
+    <div id="contentdiv">  
+      <div id="base_era" class="era">
+            <p class="eratitle">Base Era</p>
+            <a href="/deckviewer/Base_Set" class="href">Base Set</a>
+            <a href="/deckviewer/Base_Jungle" class="href">Base - Jungle</a>
+            <a href="/deckviewer/Base_Fossil" class="href">Base - Fossil</a>
+            <a href="/deckviewer/Base_Team_Rocket" class="href">Base - Team Rocket</a>
+            <a href="/deckviewer/Base_Gym" class="href">Base Gym</a>
+            <a href="/deckviewer/Prop_153" class="href">Prop 15/3</a>
+      </div>
+      <div id="neo_era" class="era">
+            <p class="eratitle">Neo Era</p>
+            <a href="/deckviewer/Base_Neo" class="href">Base Neo</a>
+            <a href="/deckviewer/Rocket_On" class="href">Rocket-On</a>
+      </div>
+      <div id="ex_era" class="era">
+            <p class="eratitle">EX Era</p>
+            <a href="/deckviewer/Neo_On" class="href">Neo-On</a> 
+            <a href='/deckviewer/0304mod' class="href">Expedition to EX Hidden Legends (03-04 Standard)</a>
+            <a href='/deckviewer/0405mod' class="href">EX Ruby & Sapphire to EX Emerald (04-05 Standard)</a>
+            <a href='/deckviewer/0506mod' class="href">EX Hidden Legends to EX Holon Phantoms (05-06 Standard)</a>
+      </div>
+      <div id="dp_era" class="era">
+            <p class="eratitle">Diamond & Pearl Era</p>
+            <a href='/deckviewer/0607mod' class="href">EX Deoxys to Diamond & Pearl (06-07 Standard)</a>
+            <a href='/deckviewer/0708mod' class="href">EX Holon Phantoms to Majestic Dawn (07-08 Standard)</a>
+            <a href='/deckviewer/0810mod' class="href">Diamond & Pearl to Unleashed (08-10 Standard)</a>
+      </div>
+      <div id="bw_era" class="era">
+            <p class="eratitle">Black & White Era</p>
+            <a href='/deckviewer/1011mod' class="href">Majestic Dawn to Black & White (10-11 Standard)</a>
+            <a href='/deckviewer/1112mod' class="href">HeartGold & SoulSilver to Dark Explorers (11-12 Standard)</a>
+            <a href='/deckviewer/1213mod' class="href">Black & White to Plasma Freeze (12-13 Standard)</a>
+      </div>
+      <div id="xy_era" class="era">
+            <p class="eratitle">Black & White Era</p>
+            <a href='/deckviewer/1314mod' class="href">Next Destinies to Flashfire (13-14 Standard)</a>
+            <a href='/deckviewer/1415standard' class="href">Boundaries Crossed to Roaring Skies (14-15 Standard)</a>
+            <a href='/deckviewer/1415exp' class="href">Black & White to Roaring Skies (14-15 Expanded)</a>
+            <a href='/deckviewer/1516standard' class="href">XY to Steam Siege (15-16 Standard)</a>
+            <a href='/deckviewer/1516exp' class="href">Black & White to Steam Siege (15-16 Expanded)</a>
+      </div>
+      <div id="sm_era" class="era">
+            <p class="eratitle">Sun & Moon Era</p>
+            <a href='/deckviewer/1617standard' class="href">Primal Clash to Burning Shadows (16-17 Standard)</a>
+            <a href='/deckviewer/1617exp' class="href">Black & White to Burning Shadows (16-17 Expanded)</a>
+            <a href='/deckviewer/1718standard' class="href">BREAKthrough to Celestial Storm (17-18 Standard)</a>
+            <a href='/deckviewer/1718exp' class="href">Black & White to Celestial Storm (17-18 Expanded)</a>
+            <a href='/deckviewer/1819standard' class="href">Sun & Moon to Unbroken Bonds (18-19 Standard)</a>
+            <a href='/deckviewer/1819exp' class="href">Black & White to Unbroken Bonds (18-19 Expanded)</a>
+      </div>
+      <div id="swsh_era" class="era">
+            <p class="eratitle">Sword & Shield Era</p>
+            <a href='/deckviewer/1920standard' class="href">Ultra Prism to Rebel Clash (19-20 Standard)</a>
+            <a href='/deckviewer/1920exp' class="href">Black & White to Rebel Clash (19-20 Expanded)</a>
+            <a href='/deckviewer/2021standard' class="href">Team Up to Chilling Reign (20-21 Standard)</a>
+            <a href='/deckviewer/2021exp' class="href">Black & White to Chilling Reign (20-21 Expanded)</a>
+            <a href='/deckviewer/2122standard' class="href">Sword & Shield onwards (21-22 Standard)</a>
+            <a href='/deckviewer/2122exp' class="href">Black & White onwards (21-22 Expanded)</a>
+      </div>
+    </div>
+      
+      
+      
+      
+      
+      
         
 </body>
 </html>

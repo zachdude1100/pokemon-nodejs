@@ -16,9 +16,9 @@
     <div id=cardlist></div>
     <div id=cards></div>
     <script type='text/javascript'>
-        let allCardsInSet = Object.values(JSON.parse(`<%-JSON.stringify(allCardsInSet)%>`));
-        let userCardsInSet = Object.values(JSON.parse(`<%-JSON.stringify(userCardsInSet)%>`));
-        drawcards(allCardsInSet,userCardsInSet);
+        let allCardsInSetObj = Object.values(JSON.parse(`<%-JSON.stringify(allCardsInSet)%>`));
+        let userCardsInSetObj = Object.values(JSON.parse(`<%-JSON.stringify(userCardsInSet)%>`));
+        drawcards(allCardsInSetObj,userCardsInSetObj);
         window.addEventListener('scroll',function() {
             //When scroll change, you save it on localStorage.
             localStorage.setItem('scrollPosition',window.scrollY);
