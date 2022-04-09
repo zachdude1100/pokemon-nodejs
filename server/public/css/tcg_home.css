@@ -1,10 +1,37 @@
 
-#gamename{
-  display:none;
+
+#message-container{
+  height:30vh;
+  border:1px solid black;
+  overflow-y:auto;
 }
-  #gamename.visible{
-    display:block;
-  }
-  #gamename.hide{
-    display:none;
-  }
+#open-gamestates{
+  height:30vh;
+  border:1px solid black;
+  overflow-y:auto;
+}
+#open-gamestate-user{
+  width:10%;
+  overflow-x:hidden;
+  float:left;
+}
+#open-gamestate-name{
+  width:20%;
+  overflow-x:hidden;
+  float:left;
+}
+#open-gamestate-format{
+  width:20%;
+  overflow-x:hidden;
+  float:left;
+}
+#open-gamestate-deckname{
+  width:40%;
+  overflow-x:hidden;
+  float:left;
+}
+#open-gamestate-join{
+  width:5%;
+  overflow-x:hidden;
+  float:left;
+}

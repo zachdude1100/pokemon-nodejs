@@ -8,6 +8,7 @@ const User = require('../models/User.js')
 const crypto = require('crypto')
 const {ensureAuth,ensureGuest}=require('../middleware/auth')
 const bodyParser = require('body-parser');
+const _ = require('lodash')
 router.use(bodyParser.urlencoded({extended: true}));
 
 const { db } = require('../config.js');
@@ -372,7 +373,277 @@ router.get('/addlegalpromos',(req,res)=>{
         
     }
 })*/
+router.get('/calculatedupes',(req,res)=>{
+    Card.find({supertype:"Pokémon"})
+    .then((cardsfound)=>{
+        let cardsArr=[]
+        let finalGroupsArr=[]
+        cardsfound.forEach((card)=>{
+            cardsArr.push({id:card.id,resistances:card.resistances,abilities:card.abilities,weaknesses:card.weaknesses,convertedRetreatCost:card.convertedRetreatCost,hp:card.hp,name:card.name,artist:card.artist,imageUrl:card.imageUrl,attacks:card.attacks,flavorText:card.flavorText})
+        })
+        /*let groups = cardsArr.reduce((groups, item)=>{
+            const group = (groups[item.attacks]||[]);
+                group.push(item);
+                groups[item.attacks]=group;
+                return groups;
+        },{});
+        let groupsArr=Object.values(groups)
+        for(let grouping of groupsArr){
+            if(grouping.length==1){}
+            else{
+                finalGroupsArr.push(grouping)
+            }
+        }*/
+        let groupedArr=[]
+        let isEqual=false;
+        let isEqual1=false;
+        let isEqual2=false;
+        let isEqual3=false;
+        for (let i=0;i<cardsArr.length;i++){
+            if(groupedArr.length==0){
+                groupedArr.push([cardsArr[i]])
+            }
+            for(let k=0;k<groupedArr.length;k++){
+                isEqual=false
+                isEqual1=false
+                isEqual2=false;
+                isEqual3=true; //bootleg hack to make the last conditional work even though some cards don't have it
+                if(cardsArr[i].name&&groupedArr[k][0].name&&cardsArr[i].attacks&&groupedArr[k][0].attacks){ //makes sure it actually has these properties
+                    if(cardsArr[i].name==groupedArr[k][0].name){
+                        if(cardsArr[i].hp==groupedArr[k][0].hp){
+                            if(cardsArr[i].attacks[0].name==groupedArr[k][0].attacks[0].name&&cardsArr[i].attacks[0].damage==groupedArr[k][0].attacks[0].damage){
+                                if(cardsArr[i].attacks.length==groupedArr[k][0].attacks.length){
+                                    let index=cardsArr[i].attacks.length-1;
+                                    if(cardsArr[i].attacks[index].name==groupedArr[k][0].attacks[index].name&&cardsArr[i].attacks[index].damage==groupedArr[k][0].attacks[index].damage)
+                                        if(cardsArr[i].convertedRetreatCost==groupedArr[k][0].convertedRetreatCost){
+                                            isEqual1=_.isEqual(cardsArr[i].weaknesses,groupedArr[k][0].weaknesses)
+                                            isEqual2=_.isEqual(cardsArr[i].resistances,groupedArr[k][0].resistances)
+                                            if(cardsArr[i].abilities!=null&&groupedArr[k][0].abilities!=null)
+                                                isEqual3=false
+                                                console.log(cardsArr[i].id)
+                                                isEqual3=_.isEqual(cardsArr[i].abilities[0].name,groupedArr[k][0].abilities[0].name)
+                                        }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                if(isEqual1==true&&isEqual2==true&&isEqual3==true){
+                    isEqual==true;
+                }
+                if(isEqual==true){
+                    groupedArr[k].push(cardsArr[i])
+                    //console.log(cardsArr[i].name+" is equal to "+groupedArr[k][0].name)
+                    break;
+                }
+                
+            }
+            if(isEqual==false){
+                groupedArr.push([cardsArr[i]])
+                //console.log(cardsArr[i].name+" is not a reprint so far")
+            }
+        }
+        //console.log(groupedArr)
+        let reducedArr=[]
+        let imgArr=[]
+        groupedArr.forEach((group)=>{
+            if(group.length>1){
+                reducedArr.push(group)
+                let imgGroup=[]
+                group.forEach((card)=>{
+                    imgGroup.push({name:card.name,imageUrl:card.imageUrl})
+                })
+                imgArr.push(imgGroup)
+            }
+        })
 
+        return res.json(reducedArr)
+        //res.render('reprint',{finalGroupsArr:imgArr})
+    })
+})
+/*
+router.get('/updatecardswithmoreinfo',(req,res)=>{
+    let jsonArr=[
+        '../public/Card Data/new sets 10-26/base1.json',
+'../public/Card Data/new sets 10-26/base2.json',
+'../public/Card Data/new sets 10-26/base3.json',
+'../public/Card Data/new sets 10-26/base4.json',
+'../public/Card Data/new sets 10-26/base5.json',
+'../public/Card Data/new sets 10-26/base6.json',
+'../public/Card Data/new sets 10-26/basep.json',
+'../public/Card Data/new sets 10-26/bp.json',
+'../public/Card Data/new sets 10-26/bw10.json',
+'../public/Card Data/new sets 10-26/bw11.json',
+'../public/Card Data/new sets 10-26/bw1.json',
+'../public/Card Data/new sets 10-26/bw2.json',
+'../public/Card Data/new sets 10-26/bw3.json',
+'../public/Card Data/new sets 10-26/bw4.json',
+'../public/Card Data/new sets 10-26/bw5.json',
+'../public/Card Data/new sets 10-26/bw6.json',
+'../public/Card Data/new sets 10-26/bw7.json',
+'../public/Card Data/new sets 10-26/bw8.json',
+'../public/Card Data/new sets 10-26/bw9.json',
+'../public/Card Data/new sets 10-26/bwp.json',
+'../public/Card Data/new sets 10-26/cel25c.json',
+'../public/Card Data/new sets 10-26/cel25.json',
+'../public/Card Data/new sets 10-26/col1.json',
+'../public/Card Data/new sets 10-26/dc1.json',
+'../public/Card Data/new sets 10-26/det1.json',
+'../public/Card Data/new sets 10-26/dp1.json',
+'../public/Card Data/new sets 10-26/dp2.json',
+'../public/Card Data/new sets 10-26/dp3.json',
+'../public/Card Data/new sets 10-26/dp4.json',
+'../public/Card Data/new sets 10-26/dp5.json',
+'../public/Card Data/new sets 10-26/dp6.json',
+'../public/Card Data/new sets 10-26/dp7.json',
+'../public/Card Data/new sets 10-26/dpp.json',
+'../public/Card Data/new sets 10-26/dv1.json',
+'../public/Card Data/new sets 10-26/ecard1.json',
+'../public/Card Data/new sets 10-26/ecard2.json',
+'../public/Card Data/new sets 10-26/ecard3.json',
+'../public/Card Data/new sets 10-26/ex10.json',
+'../public/Card Data/new sets 10-26/ex11.json',
+'../public/Card Data/new sets 10-26/ex12.json',
+'../public/Card Data/new sets 10-26/ex13.json',
+'../public/Card Data/new sets 10-26/ex14.json',
+'../public/Card Data/new sets 10-26/ex15.json',
+'../public/Card Data/new sets 10-26/ex16.json',
+'../public/Card Data/new sets 10-26/ex1.json',
+'../public/Card Data/new sets 10-26/ex2.json',
+'../public/Card Data/new sets 10-26/ex3.json',
+'../public/Card Data/new sets 10-26/ex4.json',
+'../public/Card Data/new sets 10-26/ex5.json',
+'../public/Card Data/new sets 10-26/ex6.json',
+'../public/Card Data/new sets 10-26/ex7.json',
+'../public/Card Data/new sets 10-26/ex8.json',
+'../public/Card Data/new sets 10-26/ex9.json',
+'../public/Card Data/new sets 10-26/fut20.json',
+'../public/Card Data/new sets 10-26/g1.json',
+'../public/Card Data/new sets 10-26/gym1.json',
+'../public/Card Data/new sets 10-26/gym2.json',
+'../public/Card Data/new sets 10-26/hgss1.json',
+'../public/Card Data/new sets 10-26/hgss2.json',
+'../public/Card Data/new sets 10-26/hgss3.json',
+'../public/Card Data/new sets 10-26/hgss4.json',
+'../public/Card Data/new sets 10-26/hsp.json',
+'../public/Card Data/new sets 10-26/mcd11.json',
+'../public/Card Data/new sets 10-26/mcd12.json',
+'../public/Card Data/new sets 10-26/mcd14.json',
+'../public/Card Data/new sets 10-26/mcd15.json',
+'../public/Card Data/new sets 10-26/mcd16.json',
+'../public/Card Data/new sets 10-26/mcd17.json',
+'../public/Card Data/new sets 10-26/mcd18.json',
+'../public/Card Data/new sets 10-26/mcd19.json',
+'../public/Card Data/new sets 10-26/mcd21.json',
+'../public/Card Data/new sets 10-26/neo1.json',
+'../public/Card Data/new sets 10-26/neo2.json',
+'../public/Card Data/new sets 10-26/neo3.json',
+'../public/Card Data/new sets 10-26/neo4.json',
+'../public/Card Data/new sets 10-26/np.json',
+'../public/Card Data/new sets 10-26/pl1.json',
+'../public/Card Data/new sets 10-26/pl2.json',
+'../public/Card Data/new sets 10-26/pl3.json',
+'../public/Card Data/new sets 10-26/pl4.json',
+'../public/Card Data/new sets 10-26/pop1.json',
+'../public/Card Data/new sets 10-26/pop2.json',
+'../public/Card Data/new sets 10-26/pop3.json',
+'../public/Card Data/new sets 10-26/pop4.json',
+'../public/Card Data/new sets 10-26/pop5.json',
+'../public/Card Data/new sets 10-26/pop6.json',
+'../public/Card Data/new sets 10-26/pop7.json',
+'../public/Card Data/new sets 10-26/pop8.json',
+'../public/Card Data/new sets 10-26/pop9.json',
+'../public/Card Data/new sets 10-26/ru1.json',
+'../public/Card Data/new sets 10-26/si1.json',
+'../public/Card Data/new sets 10-26/sm10.json',
+'../public/Card Data/new sets 10-26/sm115.json',
+'../public/Card Data/new sets 10-26/sm11.json',
+'../public/Card Data/new sets 10-26/sm12.json',
+'../public/Card Data/new sets 10-26/sm1.json',
+'../public/Card Data/new sets 10-26/sm2.json',
+'../public/Card Data/new sets 10-26/sm35.json',
+'../public/Card Data/new sets 10-26/sm3.json',
+'../public/Card Data/new sets 10-26/sm4.json',
+'../public/Card Data/new sets 10-26/sm5.json',
+'../public/Card Data/new sets 10-26/sm6.json',
+'../public/Card Data/new sets 10-26/sm75.json',
+'../public/Card Data/new sets 10-26/sm7.json',
+'../public/Card Data/new sets 10-26/sm8.json',
+'../public/Card Data/new sets 10-26/sm9.json',
+'../public/Card Data/new sets 10-26/sma.json',
+'../public/Card Data/new sets 10-26/smp.json',
+'../public/Card Data/new sets 10-26/swsh1.json',
+'../public/Card Data/new sets 10-26/swsh2.json',
+'../public/Card Data/new sets 10-26/swsh35.json',
+'../public/Card Data/new sets 10-26/swsh3.json',
+'../public/Card Data/new sets 10-26/swsh45.json',
+'../public/Card Data/new sets 10-26/swsh45sv.json',
+'../public/Card Data/new sets 10-26/swsh4.json',
+'../public/Card Data/new sets 10-26/swsh5.json',
+'../public/Card Data/new sets 10-26/swsh6.json',
+'../public/Card Data/new sets 10-26/swsh7.json',
+'../public/Card Data/new sets 10-26/swsh8.json',
+'../public/Card Data/new sets 10-26/swshp.json',
+'../public/Card Data/new sets 10-26/xy0.json',
+'../public/Card Data/new sets 10-26/xy10.json',
+'../public/Card Data/new sets 10-26/xy11.json',
+'../public/Card Data/new sets 10-26/xy12.json',
+'../public/Card Data/new sets 10-26/xy1.json',
+'../public/Card Data/new sets 10-26/xy2.json',
+'../public/Card Data/new sets 10-26/xy3.json',
+'../public/Card Data/new sets 10-26/xy4.json',
+'../public/Card Data/new sets 10-26/xy5.json',
+'../public/Card Data/new sets 10-26/xy6.json',
+'../public/Card Data/new sets 10-26/xy7.json',
+'../public/Card Data/new sets 10-26/xy8.json',
+'../public/Card Data/new sets 10-26/xy9.json',
+'../public/Card Data/new sets 10-26/xyp.json',
 
+    ]
+    for(json of jsonArr){
+        console.log("next json loaded")
+    let jsonReq=require(json)
+    for(card of jsonReq){       
+        
+        if(card.supertype=="Pokémon"){
+            Card.findOneAndUpdate({id:card.id},{hp:card.hp,types:card.types,evolvesTo:card.evolvesTo,attacks:card.attacks,weaknesses:card.weaknesses,resistances:card.resistances,retreatCost:card.retreatCost,convertedRetreatCost:card.convertedRetreatCost,flavorText:card.flavorText,abilities:card.abilities})
+            .then((res)=>{//console.log("updated successfully "+res.id)
+            })
+            .catch((err)=>{console.log("error was detected "+err)})
+        }
+        if(card.supertype=="Trainer"){
+            if(card.rules){
+                Card.findOneAndUpdate({id:card.id},{rules:card.rules})
+                .then((res)=>{//console.log("updated successfully "+res.id)
+                    
+            })
+            .catch((err)=>{console.log("error was detected "+err)})
+            }
+            if(card.text){
+                Card.findOneAndUpdate({id:card.id},{rules:card.text})
+                .then((res)=>{//console.log("updated successfully "+res.id)
+            })
+            .catch((err)=>{console.log("error was detected "+err)})
+            }
+        }
+        if(card.supertype=="Energy"){
+            if(card.rules){
+                Card.findOneAndUpdate({id:card.id},{rules:card.rules})
+                .then((res)=>{//console.log("updated successfully "+res.id)
+            })
+            .catch((err)=>{console.log("error was detected "+err)})
+            }
+            if(card.text){
+                Card.findOneAndUpdate({id:card.id},{rules:card.text})
+                .then((res)=>{//console.log("updated successfully "+res.id)
+            })
+            .catch((err)=>{console.log("error was detected "+err)})
+            }
+        }
+    }
+}
+})
+*/
 
 module.exports=router;

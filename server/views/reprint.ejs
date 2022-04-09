@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='masterdiv'></div>
+</body>
+<script type='text/javascript'>
+    let finalGroupsArr=Object.values(JSON.parse(`<%-JSON.stringify(finalGroupsArr)%>`))
+    for (let Group of finalGroupsArr){
+        rand=Math.random().toString(36).substr(2, 5);
+        let div=document.createElement('div')
+        div.setAttribute("id",rand)
+        document.getElementById("masterdiv").appendChild(div)
+        for(let card of Group){
+            let img=document.createElement('img')
+            img.src=card.imageUrl
+            document.getElementById(rand).appendChild(img)
+
+        }
+    }
+</script>
+</html>

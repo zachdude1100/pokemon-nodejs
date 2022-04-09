@@ -1,5 +1,5 @@
 var socket;
-socket=io.connect('http://webserver.zachicus.xyz:3000')
+socket=io.connect('http://pokemon.zachicus.xyz:80')
 socket.on('updateGameState',updateGameState) //upon receiving game state packet from the other player:
 socket.on('updateCoinFlip',updateCoinFlip)
 
@@ -10,6 +10,7 @@ var prizes = new Prizes()
 
 
 var gamestate = {}; //full gamestate as found in the db
+
 
 function updateGameState(){
   var playerCardsOnStage=stage.find('.card') //finds all player cards
@@ -32,7 +33,11 @@ function updateGameState(){
     discard:discard,
     hand:hand,
     prizes:prizes,
-    stageData:stageData
+    stageData:stageData,
+    playerName:playerName,
+    deckName:deckName,
+    playerUUID:socket.id
+    
   }
   $.ajax({   //update gamestate with whatever changed
     type: 'POST',

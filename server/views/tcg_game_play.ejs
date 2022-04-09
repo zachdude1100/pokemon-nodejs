@@ -89,7 +89,10 @@
         cardsFromDb = JSON.parse(`<%-JSON.stringify(Deck)%>`);
         gameUUID=JSON.parse(`<%-JSON.stringify(gameUUID)%>`)
         player=JSON.parse(`<%-JSON.stringify(player)%>`)
+        playerName=JSON.parse(`<%-JSON.stringify(playerName)%>`)
+        deckName=JSON.parse(`<%-JSON.stringify(deckName)%>`)
         deck.initDeck(cardsFromDb);
+        updateGameState();
     </script>
 </body>
 

@@ -13,8 +13,10 @@ module.exports.newGamestate = (req,res,err)=>{
         const newGamestate = new gameState({
             gameStateUUID: UUID,
             gameStateName: req.body.gamename,
+            format: req.body.formatselection,
             playerOneUUID: "",
             playerOneName: "",
+            playerOneDeckName: "",
             playerOneDeck: {},
             playerOneDiscard: {},
             playerOnePrizes: {},
@@ -23,18 +25,21 @@ module.exports.newGamestate = (req,res,err)=>{
 
             playerTwoUUID: "",
             playerTwoName: "",
+            playerTwoDeckName: "",
             playerTwoDeck: {},
             playerTwoDiscard: {},
             playerTwoPrizes: {},
             playerTwoHand: {},
             playerTwoStage: {},
+            coinFlip:"",
+            activeTime:Date.now()
         });
         gameState.create(newGamestate)
         let cards=[]
         for (let card of deck.cards){
             cards.push({imageUrl:card.card.imageUrl,id:card.card.id,instances:card.instances})
         }
-        res.render("tcg_game_play",{Deck:cards,gameUUID:UUID,player:req.body.playerselection});
+        res.render("tcg_game_play",{Deck:cards,gameUUID:UUID,player:"player1",playerName:req.body.playerName,deckName:deck.deckName});
     })
     .catch((err)=>{
         console.log(err)
@@ -48,7 +53,7 @@ module.exports.joinGame = (req,res,next)=>{
         for (let card of deck.cards){
             cards.push({imageUrl:card.card.imageUrl,id:card.card.id,instances:card.instances})
         }
-        res.render("tcg_game_play",{Deck:cards,gameUUID:req.body.gameselection,player:req.body.playerselection});
+        res.render("tcg_game_play",{Deck:cards,gameUUID:req.body.gameselection,player:"player2",playerName:req.body.playerName,deckName:deck.deckName});
     })
     .catch((err)=>{
         console.log(err)
@@ -60,7 +65,7 @@ module.exports.queryAllExisting=(req,res,next)=>{
     .then(foundGames=>{
         let foundGameStateUuidArr=[];
         foundGames.forEach(game=>{
-            foundGameStateUuidArr.push({gameStateUUID:game.gameStateUUID,gameStateName:game.gameStateName})
+            foundGameStateUuidArr.push({gameStateUUID:game.gameStateUUID,gameStateName:game.gameStateName,playerOneName:game.playerOneName,playerOneDeckName:game.playerOneDeckName,format:game.format})
         })
         return res.json(foundGameStateUuidArr)
     })
@@ -68,13 +73,13 @@ module.exports.queryAllExisting=(req,res,next)=>{
 module.exports.updateGamestate =(req,res,next)=>{
     if (req.body.player=="player1")
         gameState.findOneAndUpdate({gameStateUUID:req.body.gameUUID},
-            {playerOneHand:req.body.hand,playerOneDeck:req.body.deck,playerOneDiscard:req.body.discard,playerOnePrizes:req.body.prizes,playerOneUUID:"yep",playerOneStage:req.body.stageData}, 
+            {playerOneHand:req.body.hand,playerOneDeck:req.body.deck,playerOneDiscard:req.body.discard,playerOnePrizes:req.body.prizes,playerOneUUID:req.body.playerUUID,playerOneStage:req.body.stageData,playerOneName:req.body.playerName,playerOneDeckName:req.body.deckName,activeTime:Date.now()}, 
             function(err,doc){
             if (err) return res.send(500, {error:err});
         })
     if (req.body.player=="player2")
         gameState.findOneAndUpdate({gameStateUUID:req.body.gameUUID},
-            {playerTwoHand:req.body.hand,playerTwoDeck:req.body.deck,playerTwoDiscard:req.body.discard,playerTwoPrizes:req.body.prizes,playerTwoUUID:"yep",playerTwoStage:req.body.stageData}, 
+            {playerTwoHand:req.body.hand,playerTwoDeck:req.body.deck,playerTwoDiscard:req.body.discard,playerTwoPrizes:req.body.prizes,playerTwoUUID:req.body.playerUUID,playerTwoStage:req.body.stageData,playerTwoName:req.body.playerName,playerTwoDeckName:req.body.deckName,activeTime:Date.now()}, 
             function(err,doc){
             if (err) return res.send(500, {error:err});
         })

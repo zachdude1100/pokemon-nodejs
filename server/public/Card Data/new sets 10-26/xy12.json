@@ -5641,6 +5641,8 @@
       84
     ],
     "legalities": {
+      "unlimited": "Legal",
+      "expanded": "Legal"
     },
     "images": {
       "small": "https://images.pokemontcg.io/xy12/112.png",

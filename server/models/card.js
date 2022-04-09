@@ -14,7 +14,18 @@ const cardSchema = new mongoose.Schema({
         imageUrlHiRes: String,
         duplicateprints: Array,
         artist: String,
-        legalFormats: Array
+        legalFormats: Array,
+        hp:String,
+        types:Array,
+        evolvesTo:Array,
+        attacks:Array,
+        weaknesses:Array,
+        resistances:Array,
+        retreatCost:Array,
+        convertedRetreatCost:String,
+        flavorText:String,
+        abilities:Array,
+        rules:Array,
 
 })
 

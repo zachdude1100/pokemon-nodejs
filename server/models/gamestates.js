@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const gameStateSchema = new mongoose.Schema({
         gameStateUUID: String,
         gameStateName: String,
+        format: String,
         
         playerOneUUID: String,
         playerOneName: String,
+        playerOneDeckName: String,
         playerOneDeck: Object,
         playerOneDiscard: Object,
         playerOnePrizes: Object,
@@ -14,12 +16,14 @@ const gameStateSchema = new mongoose.Schema({
 
         playerTwoUUID: String,
         playerTwoName: String,
+        playerTwoDeckName: String,
         playerTwoDeck: Object,
         playerTwoDiscard: Object,
         playerTwoPrizes: Object,
         playerTwoHand: Object,
         playerTwoStage: Object,
-        coinFlip: String
+        coinFlip: String,
+        activeTime: Number
 
 })
 

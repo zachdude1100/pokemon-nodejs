@@ -12,7 +12,7 @@ module.exports.returnUserCardsInFormat=(req,res,next)=>{
                     userCardsInSet.push(user.cards[i])
                 }
             }
-            Card.find({'setCode': req.params.setcode})
+            Card.find({'setCode': req.params.setcode},'id imageUrl name number _id playSetInv set')
             .then((allCardsInSet)=>{
                 res.render("inventory_set",{allCardsInSet: allCardsInSet,userCardsInSet:userCardsInSet});
                 //return res.json({allCardsInSet: allCardsInSet,userCardsInSet:userCardsInSet})

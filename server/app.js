@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const config = require('./config.js');
 const mongoose = require('mongoose');
+const gameState=require("./models/gamestates.js")
 const cors = require('cors');
 const socket = require('socket.io')
 const morgan = require('morgan');
@@ -21,7 +22,7 @@ const adminUtility = require('./routes/administrator_utility.js')
 const home = require('./routes/home.js');
 const tcg = require('./routes/tcg.js')
 const auth = require('./routes/auth.js')
-const { isArray } = require('util');
+const { isArray, isNullOrUndefined } = require('util');
 
 // Load config
 dotenv.config({path:'./config/config.env'})
@@ -73,19 +74,33 @@ var server = app.listen(80,() => {
 });
 
 var io = socket(server);
-io.sockets.on('connection',newConnection);
-
-function newConnection(socket){
-    console.log('new connection ' +socket.id);
-    socket.on('updateGameState',syncGameState);
-    function syncGameState(stageData){
+const socketUsers={}
+io.sockets.on('connection',function(socket){
+    let minGameAge=Date.now()-3600000; //current epoch time-60minutes
+    gameState.deleteMany({activeTime:{$lt:minGameAge}}) //deletes all game states that haven't been updated in 60 minutes
+    .then((res)=>{return})
+    socket.on('updateGameState',stageData=>{
         socket.broadcast.emit('updateGameState',stageData)
-    }
-    socket.on('updateCoinFlip',syncCoinFlip);
-    function syncCoinFlip(stageData){
+    })
+    socket.on('updateCoinFlip',stageData=>{
         socket.broadcast.emit('updateCoinFlip',stageData)
-    }
-}
+    })
+    socket.on('new-user',name=>{
+        socketUsers[socket.id]=name;
+        socket.broadcast.emit('user-connected',name)
+        
+    })
+    socket.on('send-chat-message',message=>{
+        socket.broadcast.emit('chat-message',{message,name:socketUsers[socket.id]})
+    })
+    socket.on('disconnect',()=>{
+        if(socketUsers[socket.id]){
+            socket.broadcast.emit('user-disconnected',socketUsers[socket.id])
+            delete socketUsers[socket.id]
+        }
+        
+    })
+})
 
 
 

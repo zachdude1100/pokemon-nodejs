@@ -6,20 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tcg_home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/javascript/tcg_lobby/tcg_lobby.js"></script>
-    <title>Zach's bootleg tcg game</title>
+    
+    <title>Zach's bootleg tcg game Lobby</title>
     
 </head>
 <body>
     <header>
         <%- include('./templates/header'); %>
       </header>
-    <form id="form" action="" method="POST">
-        <select name="playerselection" id="playerselection">
-            <option value="" disabled selected>Select Player</option>
-            <option value="player1">Player 1</option>
-            <option value="player2">Player 2</option>
-        </select>
+    <button id="refresh" onclick="refreshGameStates()">Refresh</button>
+    <form id="form" action="/tcg/newgame" method="POST">
         <select name="formatselection" id="formatselection" onchange="setOptions()">
             <option value="asdf" disabled selected>Select format</option>
             <option value="Base_Set">Base Set</option>
@@ -27,21 +25,57 @@
             <option value="Base_Fossil">Base - Fossil</option>
             <option value="Base_Team_Rocket">Base - Team Rocket</option>
             <option value="Base_Gym">Base - Gym</option>
-            <option value="Prop_15/3">Prop 15/3</option>
+            <option value="Prop_153">Prop 15/3</option>
             <option value="Base_Neo">Base - Neo</option>
             <option value="Rocket_On">Rocket-On</option>
             <option value="Neo_On">Neo - On</option>
+            <option value='0304mod'>Expedition to EX Hidden Legends (03-04 Standard)</option>
+            <option value='0405mod'>EX Ruby & Sapphire to EX Emerald (04-05 Standard)</option>
+            <option value='0506mod'>EX Hidden Legends to EX Holon Phantoms (05-06 Standard)</option>
+            <option value='0607mod'>EX Deoxys to Diamond & Pearl (06-07 Standard)</option>
+            <option value='0708mod'>EX Holon Phantoms to Majestic Dawn (07-08 Standard)</option>
+            <option value='0810mod'>Diamond & Pearl to Unleashed (08-10 Standard)</option>
+            <option value='1011mod'>Majestic Dawn to Black & White (10-11 Standard)</option>
+            <option value='1112mod'>HeartGold & SoulSilver to Dark Explorers (11-12 Standard)</option>
+            <option value='1213mod'>Black & White to Plasma Freeze (12-13 Standard)</option>
+            <option value='1314mod'>Next Destinies to Flashfire (13-14 Standard)</option>
+            <option value='1415standard'>Boundaries Crossed to Roaring Skies (14-15 Standard)</option>
+            <option value='1415exp'>Black & White to Roaring Skies (14-15 Expanded)</option>
+            <option value='1516standard'>XY to Steam Siege (15-16 Standard)</option>
+            <option value='1516exp'>Black & White to Steam Siege (15-16 Expanded)</option>
+            <option value='1617standard'>Primal Clash to Burning Shadows (16-17 Standard)</option>
+            <option value='1617exp'>Black & White to Burning Shadows (16-17 Expanded)</option>
+            <option value='1718standard'>BREAKthrough to Celestial Storm (17-18 Standard)</option>
+            <option value='1718exp'>Black & White to Celestial Storm (17-18 Expanded)</option>
+            <option value='1819standard'>Sun & Moon to Unbroken Bonds (18-19 Standard)</option>
+            <option value='1819exp'>Black & White to Unbroken Bonds (18-19 Expanded)</option>
+            <option value='1920standard'>Ultra Prism to Rebel Clash (19-20 Standard)</option>
+            <option value='1920exp'>Black & White to Rebel Clash (19-20 Expanded)</option>
+            <option value='2021standard'>Team Up to Chilling Reign (20-21 Standard)</option>
+            <option value='2021exp'>Black & White to Chilling Reign (20-21 Expanded)</option>
+            <option value='2122standard'>Sword & Shield onwards (21-22 Standard)</option>
+            <option value='2122exp'>Black & White onwards (21-22 Expanded)</option>
         </select>
 
         <select name="deckselection" id="deckselection">
             <option disabled selected>Select format first</option>
         </select>
-        <select name="gameselection" id="gameselection">
-            <option value="" disabled selected>New game or Join game?</option>
-            <option value="new_game_selected" onclick="showNewGameInput()">New Game</option>
-        </select>
+        <input type="hidden" id="playerName" name="playerName" value="">
         <input type="text" id="gamename" name="gamename" placeholder="Enter name of Game">
-        <button type="submit">ye old button</button>
+        <button type="submit">New Game</button>
+    </form>
+    <div id='open-gamestates'>
+        <div id='open-gamestate-user'>Opponent Name</div>
+        <div id='open-gamestate-name'>Game Name</div>
+        <div id='open-gamestate-format'>Format / Meta</div>
+        <div id='open-gamestate-deckname'>Opponent Deck Name</div>
+        <div id='open-gamestate-join'>Join this game</div>
+    </div>
+    <div id='message-container'></div>
+    <form action="" id="send-container">
+        <input type="text" id="message-input">
+        <button type="submit" id='send'>Send</button>
     </form>
 </body>
+<script src="/javascript/tcg_lobby/tcg_lobby_chat.js"></script>
 </html>

@@ -2,26 +2,16 @@
   {
     "id": "base2-1",
     "name": "Clefable",
-    "imageUrl": "https://images.pokemontcg.io/base2/1.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "34",
-    "evolvesFrom": "Clefairy",
-    "hp": "70",
-    "retreatCost": [
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 2,
-    "number": "1",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "34",
+    "hp": "70",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Clefairy",
     "attacks": [
       {
         "name": "Metronome",
@@ -40,7 +30,7 @@
         ],
         "convertedEnergyCost": 2,
         "damage": "",
-        "text": "All damage done by attacks to Clefable during your opponent's next turn is reduce by 20 (after applying Weakness and Resistance)."
+        "text": "All damage done by attacks to Clefable during your opponent's next turn is reduced by 20 (after applying Weakness and Resistance)."
       }
     ],
     "weaknesses": [
@@ -55,31 +45,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/1_hires.png",
-    "nationalPokedexNumber": 36
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "1",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare Holo",
+    "flavorText": "A timid Fairy Pokémon that is rarely seen. It will run and hide the moment it senses people.",
+    "nationalPokedexNumbers": [
+      36
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/1.png",
+      "large": "https://images.pokemontcg.io/base2/1_hires.png"
+    }
   },
   {
     "id": "base2-2",
     "name": "Electrode",
-    "imageUrl": "https://images.pokemontcg.io/base2/2.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Voltorb",
-    "hp": "90",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "2",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "90",
     "types": [
       "Lightning"
     ],
+    "evolvesFrom": "Voltorb",
     "attacks": [
       {
         "name": "Tackle",
@@ -109,31 +107,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/2_hires.png",
-    "nationalPokedexNumber": 101
-  },
-  {
-    "id": "base2-3",
-    "name": "Flareon",
-    "imageUrl": "https://images.pokemontcg.io/base2/3.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Eevee",
-    "hp": "70",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "3",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "number": "2",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare Holo",
+    "flavorText": "It stores electrical energy under very high pressure. It often explodes with little or no provocation.",
+    "nationalPokedexNumbers": [
+      101
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/2.png",
+      "large": "https://images.pokemontcg.io/base2/2_hires.png"
+    }
+  },
+  {
+    "id": "base2-3",
+    "name": "Flareon",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "28",
+    "hp": "70",
     "types": [
       "Fire"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -164,31 +169,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/3_hires.png",
-    "nationalPokedexNumber": 136
-  },
-  {
-    "id": "base2-4",
-    "name": "Jolteon",
-    "imageUrl": "https://images.pokemontcg.io/base2/4.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "29",
-    "evolvesFrom": "Eevee",
-    "hp": "70",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "4",
+    "number": "3",
     "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "rarity": "Rare Holo",
+    "flavorText": "When storing thermal energy in its body, its temperature could soar to over 1600 degrees.",
+    "nationalPokedexNumbers": [
+      136
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/3.png",
+      "large": "https://images.pokemontcg.io/base2/3_hires.png"
+    }
+  },
+  {
+    "id": "base2-4",
+    "name": "Jolteon",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "29",
+    "hp": "70",
     "types": [
       "Lightning"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -218,29 +230,34 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/4_hires.png",
-    "nationalPokedexNumber": 135
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "4",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare Holo",
+    "flavorText": "It accumulates negative ions from the atmosphere to blast out 10,000-volt lightning bolts.",
+    "nationalPokedexNumbers": [
+      135
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/4.png",
+      "large": "https://images.pokemontcg.io/base2/4_hires.png"
+    }
   },
   {
     "id": "base2-5",
     "name": "Kangaskhan",
-    "imageUrl": "https://images.pokemontcg.io/base2/5.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "40",
     "hp": "90",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
-    ],
-    "convertedRetreatCost": 3,
-    "number": "5",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
@@ -279,35 +296,46 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/5_hires.png",
-    "nationalPokedexNumber": 115
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "5",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare Holo",
+    "flavorText": "The infant rarely ventures out of its mother's protective pouch until it is three years old.",
+    "nationalPokedexNumbers": [
+      115
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/5.png",
+      "large": "https://images.pokemontcg.io/base2/5_hires.png"
+    }
   },
   {
     "id": "base2-6",
     "name": "Mr. Mime",
-    "imageUrl": "https://images.pokemontcg.io/base2/6.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Mime Jr.",
-    "ability": {
-      "name": "Invisible Wall",
-      "text": "Whenever an attack (including your own) does 30 or more damage to Mr. Mime (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.) This power can't be used if Mr. Mime is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
-    "hp": "40",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Basic"
     ],
-    "convertedRetreatCost": 1,
-    "number": "6",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "28",
+    "hp": "40",
     "types": [
       "Psychic"
+    ],
+    "evolvesFrom": "Mime Jr.",
+    "abilities": [
+      {
+        "name": "Invisible Wall",
+        "text": "Whenever an attack (including your own) does 30 or more damage to Mr. Mime (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.) This power can't be used if Mr. Mime is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -327,33 +355,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/6_hires.png",
-    "nationalPokedexNumber": 122
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "6",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "If interrupted while miming, it will slap around the enemy with its broad hands.",
+    "nationalPokedexNumbers": [
+      122
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/6.png",
+      "large": "https://images.pokemontcg.io/base2/6_hires.png"
+    }
   },
   {
     "id": "base2-7",
     "name": "Nidoqueen",
-    "imageUrl": "https://images.pokemontcg.io/base2/7.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
-    "level": "43",
-    "evolvesFrom": "Nidorina",
-    "hp": "90",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 2"
     ],
-    "convertedRetreatCost": 3,
-    "number": "7",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "43",
+    "hp": "90",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Nidorina",
     "attacks": [
       {
         "name": "Boyfriends",
@@ -384,27 +417,40 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/7_hires.png",
-    "nationalPokedexNumber": 31
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "7",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves.",
+    "nationalPokedexNumbers": [
+      31
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/7.png",
+      "large": "https://images.pokemontcg.io/base2/7_hires.png"
+    }
   },
   {
     "id": "base2-8",
     "name": "Pidgeot",
-    "imageUrl": "https://images.pokemontcg.io/base2/8.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 2"
+    ],
     "level": "40",
-    "evolvesFrom": "Pidgeotto",
     "hp": "80",
-    "number": "8",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Pidgeotto",
     "attacks": [
       {
         "name": "Wing Attack",
@@ -440,27 +486,30 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/8_hires.png",
-    "nationalPokedexNumber": 18
+    "number": "8",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare Holo",
+    "flavorText": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as Magikarp.",
+    "nationalPokedexNumbers": [
+      18
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/8.png",
+      "large": "https://images.pokemontcg.io/base2/8_hires.png"
+    }
   },
   {
     "id": "base2-9",
     "name": "Pinsir",
-    "imageUrl": "https://images.pokemontcg.io/base2/9.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "24",
     "hp": "60",
-    "retreatCost": [
-      "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "9",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
     ],
@@ -494,25 +543,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/9_hires.png",
-    "nationalPokedexNumber": 127
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "9",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare Holo",
+    "flavorText": "If it fails to crush the victim in its pincers, it will swing its victim around and toss it hard.",
+    "nationalPokedexNumbers": [
+      127
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/9.png",
+      "large": "https://images.pokemontcg.io/base2/9_hires.png"
+    }
   },
   {
     "id": "base2-10",
     "name": "Scyther",
-    "imageUrl": "https://images.pokemontcg.io/base2/10.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "25",
     "hp": "70",
-    "number": "10",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Scizor"
     ],
     "attacks": [
       {
@@ -548,41 +611,40 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/10_hires.png",
-    "nationalPokedexNumber": 123,
-    "evolvesTo": [
-      "Scizor"
-    ]
+    "number": "10",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "With ninja-like agility and speed, it can create the illusion that there is more than one of it.",
+    "nationalPokedexNumbers": [
+      123
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/10.png",
+      "large": "https://images.pokemontcg.io/base2/10_hires.png"
+    }
   },
   {
     "id": "base2-11",
     "name": "Snorlax",
-    "imageUrl": "https://images.pokemontcg.io/base2/11.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
-    "level": "20",
-    "evolvesFrom": "Munchlax",
-    "ability": {
-      "name": "Thick Skinned",
-      "text": "Snorlax can't become Asleep, Confused, Paralyzed, or Poisoned. This power can't be used if Snorlax is already Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
-    "hp": "90",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Basic"
     ],
-    "convertedRetreatCost": 4,
-    "number": "11",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "20",
+    "hp": "90",
     "types": [
       "Colorless"
+    ],
+    "evolvesFrom": "Munchlax",
+    "abilities": [
+      {
+        "name": "Thick Skinned",
+        "text": "Snorlax can't become Asleep, Confused, Paralyzed, or Poisoned. This power can't be used if Snorlax is already Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -610,31 +672,41 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/11_hires.png",
-    "nationalPokedexNumber": 143
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 4,
+    "number": "11",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful.",
+    "nationalPokedexNumbers": [
+      143
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/11.png",
+      "large": "https://images.pokemontcg.io/base2/11_hires.png"
+    }
   },
   {
     "id": "base2-12",
     "name": "Vaporeon",
-    "imageUrl": "https://images.pokemontcg.io/base2/12.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Eevee",
-    "hp": "80",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "12",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "80",
     "types": [
       "Water"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -655,7 +727,7 @@
         ],
         "convertedEnergyCost": 3,
         "damage": "30+",
-        "text": "Does 30 damage plus 10 more damage for each Energy attached to Vaporeon but not used to pay for this attack's Energy cost. Extra Energy after the 2nd doesn't count."
+        "text": "Does 30 damage plus 10 more damage for each Water Energy attached to Vaporeon but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
       }
     ],
     "weaknesses": [
@@ -664,31 +736,44 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/12_hires.png",
-    "nationalPokedexNumber": 134
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "12",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare Holo",
+    "flavorText": "Lives close to water. Its long tail is ridged with a fin that is often mistaken for a mermaid's.",
+    "nationalPokedexNumbers": [
+      134
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/12.png",
+      "large": "https://images.pokemontcg.io/base2/12_hires.png"
+    }
   },
   {
     "id": "base2-13",
     "name": "Venomoth",
-    "imageUrl": "https://images.pokemontcg.io/base2/13.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "28",
-    "evolvesFrom": "Venonat",
-    "ability": {
-      "name": "Shift",
-      "text": "Once during your turn (before your attack), you may change the type of Venomoth to the type of any other Pokémon in play other than Colorless. This power can't be used if Venomoth is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
     "hp": "70",
-    "number": "13",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Venonat",
+    "abilities": [
+      {
+        "name": "Shift",
+        "text": "Once during your turn (before your attack), you may change the type of Venomoth to the type of any other Pokémon in play other than Colorless. This power can't be used if Venomoth is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -698,7 +783,7 @@
           "Grass"
         ],
         "convertedEnergyCost": 2,
-        "damage": "",
+        "damage": "10",
         "text": "Flip a coin. If heads, the Defending Pokémon is now Confused and Poisoned."
       }
     ],
@@ -714,32 +799,34 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/13_hires.png",
-    "nationalPokedexNumber": 49
+    "number": "13",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "The dust-like scales covering its wings are color coded to indicate the kinds of poison it has.",
+    "nationalPokedexNumbers": [
+      49
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/13.png",
+      "large": "https://images.pokemontcg.io/base2/13_hires.png"
+    }
   },
   {
     "id": "base2-14",
     "name": "Victreebel",
-    "imageUrl": "https://images.pokemontcg.io/base2/14.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Weepinbell",
-    "hp": "80",
-    "retreatCost": [
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 2"
     ],
-    "convertedRetreatCost": 2,
-    "number": "14",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "80",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Weepinbell",
     "attacks": [
       {
         "name": "Lure",
@@ -758,7 +845,7 @@
         ],
         "convertedEnergyCost": 2,
         "damage": "20",
-        "text": "Flip a coin. If heads, the Defending Pokémon can't retreat during your opponent's next turn."
+        "text": "Flip a coin. If heads, the Defending Pokémon can't retreat during your next turn."
       }
     ],
     "weaknesses": [
@@ -767,36 +854,45 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/14_hires.png",
-    "nationalPokedexNumber": 71
-  },
-  {
-    "id": "base2-15",
-    "name": "Vileplume",
-    "imageUrl": "https://images.pokemontcg.io/base2/15.png",
-    "subtype": "Stage 2",
-    "supertype": "Pokémon",
-    "level": "35",
-    "evolvesFrom": "Gloom",
-    "ability": {
-      "name": "Heal",
-      "text": "Once during your turn (before your attack), you may flip a coin. If heads, remove 1 damage counter from 1 of your Pokémon. This power can't be used if Vileplume is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
-    "hp": "80",
     "retreatCost": [
       "Colorless",
       "Colorless"
     ],
     "convertedRetreatCost": 2,
-    "number": "15",
-    "artist": "Keiji Kinebuchi",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "number": "14",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare Holo",
+    "flavorText": "Said to live in huge colonies deep in jungles, although no one has ever returned from there.",
+    "nationalPokedexNumbers": [
+      71
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/14.png",
+      "large": "https://images.pokemontcg.io/base2/14_hires.png"
+    }
+  },
+  {
+    "id": "base2-15",
+    "name": "Vileplume",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 2"
+    ],
+    "level": "35",
+    "hp": "80",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Gloom",
+    "abilities": [
+      {
+        "name": "Heal",
+        "text": "Once during your turn (before your attack), you may flip a coin. If heads, remove 1 damage counter from 1 of your Pokémon. This power can't be used if Vileplume is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -817,32 +913,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/15_hires.png",
-    "nationalPokedexNumber": 45
-  },
-  {
-    "id": "base2-16",
-    "name": "Wigglytuff",
-    "imageUrl": "https://images.pokemontcg.io/base2/16.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "36",
-    "evolvesFrom": "Jigglypuff",
-    "hp": "80",
     "retreatCost": [
       "Colorless",
       "Colorless"
     ],
     "convertedRetreatCost": 2,
-    "number": "16",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "number": "15",
+    "artist": "Keiji Kinebuchi",
+    "rarity": "Rare Holo",
+    "flavorText": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.",
+    "nationalPokedexNumbers": [
+      45
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/15.png",
+      "large": "https://images.pokemontcg.io/base2/15_hires.png"
+    }
+  },
+  {
+    "id": "base2-16",
+    "name": "Wigglytuff",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "36",
+    "hp": "80",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Jigglypuff",
     "attacks": [
       {
         "name": "Lullaby",
@@ -877,32 +980,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/16_hires.png",
-    "nationalPokedexNumber": 40
-  },
-  {
-    "id": "base2-17",
-    "name": "Clefable",
-    "imageUrl": "https://images.pokemontcg.io/base2/17.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "34",
-    "evolvesFrom": "Clefairy",
-    "hp": "70",
     "retreatCost": [
       "Colorless",
       "Colorless"
     ],
     "convertedRetreatCost": 2,
-    "number": "17",
+    "number": "16",
     "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "rarity": "Rare Holo",
+    "flavorText": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
+    "nationalPokedexNumbers": [
+      40
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/16.png",
+      "large": "https://images.pokemontcg.io/base2/16_hires.png"
+    }
+  },
+  {
+    "id": "base2-17",
+    "name": "Clefable",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "34",
+    "hp": "70",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Clefairy",
     "attacks": [
       {
         "name": "Metronome",
@@ -921,7 +1031,7 @@
         ],
         "convertedEnergyCost": 2,
         "damage": "",
-        "text": "All damage done by attacks to Clefable during your opponent's next turn is reduce by 20 (after applying Weakness and Resistance)."
+        "text": "All damage done by attacks to Clefable during your opponent's next turn is reduced by 20 (after applying Weakness and Resistance)."
       }
     ],
     "weaknesses": [
@@ -936,31 +1046,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/17_hires.png",
-    "nationalPokedexNumber": 36
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "17",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare",
+    "flavorText": "A timid Fairy Pokémon that is rarely seen. It will run and hide the moment it senses people.",
+    "nationalPokedexNumbers": [
+      36
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/17.png",
+      "large": "https://images.pokemontcg.io/base2/17_hires.png"
+    }
   },
   {
     "id": "base2-18",
     "name": "Electrode",
-    "imageUrl": "https://images.pokemontcg.io/base2/18.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Voltorb",
-    "hp": "90",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "18",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "90",
     "types": [
       "Lightning"
     ],
+    "evolvesFrom": "Voltorb",
     "attacks": [
       {
         "name": "Tackle",
@@ -990,31 +1108,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/18_hires.png",
-    "nationalPokedexNumber": 101
-  },
-  {
-    "id": "base2-19",
-    "name": "Flareon",
-    "imageUrl": "https://images.pokemontcg.io/base2/19.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Eevee",
-    "hp": "70",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "19",
-    "artist": "Kagemaru Himeno",
+    "number": "18",
+    "artist": "Mitsuhiro Arita",
     "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "It stores electrical energy under very high pressure. It often explodes with little or no provocation.",
+    "nationalPokedexNumbers": [
+      101
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/18.png",
+      "large": "https://images.pokemontcg.io/base2/18_hires.png"
+    }
+  },
+  {
+    "id": "base2-19",
+    "name": "Flareon",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "28",
+    "hp": "70",
     "types": [
       "Fire"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -1045,31 +1170,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/19_hires.png",
-    "nationalPokedexNumber": 136
-  },
-  {
-    "id": "base2-20",
-    "name": "Jolteon",
-    "imageUrl": "https://images.pokemontcg.io/base2/20.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "29",
-    "evolvesFrom": "Eevee",
-    "hp": "70",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "20",
+    "number": "19",
     "artist": "Kagemaru Himeno",
     "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "When storing thermal energy in its body, its temperature could soar to over 1600 degrees.",
+    "nationalPokedexNumbers": [
+      136
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/19.png",
+      "large": "https://images.pokemontcg.io/base2/19_hires.png"
+    }
+  },
+  {
+    "id": "base2-20",
+    "name": "Jolteon",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "29",
+    "hp": "70",
     "types": [
       "Lightning"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -1099,29 +1231,34 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/20_hires.png",
-    "nationalPokedexNumber": 135
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "20",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare",
+    "flavorText": "It accumulates negative ions from the atmosphere to blast out 10,000-volt lightning bolts.",
+    "nationalPokedexNumbers": [
+      135
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/20.png",
+      "large": "https://images.pokemontcg.io/base2/20_hires.png"
+    }
   },
   {
     "id": "base2-21",
     "name": "Kangaskhan",
-    "imageUrl": "https://images.pokemontcg.io/base2/21.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "40",
     "hp": "90",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
-    ],
-    "convertedRetreatCost": 3,
-    "number": "21",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
@@ -1160,35 +1297,46 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/21_hires.png",
-    "nationalPokedexNumber": 115
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "21",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare",
+    "flavorText": "The infant rarely ventures out of its mother's protective pouch until it is three years old.",
+    "nationalPokedexNumbers": [
+      115
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/21.png",
+      "large": "https://images.pokemontcg.io/base2/21_hires.png"
+    }
   },
   {
     "id": "base2-22",
     "name": "Mr. Mime",
-    "imageUrl": "https://images.pokemontcg.io/base2/22.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Mime Jr.",
-    "ability": {
-      "name": "Invisible Wall",
-      "text": "Whenever an attack (including your own) does 30 or more damage to Mr. Mime (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.) This power can't be used if Mr. Mime is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
-    "hp": "40",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Basic"
     ],
-    "convertedRetreatCost": 1,
-    "number": "22",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "28",
+    "hp": "40",
     "types": [
       "Psychic"
+    ],
+    "evolvesFrom": "Mime Jr.",
+    "abilities": [
+      {
+        "name": "Invisible Wall",
+        "text": "Whenever an attack (including your own) does 30 or more damage to Mr. Mime (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.) This power can't be used if Mr. Mime is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -1208,33 +1356,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/22_hires.png",
-    "nationalPokedexNumber": 122
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "22",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "flavorText": "If interrupted while miming, it will slap around the enemy with its broad hands.",
+    "nationalPokedexNumbers": [
+      122
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/22.png",
+      "large": "https://images.pokemontcg.io/base2/22_hires.png"
+    }
   },
   {
     "id": "base2-23",
     "name": "Nidoqueen",
-    "imageUrl": "https://images.pokemontcg.io/base2/23.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
-    "level": "43",
-    "evolvesFrom": "Nidorina",
-    "hp": "90",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 2"
     ],
-    "convertedRetreatCost": 3,
-    "number": "23",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "43",
+    "hp": "90",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Nidorina",
     "attacks": [
       {
         "name": "Boyfriends",
@@ -1265,27 +1418,40 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/23_hires.png",
-    "nationalPokedexNumber": 31
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "23",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "flavorText": "Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves.",
+    "nationalPokedexNumbers": [
+      31
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/23.png",
+      "large": "https://images.pokemontcg.io/base2/23_hires.png"
+    }
   },
   {
     "id": "base2-24",
     "name": "Pidgeot",
-    "imageUrl": "https://images.pokemontcg.io/base2/24.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 2"
+    ],
     "level": "40",
-    "evolvesFrom": "Pidgeotto",
     "hp": "80",
-    "number": "24",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Pidgeotto",
     "attacks": [
       {
         "name": "Wing Attack",
@@ -1321,27 +1487,30 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/24_hires.png",
-    "nationalPokedexNumber": 18
+    "number": "24",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare",
+    "flavorText": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as Magikarp.",
+    "nationalPokedexNumbers": [
+      18
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/24.png",
+      "large": "https://images.pokemontcg.io/base2/24_hires.png"
+    }
   },
   {
     "id": "base2-25",
     "name": "Pinsir",
-    "imageUrl": "https://images.pokemontcg.io/base2/25.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "24",
     "hp": "60",
-    "retreatCost": [
-      "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "25",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
     ],
@@ -1375,25 +1544,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/25_hires.png",
-    "nationalPokedexNumber": 127
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "25",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare",
+    "flavorText": "If it fails to crush the victim in its pincers, it will swing its victim around and toss it hard.",
+    "nationalPokedexNumbers": [
+      127
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/25.png",
+      "large": "https://images.pokemontcg.io/base2/25_hires.png"
+    }
   },
   {
     "id": "base2-26",
     "name": "Scyther",
-    "imageUrl": "https://images.pokemontcg.io/base2/26.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "25",
     "hp": "70",
-    "number": "26",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Scizor"
     ],
     "attacks": [
       {
@@ -1429,26 +1612,67 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/26_hires.png",
-    "nationalPokedexNumber": 123,
-    "evolvesTo": [
-      "Scizor"
-    ]
+    "number": "26",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "flavorText": "With ninja-like agility and speed, it can create the illusion that there is more than one of it.",
+    "nationalPokedexNumbers": [
+      123
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/26.png",
+      "large": "https://images.pokemontcg.io/base2/26_hires.png"
+    }
   },
   {
     "id": "base2-27",
     "name": "Snorlax",
-    "imageUrl": "https://images.pokemontcg.io/base2/27.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "20",
-    "evolvesFrom": "Munchlax",
-    "ability": {
-      "name": "Thick Skinned",
-      "text": "Snorlax can't become Asleep, Confused, Paralyzed, or Poisoned. This power can't be used if Snorlax is already Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
     "hp": "90",
+    "types": [
+      "Colorless"
+    ],
+    "evolvesFrom": "Munchlax",
+    "abilities": [
+      {
+        "name": "Thick Skinned",
+        "text": "Snorlax can't become Asleep, Confused, Paralyzed, or Poisoned. This power can't be used if Snorlax is already Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "cost": [
+          "Colorless",
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ],
+        "convertedEnergyCost": 4,
+        "damage": "30",
+        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Fighting",
+        "value": "×2"
+      }
+    ],
+    "resistances": [
+      {
+        "type": "Psychic",
+        "value": "-30"
+      }
+    ],
     "retreatCost": [
       "Colorless",
       "Colorless",
@@ -1459,63 +1683,31 @@
     "number": "27",
     "artist": "Ken Sugimori",
     "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
-    "types": [
-      "Colorless"
+    "flavorText": "Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful.",
+    "nationalPokedexNumbers": [
+      143
     ],
-    "attacks": [
-      {
-        "name": "Body Slam",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
-        "convertedEnergyCost": 4,
-        "damage": "30",
-        "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
-      }
-    ],
-    "weaknesses": [
-      {
-        "type": "Fighting",
-        "value": "×2"
-      }
-    ],
-    "resistances": [
-      {
-        "type": "Psychic",
-        "value": "-30"
-      }
-    ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/27_hires.png",
-    "nationalPokedexNumber": 143
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/27.png",
+      "large": "https://images.pokemontcg.io/base2/27_hires.png"
+    }
   },
   {
     "id": "base2-28",
     "name": "Vaporeon",
-    "imageUrl": "https://images.pokemontcg.io/base2/28.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Eevee",
-    "hp": "80",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "28",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "80",
     "types": [
       "Water"
     ],
+    "evolvesFrom": "Eevee",
     "attacks": [
       {
         "name": "Quick Attack",
@@ -1536,7 +1728,7 @@
         ],
         "convertedEnergyCost": 3,
         "damage": "30+",
-        "text": "Does 30 damage plus 10 more damage for each Energy attached to Vaporeon but not used to pay for this attack's Energy cost. Extra Energy after the 2nd doesn't count."
+        "text": "Does 30 damage plus 10 more damage for each Water Energy attached to Vaporeon but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
       }
     ],
     "weaknesses": [
@@ -1545,31 +1737,44 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/28_hires.png",
-    "nationalPokedexNumber": 134
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "28",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Rare",
+    "flavorText": "Lives close to water. Its long tail is ridged with a fin that is often mistaken for a mermaid's.",
+    "nationalPokedexNumbers": [
+      134
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/28.png",
+      "large": "https://images.pokemontcg.io/base2/28_hires.png"
+    }
   },
   {
     "id": "base2-29",
     "name": "Venomoth",
-    "imageUrl": "https://images.pokemontcg.io/base2/29.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "28",
-    "evolvesFrom": "Venonat",
-    "ability": {
-      "name": "Shift",
-      "text": "Once during your turn (before your attack), you may change the type of Venomoth to the type of any other Pokémon in play other than Colorless. This power can't be used if Venomoth is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
     "hp": "70",
-    "number": "29",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Venonat",
+    "abilities": [
+      {
+        "name": "Shift",
+        "text": "Once during your turn (before your attack), you may change the type of Venomoth to the type of any other Pokémon in play other than Colorless. This power can't be used if Venomoth is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -1579,7 +1784,7 @@
           "Grass"
         ],
         "convertedEnergyCost": 2,
-        "damage": "",
+        "damage": "10",
         "text": "Flip a coin. If heads, the Defending Pokémon is now Confused and Poisoned."
       }
     ],
@@ -1595,32 +1800,34 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/29_hires.png",
-    "nationalPokedexNumber": 49
+    "number": "29",
+    "artist": "Ken Sugimori",
+    "rarity": "Rare",
+    "flavorText": "The dust-like scales covering its wings are color coded to indicate the kinds of poison it has.",
+    "nationalPokedexNumbers": [
+      49
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/29.png",
+      "large": "https://images.pokemontcg.io/base2/29_hires.png"
+    }
   },
   {
     "id": "base2-30",
     "name": "Victreebel",
-    "imageUrl": "https://images.pokemontcg.io/base2/30.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
-    "level": "42",
-    "evolvesFrom": "Weepinbell",
-    "hp": "80",
-    "retreatCost": [
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 2"
     ],
-    "convertedRetreatCost": 2,
-    "number": "30",
-    "artist": "Ken Sugimori",
-    "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "42",
+    "hp": "80",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Weepinbell",
     "attacks": [
       {
         "name": "Lure",
@@ -1639,7 +1846,7 @@
         ],
         "convertedEnergyCost": 2,
         "damage": "20",
-        "text": "Flip a coin. If heads, the Defending Pokémon can't retreat during your opponent's next turn."
+        "text": "Flip a coin. If heads, the Defending Pokémon can't retreat during your next turn."
       }
     ],
     "weaknesses": [
@@ -1648,36 +1855,45 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/30_hires.png",
-    "nationalPokedexNumber": 71
-  },
-  {
-    "id": "base2-31",
-    "name": "Vileplume",
-    "imageUrl": "https://images.pokemontcg.io/base2/31.png",
-    "subtype": "Stage 2",
-    "supertype": "Pokémon",
-    "level": "35",
-    "evolvesFrom": "Gloom",
-    "ability": {
-      "name": "Heal",
-      "text": "Once during your turn (before your attack), you may flip a coin. If heads, remove 1 damage counter from 1 of your Pokémon. This power can't be used if Vileplume is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
-    "hp": "80",
     "retreatCost": [
       "Colorless",
       "Colorless"
     ],
     "convertedRetreatCost": 2,
-    "number": "31",
-    "artist": "Keiji Kinebuchi",
+    "number": "30",
+    "artist": "Ken Sugimori",
     "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Said to live in huge colonies deep in jungles, although no one has ever returned from there.",
+    "nationalPokedexNumbers": [
+      71
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/30.png",
+      "large": "https://images.pokemontcg.io/base2/30_hires.png"
+    }
+  },
+  {
+    "id": "base2-31",
+    "name": "Vileplume",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 2"
+    ],
+    "level": "35",
+    "hp": "80",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Gloom",
+    "abilities": [
+      {
+        "name": "Heal",
+        "text": "Once during your turn (before your attack), you may flip a coin. If heads, remove 1 damage counter from 1 of your Pokémon. This power can't be used if Vileplume is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -1698,32 +1914,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/31_hires.png",
-    "nationalPokedexNumber": 45
-  },
-  {
-    "id": "base2-32",
-    "name": "Wigglytuff",
-    "imageUrl": "https://images.pokemontcg.io/base2/32.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "36",
-    "evolvesFrom": "Jigglypuff",
-    "hp": "80",
     "retreatCost": [
       "Colorless",
       "Colorless"
     ],
     "convertedRetreatCost": 2,
-    "number": "32",
-    "artist": "Mitsuhiro Arita",
+    "number": "31",
+    "artist": "Keiji Kinebuchi",
     "rarity": "Rare",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.",
+    "nationalPokedexNumbers": [
+      45
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/31.png",
+      "large": "https://images.pokemontcg.io/base2/31_hires.png"
+    }
+  },
+  {
+    "id": "base2-32",
+    "name": "Wigglytuff",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "36",
+    "hp": "80",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Jigglypuff",
     "attacks": [
       {
         "name": "Lullaby",
@@ -1758,27 +1981,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/32_hires.png",
-    "nationalPokedexNumber": 40
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "32",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Rare",
+    "flavorText": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
+    "nationalPokedexNumbers": [
+      40
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/32.png",
+      "large": "https://images.pokemontcg.io/base2/32_hires.png"
+    }
   },
   {
     "id": "base2-33",
     "name": "Butterfree",
-    "imageUrl": "https://images.pokemontcg.io/base2/33.png",
-    "subtype": "Stage 2",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 2"
+    ],
     "level": "28",
-    "evolvesFrom": "Metapod",
     "hp": "70",
-    "number": "33",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Metapod",
     "attacks": [
       {
         "name": "Whirlwind",
@@ -1815,31 +2050,40 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/33_hires.png",
-    "nationalPokedexNumber": 12
+    "number": "33",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "In battle, it flaps its wings at high speed to release highly toxic dust into the air.",
+    "nationalPokedexNumbers": [
+      12
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/33.png",
+      "large": "https://images.pokemontcg.io/base2/33_hires.png"
+    }
   },
   {
     "id": "base2-34",
     "name": "Dodrio",
-    "imageUrl": "https://images.pokemontcg.io/base2/34.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "28",
-    "evolvesFrom": "Doduo",
-    "ability": {
-      "name": "Retreat Aid",
-      "text": "As long as Dodrio is Benched, pay 1 Colorless less to retreat your Active Pokémon.",
-      "type": "Pokémon Power"
-    },
     "hp": "70",
-    "number": "34",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
+    ],
+    "evolvesFrom": "Doduo",
+    "abilities": [
+      {
+        "name": "Retreat Aid",
+        "text": "As long as Dodrio is Benched, pay Colorless less to retreat your Active Pokémon.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -1866,33 +2110,34 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/34_hires.png",
-    "nationalPokedexNumber": 85
+    "number": "34",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Uncommon",
+    "flavorText": "Uses its three brains to execute complex plans. While two heads sleep, one head stays awake.",
+    "nationalPokedexNumbers": [
+      85
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/34.png",
+      "large": "https://images.pokemontcg.io/base2/34_hires.png"
+    }
   },
   {
     "id": "base2-35",
     "name": "Exeggutor",
-    "imageUrl": "https://images.pokemontcg.io/base2/35.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "35",
-    "evolvesFrom": "Exeggcute",
-    "hp": "80",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 3,
-    "number": "35",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "35",
+    "hp": "80",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Exeggcute",
     "attacks": [
       {
         "name": "Teleport",
@@ -1919,27 +2164,40 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/35_hires.png",
-    "nationalPokedexNumber": 103
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "35",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "Legend has it that on rare occasions, one of its heads will drop off and continue on as an Exeggcute.",
+    "nationalPokedexNumbers": [
+      103
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/35.png",
+      "large": "https://images.pokemontcg.io/base2/35_hires.png"
+    }
   },
   {
     "id": "base2-36",
     "name": "Fearow",
-    "imageUrl": "https://images.pokemontcg.io/base2/36.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "27",
-    "evolvesFrom": "Spearow",
     "hp": "70",
-    "number": "36",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Spearow",
     "attacks": [
       {
         "name": "Agility",
@@ -1977,30 +2235,37 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/36_hires.png",
-    "nationalPokedexNumber": 22
+    "number": "36",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Uncommon",
+    "flavorText": "With its huge and magnificent wings, it can keep aloft without ever having to land for rest.",
+    "nationalPokedexNumbers": [
+      22
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/36.png",
+      "large": "https://images.pokemontcg.io/base2/36_hires.png"
+    }
   },
   {
     "id": "base2-37",
     "name": "Gloom",
-    "imageUrl": "https://images.pokemontcg.io/base2/37.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "35",
-    "evolvesFrom": "Oddish",
-    "hp": "60",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "37",
-    "artist": "Keiji Kinebuchi",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "35",
+    "hp": "60",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Oddish",
+    "evolvesTo": [
+      "Vileplume",
+      "Bellossom"
     ],
     "attacks": [
       {
@@ -2009,7 +2274,7 @@
           "Grass"
         ],
         "convertedEnergyCost": 1,
-        "damage": "10",
+        "damage": "",
         "text": "The Defending Pokémon is now Poisoned."
       },
       {
@@ -2029,33 +2294,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/37_hires.png",
-    "nationalPokedexNumber": 44,
-    "evolvesTo": [
-      "Vileplume",
-      "Bellossom"
-    ]
-  },
-  {
-    "id": "base2-38",
-    "name": "Lickitung",
-    "imageUrl": "https://images.pokemontcg.io/base2/38.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "10",
-    "hp": "90",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "38",
-    "artist": "Mitsuhiro Arita",
+    "number": "37",
+    "artist": "Keiji Kinebuchi",
     "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "The fluid that oozes from its mouth isn't drool; it is a nectar that is used to attract prey.",
+    "nationalPokedexNumbers": [
+      44
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/37.png",
+      "large": "https://images.pokemontcg.io/base2/37_hires.png"
+    }
+  },
+  {
+    "id": "base2-38",
+    "name": "Lickitung",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "10",
+    "hp": "90",
     "types": [
       "Colorless"
+    ],
+    "evolvesTo": [
+      "Lickilicky"
     ],
     "attacks": [
       {
@@ -2090,34 +2361,40 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/38_hires.png",
-    "nationalPokedexNumber": 108,
-    "evolvesTo": [
-      "Lickilicky"
-    ]
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "38",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Uncommon",
+    "flavorText": "Its tongue can be extended like a chameleon's. It leaves a stinging sensation when it licks enemies.",
+    "nationalPokedexNumbers": [
+      108
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/38.png",
+      "large": "https://images.pokemontcg.io/base2/38_hires.png"
+    }
   },
   {
     "id": "base2-39",
     "name": "Marowak",
-    "imageUrl": "https://images.pokemontcg.io/base2/39.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "26",
-    "evolvesFrom": "Cubone",
-    "hp": "60",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "39",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "26",
+    "hp": "60",
     "types": [
       "Fighting"
     ],
+    "evolvesFrom": "Cubone",
     "attacks": [
       {
         "name": "Bonemerang",
@@ -2153,30 +2430,40 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/39_hires.png",
-    "nationalPokedexNumber": 105
-  },
-  {
-    "id": "base2-40",
-    "name": "Nidorina",
-    "imageUrl": "https://images.pokemontcg.io/base2/40.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "24",
-    "evolvesFrom": "Nidoran♀",
-    "hp": "70",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "40",
-    "artist": "Ken Sugimori",
+    "number": "39",
+    "artist": "Mitsuhiro Arita",
     "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "The bone it holds is its key weapon. It throws the bone skillfully like a boomerang to K.O. targets.",
+    "nationalPokedexNumbers": [
+      105
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/39.png",
+      "large": "https://images.pokemontcg.io/base2/39_hires.png"
+    }
+  },
+  {
+    "id": "base2-40",
+    "name": "Nidorina",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "24",
+    "hp": "70",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Nidoran ♀",
+    "evolvesTo": [
+      "Nidoqueen"
     ],
     "attacks": [
       {
@@ -2206,34 +2493,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/40_hires.png",
-    "nationalPokedexNumber": 30,
-    "evolvesTo": [
-      "Nidoqueen"
-    ]
-  },
-  {
-    "id": "base2-41",
-    "name": "Parasect",
-    "imageUrl": "https://images.pokemontcg.io/base2/41.png",
-    "subtype": "Stage 1",
-    "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Paras",
-    "hp": "60",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "41",
+    "number": "40",
     "artist": "Ken Sugimori",
     "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "The female's horn develops slowly. Prefers physical attacks such as clawing and biting.",
+    "nationalPokedexNumbers": [
+      30
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/40.png",
+      "large": "https://images.pokemontcg.io/base2/40_hires.png"
+    }
+  },
+  {
+    "id": "base2-41",
+    "name": "Parasect",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
+    "level": "28",
+    "hp": "60",
     "types": [
       "Grass"
     ],
+    "evolvesFrom": "Paras",
     "attacks": [
       {
         "name": "Spore",
@@ -2263,27 +2554,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/41_hires.png",
-    "nationalPokedexNumber": 47
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "41",
+    "artist": "Ken Sugimori",
+    "rarity": "Uncommon",
+    "flavorText": "A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places.",
+    "nationalPokedexNumbers": [
+      47
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/41.png",
+      "large": "https://images.pokemontcg.io/base2/41_hires.png"
+    }
   },
   {
     "id": "base2-42",
     "name": "Persian",
-    "imageUrl": "https://images.pokemontcg.io/base2/42.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "25",
-    "evolvesFrom": "Meowth",
     "hp": "70",
-    "number": "42",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
+    "evolvesFrom": "Meowth",
     "attacks": [
       {
         "name": "Scratch",
@@ -2304,7 +2606,7 @@
         ],
         "convertedEnergyCost": 3,
         "damage": "30",
-        "text": "If the Defending Pokémon attacks Persian during your opponent's next turn, any damage done by the attack is reduce by 10 (after applying Weakness and Resistance). (Benching either Pokémon ends this effect.)"
+        "text": "If the Defending Pokémon attacks Persian during your next turn, any damage done by the attack is reduced by 10 (after applying Weakness and Resistance). (Benching either Pokémon ends this effect.)"
       }
     ],
     "weaknesses": [
@@ -2319,31 +2621,34 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/42_hires.png",
-    "nationalPokedexNumber": 53
+    "number": "42",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "Although its fur has many admirers, it is tough to raise as a pet because of its fickle meanness.",
+    "nationalPokedexNumbers": [
+      53
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/42.png",
+      "large": "https://images.pokemontcg.io/base2/42_hires.png"
+    }
   },
   {
     "id": "base2-43",
     "name": "Primeape",
-    "imageUrl": "https://images.pokemontcg.io/base2/43.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "45",
-    "evolvesFrom": "Mankey",
-    "hp": "70",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "43",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "45",
+    "hp": "70",
     "types": [
       "Fighting"
     ],
+    "evolvesFrom": "Mankey",
     "attacks": [
       {
         "name": "Fury Swipes",
@@ -2373,27 +2678,38 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/43_hires.png",
-    "nationalPokedexNumber": 57
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "43",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "Always furious and tenacious to boot. It will not abandon chasing its quarry until its quarry is caught.",
+    "nationalPokedexNumbers": [
+      57
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/43.png",
+      "large": "https://images.pokemontcg.io/base2/43_hires.png"
+    }
   },
   {
     "id": "base2-44",
     "name": "Rapidash",
-    "imageUrl": "https://images.pokemontcg.io/base2/44.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Stage 1"
+    ],
     "level": "33",
-    "evolvesFrom": "Ponyta",
     "hp": "70",
-    "number": "44",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Fire"
     ],
+    "evolvesFrom": "Ponyta",
     "attacks": [
       {
         "name": "Stomp",
@@ -2423,32 +2739,36 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/44_hires.png",
-    "nationalPokedexNumber": 78
+    "number": "44",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Uncommon",
+    "flavorText": "Very competitive, this Pokémon will chase anything that moves fast in the hopes of racing it.",
+    "nationalPokedexNumbers": [
+      78
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/44.png",
+      "large": "https://images.pokemontcg.io/base2/44_hires.png"
+    }
   },
   {
     "id": "base2-45",
     "name": "Rhydon",
-    "imageUrl": "https://images.pokemontcg.io/base2/45.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "48",
-    "evolvesFrom": "Rhyhorn",
-    "hp": "100",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 3,
-    "number": "45",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "48",
+    "hp": "100",
     "types": [
       "Fighting"
+    ],
+    "evolvesFrom": "Rhyhorn",
+    "evolvesTo": [
+      "Rhyperior"
     ],
     "attacks": [
       {
@@ -2487,34 +2807,40 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/45_hires.png",
-    "nationalPokedexNumber": 112,
-    "evolvesTo": [
-      "Rhyperior"
-    ]
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "45",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "Protected by an armor-like hide, it is capable of living in molten lava of 3600 degrees.",
+    "nationalPokedexNumbers": [
+      112
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/45.png",
+      "large": "https://images.pokemontcg.io/base2/45_hires.png"
+    }
   },
   {
     "id": "base2-46",
     "name": "Seaking",
-    "imageUrl": "https://images.pokemontcg.io/base2/46.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Goldeen",
-    "hp": "70",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "46",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "28",
+    "hp": "70",
     "types": [
       "Water"
     ],
+    "evolvesFrom": "Goldeen",
     "attacks": [
       {
         "name": "Horn Attack",
@@ -2542,28 +2868,34 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/46_hires.png",
-    "nationalPokedexNumber": 119
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "46",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "In the autumn spawning season, they can be seen swimming powerfully up rivers and creeks.",
+    "nationalPokedexNumbers": [
+      119
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/46.png",
+      "large": "https://images.pokemontcg.io/base2/46_hires.png"
+    }
   },
   {
     "id": "base2-47",
     "name": "Tauros",
-    "imageUrl": "https://images.pokemontcg.io/base2/47.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "24",
     "hp": "60",
-    "retreatCost": [
-      "Colorless",
-      "Colorless"
-    ],
-    "convertedRetreatCost": 2,
-    "number": "47",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
     ],
@@ -2602,30 +2934,41 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/47_hires.png",
-    "nationalPokedexNumber": 128
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 2,
+    "number": "47",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Uncommon",
+    "flavorText": "When it targets an enemy, it charges furiously while whipping its body with its long tails.",
+    "nationalPokedexNumbers": [
+      128
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/47.png",
+      "large": "https://images.pokemontcg.io/base2/47_hires.png"
+    }
   },
   {
     "id": "base2-48",
     "name": "Weepinbell",
-    "imageUrl": "https://images.pokemontcg.io/base2/48.png",
-    "subtype": "Stage 1",
     "supertype": "Pokémon",
-    "level": "28",
-    "evolvesFrom": "Bellsprout",
-    "hp": "70",
-    "retreatCost": [
-      "Colorless"
+    "subtypes": [
+      "Stage 1"
     ],
-    "convertedRetreatCost": 1,
-    "number": "48",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Uncommon",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "level": "28",
+    "hp": "70",
     "types": [
       "Grass"
+    ],
+    "evolvesFrom": "Bellsprout",
+    "evolvesTo": [
+      "Victreebel"
     ],
     "attacks": [
       {
@@ -2634,7 +2977,7 @@
           "Grass"
         ],
         "convertedEnergyCost": 1,
-        "damage": "",
+        "damage": "10",
         "text": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
       },
       {
@@ -2654,32 +2997,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/48_hires.png",
-    "nationalPokedexNumber": 70,
-    "evolvesTo": [
-      "Victreebel"
-    ]
-  },
-  {
-    "id": "base2-49",
-    "name": "Bellsprout",
-    "imageUrl": "https://images.pokemontcg.io/base2/49.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "11",
-    "hp": "40",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "49",
+    "number": "48",
     "artist": "Kagemaru Himeno",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "rarity": "Uncommon",
+    "flavorText": "It spits out poisonpowder to immobilize the enemy, and then finishes the enemy with a spray of acid.",
+    "nationalPokedexNumbers": [
+      70
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/48.png",
+      "large": "https://images.pokemontcg.io/base2/48_hires.png"
+    }
+  },
+  {
+    "id": "base2-49",
+    "name": "Bellsprout",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "11",
+    "hp": "40",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Weepinbell"
     ],
     "attacks": [
       {
@@ -2707,32 +3057,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/49_hires.png",
-    "nationalPokedexNumber": 69,
-    "evolvesTo": [
-      "Weepinbell"
-    ]
-  },
-  {
-    "id": "base2-50",
-    "name": "Cubone",
-    "imageUrl": "https://images.pokemontcg.io/base2/50.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "13",
-    "hp": "40",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "50",
-    "artist": "Mitsuhiro Arita",
+    "number": "49",
+    "artist": "Kagemaru Himeno",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "A carniverous Pokémon that traps and eats bugs. It uses its root feet to soak up needed moisture.",
+    "nationalPokedexNumbers": [
+      69
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/49.png",
+      "large": "https://images.pokemontcg.io/base2/49_hires.png"
+    }
+  },
+  {
+    "id": "base2-50",
+    "name": "Cubone",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "13",
+    "hp": "40",
     "types": [
       "Fighting"
+    ],
+    "evolvesTo": [
+      "Marowak"
     ],
     "attacks": [
       {
@@ -2767,32 +3124,46 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/50_hires.png",
-    "nationalPokedexNumber": 104,
-    "evolvesTo": [
-      "Marowak"
-    ]
-  },
-  {
-    "id": "base2-51",
-    "name": "Eevee",
-    "imageUrl": "https://images.pokemontcg.io/base2/51.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "12",
-    "hp": "50",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "51",
-    "artist": "Kagemaru Himeno",
+    "number": "50",
+    "artist": "Mitsuhiro Arita",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Because it never removes its skull helmet, no one has ever seen this Pokémon's real face.",
+    "nationalPokedexNumbers": [
+      104
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/50.png",
+      "large": "https://images.pokemontcg.io/base2/50_hires.png"
+    }
+  },
+  {
+    "id": "base2-51",
+    "name": "Eevee",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "12",
+    "hp": "50",
     "types": [
       "Colorless"
+    ],
+    "evolvesTo": [
+      "Vaporeon",
+      "Jolteon",
+      "Flareon",
+      "Sylveon",
+      "Espeon",
+      "Umbreon",
+      "Leafeon",
+      "Glaceon"
     ],
     "attacks": [
       {
@@ -2827,39 +3198,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/51_hires.png",
-    "nationalPokedexNumber": 133,
-    "evolvesTo": [
-      "Vaporeon",
-      "Jolteon",
-      "Flareon",
-      "Sylveon",
-      "Espeon",
-      "Umbreon",
-      "Leafeon",
-      "Glaceon"
-    ]
-  },
-  {
-    "id": "base2-52",
-    "name": "Exeggcute",
-    "imageUrl": "https://images.pokemontcg.io/base2/52.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "14",
-    "hp": "50",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "52",
-    "artist": "Mitsuhiro Arita",
+    "number": "51",
+    "artist": "Kagemaru Himeno",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Its genetic code is irregular. It may mutate if it is exposed to radiation from elemental stones.",
+    "nationalPokedexNumbers": [
+      133
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/51.png",
+      "large": "https://images.pokemontcg.io/base2/51_hires.png"
+    }
+  },
+  {
+    "id": "base2-52",
+    "name": "Exeggcute",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "14",
+    "hp": "50",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Exeggutor"
     ],
     "attacks": [
       {
@@ -2888,28 +3259,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/52_hires.png",
-    "nationalPokedexNumber": 102,
-    "evolvesTo": [
-      "Exeggutor"
-    ]
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "52",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "Often mistaken for eggs. When disturbed, they quickly gather and attack in swarms.",
+    "nationalPokedexNumbers": [
+      102
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/52.png",
+      "large": "https://images.pokemontcg.io/base2/52_hires.png"
+    }
   },
   {
     "id": "base2-53",
     "name": "Goldeen",
-    "imageUrl": "https://images.pokemontcg.io/base2/53.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "12",
     "hp": "40",
-    "number": "53",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Water"
+    ],
+    "evolvesTo": [
+      "Seaking"
     ],
     "attacks": [
       {
@@ -2928,32 +3310,35 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/53_hires.png",
-    "nationalPokedexNumber": 118,
-    "evolvesTo": [
-      "Seaking"
-    ]
+    "number": "53",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Common",
+    "flavorText": "Its tail fin billows like an elegant ballroom dress, giving it the nickname \"Water Queen.\"",
+    "nationalPokedexNumbers": [
+      118
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/53.png",
+      "large": "https://images.pokemontcg.io/base2/53_hires.png"
+    }
   },
   {
     "id": "base2-54",
     "name": "Jigglypuff",
-    "imageUrl": "https://images.pokemontcg.io/base2/54.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "14",
     "hp": "60",
-    "retreatCost": [
-      "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "54",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
+    ],
+    "evolvesTo": [
+      "Wigglytuff"
     ],
     "attacks": [
       {
@@ -2988,33 +3373,46 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/54_hires.png",
-    "nationalPokedexNumber": 39,
-    "evolvesTo": [
-      "Wigglytuff"
-    ]
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "54",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Common",
+    "flavorText": "When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.",
+    "nationalPokedexNumbers": [
+      39
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/54.png",
+      "large": "https://images.pokemontcg.io/base2/54_hires.png"
+    }
   },
   {
     "id": "base2-55",
     "name": "Mankey",
-    "imageUrl": "https://images.pokemontcg.io/base2/55.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "7",
-    "ability": {
-      "name": "Peek",
-      "text": "Once during your turn (before your attack), you may look at one of the following: the top card of either player's deck, a random card from your opponent's hand, or one of either player's Prizes. This power can't be used if Mankey is Asleep, Confused, or Paralyzed.",
-      "type": "Pokémon Power"
-    },
     "hp": "30",
-    "number": "55",
-    "artist": "Kagemaru Himeno",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Fighting"
+    ],
+    "evolvesTo": [
+      "Primeape"
+    ],
+    "abilities": [
+      {
+        "name": "Peek",
+        "text": "Once during your turn (before your attack), you may look at one of the following: the top card of either player's deck, a random card from your opponent's hand, or one of either player's Prizes. This power can't be used if Mankey is Asleep, Confused, or Paralyzed.",
+        "type": "Pokémon Power"
+      }
     ],
     "attacks": [
       {
@@ -3033,32 +3431,35 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/55_hires.png",
-    "nationalPokedexNumber": 56,
-    "evolvesTo": [
-      "Primeape"
-    ]
+    "number": "55",
+    "artist": "Kagemaru Himeno",
+    "rarity": "Common",
+    "flavorText": "Extremely quick to anger. It could be docile one moment, then thrashing away the next.",
+    "nationalPokedexNumbers": [
+      56
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/55.png",
+      "large": "https://images.pokemontcg.io/base2/55_hires.png"
+    }
   },
   {
     "id": "base2-56",
     "name": "Meowth",
-    "imageUrl": "https://images.pokemontcg.io/base2/56.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "15",
     "hp": "50",
-    "retreatCost": [
-      "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "56",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
+    ],
+    "evolvesTo": [
+      "Persian"
     ],
     "attacks": [
       {
@@ -3084,32 +3485,39 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/56_hires.png",
-    "nationalPokedexNumber": 52,
-    "evolvesTo": [
-      "Persian"
-    ]
-  },
-  {
-    "id": "base2-57",
-    "name": "Nidoran♀",
-    "imageUrl": "https://images.pokemontcg.io/base2/57.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "13",
-    "hp": "60",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "57",
-    "artist": "Ken Sugimori",
+    "number": "56",
+    "artist": "Mitsuhiro Arita",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Adores circular objects. Wanders the streets on a nightly basis to look for dropped loose change.",
+    "nationalPokedexNumbers": [
+      52
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/56.png",
+      "large": "https://images.pokemontcg.io/base2/56_hires.png"
+    }
+  },
+  {
+    "id": "base2-57",
+    "name": "Nidoran ♀",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "13",
+    "hp": "60",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Nidorina"
     ],
     "attacks": [
       {
@@ -3129,7 +3537,7 @@
         ],
         "convertedEnergyCost": 2,
         "damage": "",
-        "text": "Search your deck for a Basic Pokémon named Nidoran M or Nidoran F and put it onto your Bench. Shuffle your deck afterward. (You can't use this attack if your Bench is full.)"
+        "text": "Search your deck for a Basic Pokémon named Nidoran ♂ or Nidoran ♀ and put it onto your Bench. Shuffle your deck afterward. (You can't use this attack if your Bench is full.)"
       }
     ],
     "weaknesses": [
@@ -3138,32 +3546,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/57_hires.png",
-    "nationalPokedexNumber": 29,
-    "evolvesTo": [
-      "Nidorina"
-    ]
-  },
-  {
-    "id": "base2-58",
-    "name": "Oddish",
-    "imageUrl": "https://images.pokemontcg.io/base2/58.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "8",
-    "hp": "50",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "58",
-    "artist": "Keiji Kinebuchi",
+    "number": "57",
+    "artist": "Ken Sugimori",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Although small, its venomous barbs make this Pokémon dangerous. The female has smaller horns.",
+    "nationalPokedexNumbers": [
+      29
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/57.png",
+      "large": "https://images.pokemontcg.io/base2/57_hires.png"
+    }
+  },
+  {
+    "id": "base2-58",
+    "name": "Oddish",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "8",
+    "hp": "50",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Gloom"
     ],
     "attacks": [
       {
@@ -3192,32 +3607,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/58_hires.png",
-    "nationalPokedexNumber": 43,
-    "evolvesTo": [
-      "Gloom"
-    ]
-  },
-  {
-    "id": "base2-59",
-    "name": "Paras",
-    "imageUrl": "https://images.pokemontcg.io/base2/59.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "8",
-    "hp": "40",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "59",
-    "artist": "Ken Sugimori",
+    "number": "58",
+    "artist": "Keiji Kinebuchi",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.",
+    "nationalPokedexNumbers": [
+      43
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/58.png",
+      "large": "https://images.pokemontcg.io/base2/58_hires.png"
+    }
+  },
+  {
+    "id": "base2-59",
+    "name": "Paras",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "8",
+    "hp": "40",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Parasect"
     ],
     "attacks": [
       {
@@ -3247,33 +3669,40 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/59_hires.png",
-    "nationalPokedexNumber": 46,
-    "evolvesTo": [
-      "Parasect"
-    ]
-  },
-  {
-    "id": "base2-60",
-    "name": "Pikachu",
-    "imageUrl": "https://images.pokemontcg.io/base2/60.png",
-    "subtype": "Basic",
-    "supertype": "Pokémon",
-    "level": "14",
-    "evolvesFrom": "Pichu",
-    "hp": "50",
     "retreatCost": [
       "Colorless"
     ],
     "convertedRetreatCost": 1,
-    "number": "60",
+    "number": "59",
     "artist": "Ken Sugimori",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
+    "flavorText": "Burrows to suck tree roots. The mushrooms on its back grow by drawing nutrients from the bug host.",
+    "nationalPokedexNumbers": [
+      46
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/59.png",
+      "large": "https://images.pokemontcg.io/base2/59_hires.png"
+    }
+  },
+  {
+    "id": "base2-60",
+    "name": "Pikachu",
+    "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
+    "level": "14",
+    "hp": "50",
     "types": [
       "Lightning"
+    ],
+    "evolvesFrom": "Pichu",
+    "evolvesTo": [
+      "Raichu"
     ],
     "attacks": [
       {
@@ -3293,34 +3722,39 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/60_hires.png",
-    "nationalPokedexNumber": 25,
-    "evolvesTo": [
-      "Raichu"
-    ]
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "60",
+    "artist": "Ken Sugimori",
+    "rarity": "Common",
+    "flavorText": "When several of these Pokémon gather, their electricity can build and cause lightning storms.",
+    "nationalPokedexNumbers": [
+      25
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/60.png",
+      "large": "https://images.pokemontcg.io/base2/60_hires.png"
+    }
   },
   {
     "id": "base2-61",
     "name": "Rhyhorn",
-    "imageUrl": "https://images.pokemontcg.io/base2/61.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "18",
     "hp": "70",
-    "retreatCost": [
-      "Colorless",
-      "Colorless",
-      "Colorless"
-    ],
-    "convertedRetreatCost": 3,
-    "number": "61",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Fighting"
+    ],
+    "evolvesTo": [
+      "Rhydon"
     ],
     "attacks": [
       {
@@ -3356,28 +3790,41 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/61_hires.png",
-    "nationalPokedexNumber": 111,
-    "evolvesTo": [
-      "Rhydon"
-    ]
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ],
+    "convertedRetreatCost": 3,
+    "number": "61",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "Its massive bones are 1,000 times harder than human bones. It can easily knock a trailer flying.",
+    "nationalPokedexNumbers": [
+      111
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/61.png",
+      "large": "https://images.pokemontcg.io/base2/61_hires.png"
+    }
   },
   {
     "id": "base2-62",
     "name": "Spearow",
-    "imageUrl": "https://images.pokemontcg.io/base2/62.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "13",
     "hp": "50",
-    "number": "62",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Colorless"
+    ],
+    "evolvesTo": [
+      "Fearow"
     ],
     "attacks": [
       {
@@ -3413,32 +3860,35 @@
         "value": "-30"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/62_hires.png",
-    "nationalPokedexNumber": 21,
-    "evolvesTo": [
-      "Fearow"
-    ]
+    "number": "62",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "Eats bugs in grassy areas. It has to flap its short wings at high speeds to stay airborne.",
+    "nationalPokedexNumbers": [
+      21
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/62.png",
+      "large": "https://images.pokemontcg.io/base2/62_hires.png"
+    }
   },
   {
     "id": "base2-63",
     "name": "Venonat",
-    "imageUrl": "https://images.pokemontcg.io/base2/63.png",
-    "subtype": "Basic",
     "supertype": "Pokémon",
+    "subtypes": [
+      "Basic"
+    ],
     "level": "12",
     "hp": "40",
-    "retreatCost": [
-      "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "63",
-    "artist": "Mitsuhiro Arita",
-    "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
     "types": [
       "Grass"
+    ],
+    "evolvesTo": [
+      "Venomoth"
     ],
     "attacks": [
       {
@@ -3467,27 +3917,43 @@
         "value": "×2"
       }
     ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/63_hires.png",
-    "nationalPokedexNumber": 48,
-    "evolvesTo": [
-      "Venomoth"
-    ]
+    "retreatCost": [
+      "Colorless"
+    ],
+    "convertedRetreatCost": 1,
+    "number": "63",
+    "artist": "Mitsuhiro Arita",
+    "rarity": "Common",
+    "flavorText": "Lives in the shadows of tall trees where it eats insects. It is attracted by light at night.",
+    "nationalPokedexNumbers": [
+      48
+    ],
+    "legalities": {
+      "unlimited": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/63.png",
+      "large": "https://images.pokemontcg.io/base2/63_hires.png"
+    }
   },
   {
     "id": "base2-64",
     "name": "Poké Ball",
-    "imageUrl": "https://images.pokemontcg.io/base2/64.png",
-    "subtype": "",
     "supertype": "Trainer",
+    "rules": [
+      "Flip a coin. If heads, you may search your deck for any Basic Pokémon or Evolution card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
+    ],
     "number": "64",
     "artist": "Keiji Kinebuchi",
     "rarity": "Common",
-    "series": "Base",
-    "set": "Jungle",
-    "setCode": "base2",
-    "text": [
-      "Flip a coin. If heads, you may search your deck for any Basic Pokémon or Evolution card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
-    ],
-    "imageUrlHiRes": "https://images.pokemontcg.io/base2/64_hires.png"
+    "legalities": {
+      "unlimited": "Legal",
+      "standard": "Legal",
+      "expanded": "Legal"
+    },
+    "images": {
+      "small": "https://images.pokemontcg.io/base2/64.png",
+      "large": "https://images.pokemontcg.io/base2/64_hires.png"
+    }
   }
 ]
