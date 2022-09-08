@@ -15,6 +15,9 @@
     <h1><%= `${allCardsInSet[0].set}`%></h1>
     <div id=cardlist></div>
     <div id=cards></div>
+    <div id="export">
+        <form id="downloadForm"></form>
+    </div>
     <script type='text/javascript'>
         let allCardsInSetObj = Object.values(JSON.parse(`<%-JSON.stringify(allCardsInSet)%>`));
         let userCardsInSetObj = Object.values(JSON.parse(`<%-JSON.stringify(userCardsInSet)%>`));

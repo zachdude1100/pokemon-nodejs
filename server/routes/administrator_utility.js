@@ -12,6 +12,45 @@ const _ = require('lodash')
 router.use(bodyParser.urlencoded({extended: true}));
 
 const { db } = require('../config.js');
+const fs = require('fs');
+
+router.get('/downloadImages',(req,res)=>{
+    const download=require('image-downloader')
+    async function downloadImage(url,filepath){
+            if (fs.existsSync(filepath)){
+                //console.log("did not need to download "+url)
+                return
+            }
+        else{
+            console.log("downloading "+url)
+            return download.image({
+            url,
+            dest:filepath,
+            timeout:2000
+            })
+            .catch((err)=>{
+                console.log("could not download "+url)
+            })
+        }
+        
+    }
+    let failedarr=[]
+    Card.find()
+    .then((cards)=>{
+        console.log("got cards")
+        
+        async function ree(){
+            for(var card of cards){
+                await downloadImage(card.imageUrl, '/card_images/'+card.setCode+"/"+card.number+".png")
+                
+                
+            }
+        }
+        ree()
+    console.log(failedarr)
+    })
+    
+})
 
 /*router.get('/deletecardinv',(req,res)=>{
     Card.updateMany({},{$unset:{"inventory":1}})

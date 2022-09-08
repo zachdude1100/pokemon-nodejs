@@ -8,7 +8,9 @@ router.get("/",ensureAuth,(req,res)=>{
     res.render("inventory_home");
 })
 
+router.get("/:setcode/download",ensureAuth,inventoryController.downloadCSV)
 router.get("/:setcode",ensureAuth,inventoryController.returnUserCardsInFormat)
 router.post("/submit",ensureAuth,inventoryController.updateCardInv)
+
 
 module.exports = router;
