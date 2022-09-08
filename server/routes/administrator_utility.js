@@ -14,7 +14,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 const { db } = require('../config.js');
 const fs = require('fs');
 
-router.get('/downloadImages',(req,res)=>{
+/*router.get('/downloadImages',(req,res)=>{
     const download=require('image-downloader')
     async function downloadImage(url,filepath){
             if (fs.existsSync(filepath)){
@@ -50,7 +50,7 @@ router.get('/downloadImages',(req,res)=>{
     console.log(failedarr)
     })
     
-})
+})*/
 
 /*router.get('/deletecardinv',(req,res)=>{
     Card.updateMany({},{$unset:{"inventory":1}})
@@ -412,6 +412,7 @@ router.get('/addlegalpromos',(req,res)=>{
         
     }
 })*/
+/*8
 router.get('/calculatedupes',(req,res)=>{
     Card.find({supertype:"Pokémon"})
     .then((cardsfound)=>{
@@ -432,7 +433,7 @@ router.get('/calculatedupes',(req,res)=>{
             else{
                 finalGroupsArr.push(grouping)
             }
-        }*/
+        }
         let groupedArr=[]
         let isEqual=false;
         let isEqual1=false;
